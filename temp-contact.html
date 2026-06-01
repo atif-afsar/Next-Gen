@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | NextGen Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fbf9f8",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-bright": "#fbf9f8",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#6f3900",
+                    "surface-dim": "#dbd9d9",
+                    "surface-container-low": "#f5f3f3",
+                    "primary": "#7a5900",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#7a5900",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e4e2e2",
+                    "on-surface": "#1b1c1c",
+                    "on-background": "#1b1c1c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#d4c4ac",
+                    "primary-fixed": "#ffdea3",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-secondary-container": "#613100",
+                    "secondary-fixed-dim": "#ffb77f",
+                    "inverse-primary": "#fdbc13",
+                    "on-surface-variant": "#504533",
+                    "surface": "#fbf9f8",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#c1bebe",
+                    "primary-fixed-dim": "#fdbc13",
+                    "on-secondary-fixed": "#2f1500",
+                    "inverse-surface": "#303030",
+                    "tertiary": "#5f5e5e",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-container-high": "#eae8e7",
+                    "on-primary-fixed": "#261900",
+                    "secondary-container": "#ff8a00",
+                    "surface-container-highest": "#e4e2e2",
+                    "primary-container": "#f4b400",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "outline": "#827560",
+                    "secondary": "#914c00",
+                    "surface-container": "#efeded",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-primary-container": "#654800",
+                    "on-tertiary-container": "#4e4d4d",
+                    "on-primary-fixed-variant": "#5d4200",
+                    "tertiary-fixed": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["EB Garamond"],
+                    "headline-xl": ["EB Garamond"],
+                    "headline-sm": ["EB Garamond"],
+                    "headline-md": ["EB Garamond"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(122, 89, 0, 0.1);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #7a5900 !important;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl dark:bg-surface/70 border-b border-outline-variant/30 shadow-[0px_10px_30px_rgba(26,26,26,0.04)]">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-on-background">
+                NextGen Academy
+            </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-body-md text-body-md tracking-wide text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Vision</a>
+<a class="font-body-md text-body-md tracking-wide text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Academic</a>
+<a class="font-body-md text-body-md tracking-wide text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Residential</a>
+<a class="font-body-md text-body-md tracking-wide text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Admissions</a>
+<a class="font-body-md text-body-md tracking-wide text-primary font-bold border-b-2 border-primary pb-1" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded shadow-sm hover:scale-105 active:scale-95 transition-all font-label-md">
+                Apply Now
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section: The Gateway to Legacy -->
+<section class="relative min-h-[716px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20" data-alt="A grand, architectural shot of an elite university library at golden hour, featuring towering bookshelves, marble floors, and ethereal sunlight streaming through high arched windows. The scene embodies a prestigious academic atmosphere with a light, warm golden color palette and soft, intentional shadows. The mood is one of profound legacy and intellectual aspiration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBp-nDYh6mYD93GXjo4q-c8dvs4Mbm0Ny4rGD2LZ-4aaclnC8SoJImGi8QfdPFxESvXrXc07mUxSFLjonYQ_BxlqfuBde2WR-V41EmwhIpqiPltSPuamsIhu7josMRq-UFSaUofL_EZ3AQjd_RwZ7-6uEFlOZ00OmkbUPRi4tWvFmiV_UzVP3K-t7MCM9wLMbP2q4hTihWdITGsgXNSasGjoPgHfg4l_ErnFJAFvLbe7k2OKcfzLJF_98kpaNt5NMerPcPW4oHeFU"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mx-auto">
+<span class="font-label-md text-label-md text-primary tracking-[0.2em] uppercase mb-stack-sm block">The Gateway to Legacy</span>
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl text-on-surface mb-stack-md leading-tight">
+                    Connect with the <br/><span class="italic text-primary">Future of Leadership</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    At NextGen Academy, every conversation is the start of a journey. Whether you are an aspiring scholar or a global partner, our doors are open to those who seek excellence.
+                </p>
+</div>
+</section>
+<!-- Channels: Inquiry Bento Grid -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Admissions Inquiry -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-stack-md hover:translate-y-[-4px] transition-all duration-300 group">
+<div class="w-12 h-12 bg-primary-fixed flex items-center justify-center mb-stack-md rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">Admissions Inquiry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Explore the path to enrollment. Our advisory team provides personalized guidance for prospective leaders.</p>
+<a class="text-primary font-label-md text-label-md inline-flex items-center gap-2 group-hover:underline" href="mailto:admissions@nextgen.edu">
+                        Contact Admissions <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Global Partnerships -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-stack-md hover:translate-y-[-4px] transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center mb-stack-md rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="handshake">handshake</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">Global Partnerships</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">We collaborate with world-class institutions and industries to redefine the boundaries of academic innovation.</p>
+<a class="text-primary font-label-md text-label-md inline-flex items-center gap-2 group-hover:underline" href="#">
+                        Partner With Us <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Media & Press -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-stack-md hover:translate-y-[-4px] transition-all duration-300 group">
+<div class="w-12 h-12 bg-tertiary-fixed flex items-center justify-center mb-stack-md rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="public">public</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-stack-sm">Media &amp; Press</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Access our latest insights, leadership reports, and media resources for global educational commentary.</p>
+<a class="text-primary font-label-md text-label-md inline-flex items-center gap-2 group-hover:underline" href="#">
+                        Press Kit <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- The Consultation: Glassmorphism Form -->
+<section class="bg-surface-container px-margin-mobile md:px-margin-desktop py-stack-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-full blur-[120px] -translate-y-1/2"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div class="space-y-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Private Consultation</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Request a confidential consultation with our Dean of Leadership or Academic Directors to discuss your unique educational trajectory.</p>
+<div class="pt-stack-md space-y-stack-sm">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md">Tailored Academic Roadmaps</span>
+</div>
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md">Confidential Enrollment Strategy</span>
+</div>
+</div>
+</div>
+<div class="glass-panel p-stack-lg border border-white/50 rounded-lg shadow-xl">
+<form action="#" class="space-y-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Full Name</label>
+<input class="bg-transparent border-b border-outline-variant py-2 font-body-md focus:border-primary transition-colors" placeholder="Alexander Hamilton" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Email Address</label>
+<input class="bg-transparent border-b border-outline-variant py-2 font-body-md focus:border-primary transition-colors" placeholder="alex@leadership.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Area of Interest</label>
+<select class="bg-transparent border-b border-outline-variant py-2 font-body-md focus:border-primary transition-colors appearance-none">
+<option>Admissions &amp; Enrollment</option>
+<option>Curriculum Partnership</option>
+<option>Executive Leadership Programs</option>
+<option>Philanthropic Support</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Your Message</label>
+<textarea class="bg-transparent border-b border-outline-variant py-2 font-body-md focus:border-primary transition-colors resize-none" placeholder="How can we assist in your leadership journey?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md text-label-md hover:bg-on-primary-container transition-colors shadow-lg" type="submit">
+                            Request Professional Consultation
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Virtual Visit: Interactive Calendar -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Virtual Visit &amp; Consultations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg max-w-xl mx-auto">Select a preferred window for a 1-on-1 virtual tour or a leadership screening with our admissions panel.</p>
+<div class="bg-white border border-outline-variant/20 rounded-xl shadow-sm overflow-hidden flex flex-col md:flex-row">
+<!-- Calendar Simulation -->
+<div class="flex-1 p-stack-md border-r border-outline-variant/10">
+<div class="flex justify-between items-center mb-stack-md">
+<h4 class="font-headline-sm text-headline-sm">November 2024</h4>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-full"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center font-label-md text-on-surface-variant mb-4">
+<div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Simplified Calendar Grid -->
+<div class="p-3 text-tertiary-fixed-dim">28</div>
+<div class="p-3 text-tertiary-fixed-dim">29</div>
+<div class="p-3 text-tertiary-fixed-dim">30</div>
+<div class="p-3 text-tertiary-fixed-dim">31</div>
+<div class="p-3 bg-primary-container/20 text-primary font-bold rounded cursor-pointer hover:bg-primary-container/40">1</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">2</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">3</div>
+<!-- ... rest of month -->
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">4</div>
+<div class="p-3 bg-primary text-white rounded cursor-pointer shadow-md">5</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">6</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">7</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">8</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">9</div>
+<div class="p-3 hover:bg-surface-container-low rounded cursor-pointer">10</div>
+</div>
+</div>
+<!-- Time Selection -->
+<div class="w-full md:w-80 bg-surface-container-lowest p-stack-md">
+<h4 class="font-label-md text-label-md mb-stack-md uppercase tracking-widest text-on-surface-variant">Available Slots</h4>
+<div class="space-y-2">
+<button class="w-full border border-outline-variant p-3 text-center rounded hover:bg-primary hover:text-white transition-colors">09:00 AM - 10:00 AM</button>
+<button class="w-full border border-outline-variant p-3 text-center rounded hover:bg-primary hover:text-white transition-colors">11:30 AM - 12:30 PM</button>
+<button class="w-full border border-outline-variant p-3 text-center rounded hover:bg-primary hover:text-white transition-colors">02:00 PM - 03:00 PM</button>
+<button class="w-full border border-outline-variant p-3 text-center rounded hover:bg-primary hover:text-white transition-colors">04:30 PM - 05:30 PM</button>
+</div>
+<p class="mt-stack-md text-[12px] text-on-surface-variant italic">All times are in GMT+1. Selection will confirm a secure link via email.</p>
+</div>
+</div>
+</section>
+<!-- The Citadel: Campus Location Map -->
+<section class="py-stack-lg">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">The Citadel Campus</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Oxfordshire, United Kingdom</p>
+</div>
+<div class="h-[500px] w-full grayscale contrast-[0.9] hover:grayscale-0 transition-all duration-700 relative group">
+<img class="w-full h-full object-cover" data-alt="A sophisticated, high-altitude aerial view of a sprawling prestigious university campus in the English countryside. The map-like perspective reveals symmetrical formal gardens, ancient stone architecture, and modern glass research facilities. The aesthetic is clean, high-tech, and refined, with a dominant white and cream palette and deep golden accents highlighting the pathways. It captures an atmosphere of elite education and historical significance." data-location="Oxfordshire, UK" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDGZCXFMGfQKCavz-Tn3bb3OsqGIrOi2KE3Y3J5grAEwcGM6bFdwLrYpOQQ_HU-hWwuU7mR1UrPIWFayFuX-dSTv192nvYrWv2yMyKu7g-2IIN4g3vJEjrdo_bp7UYEKj3pi-aqjAVCSWStH06xRYPzjKWMPVSlVThrlPRmZhdE6z-GpAmP34Dhqbgj14Bh_tSPTVk57E22PCv3LZyIF__Mtv6Hqn_FMdxasdHvFiSjlIG9pontD6lXZeTne5b-JBkP0jjYEqKHag"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<!-- Interactive Map Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-2xl animate-bounce">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="mt-4 glass-panel px-6 py-3 rounded-full border border-white shadow-lg">
+<span class="font-label-md text-label-md">NextGen Academy HQ</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-low border-t border-outline-variant/20 w-full py-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop max-w-container-max mx-auto gap-gutter">
+<div class="max-w-xs">
+<div class="font-headline-md text-headline-md font-medium text-on-surface dark:text-on-background mb-4">
+                    NextGen Academy
+                </div>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mb-stack-md">
+                    Cultivating the visionaries and stewards of tomorrow through rigorous faith-based leadership.
+                </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-stack-lg">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2">Explore</span>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">History</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Curriculum</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2">People</span>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Faculty</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2">Legal</span>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto mt-stack-lg pt-stack-md border-t border-outline-variant/10 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">
+                © 2024 NextGen Academy. Excellence in Leadership and Faith.
+            </p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Atmospheric Effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const formInputs = document.querySelectorAll('input, textarea, select');
+            
+            formInputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.querySelector('label').classList.add('text-primary');
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.querySelector('label').classList.remove('text-primary');
+                });
+            });
+
+            // Smooth scroll for map/virtual visit if needed
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>

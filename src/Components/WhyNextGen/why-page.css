@@ -1,0 +1,53 @@
+/* Stitch light theme — Why NextGen | NextGen Academy (Light) */
+.page-why {
+  --why-bg: #fbf9f8;
+  --why-surface: #ffffff;
+  --why-card: #fdfbf7;
+  --why-primary: #7a5900;
+  --why-primary-light: #ffdea3;
+  --why-text: #1b1c1c;
+  --why-muted: #504533;
+  --why-border: #d4c4ac;
+  background-color: var(--why-bg);
+  color: var(--why-text);
+}
+
+.page-why .why-card {
+  background-color: var(--why-card);
+  border: 1px solid var(--why-border);
+}
+
+.page-why .why-btn-primary {
+  background-color: var(--why-primary);
+  color: #ffffff;
+}
+
+.page-why .why-btn-primary:hover {
+  background-color: #5d4200;
+}
+
+.page-why .why-btn-outline {
+  border: 1px solid var(--why-border);
+  color: var(--why-text);
+}
+
+.page-why .why-btn-outline:hover {
+  background-color: #f5f3f3;
+}
+
+.page-why .why-text-primary {
+  color: var(--why-primary);
+}
+
+.page-why .why-highlight-card {
+  background-color: var(--why-primary);
+  color: #ffffff;
+}
+
+.page-why .why-table-highlight {
+  background-color: rgba(255, 222, 163, 0.2);
+}
+
+.page-why .why-table-col {
+  background-color: rgba(255, 222, 163, 0.12);
+}

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold: #d4af37;
-  --color-gold-light: #e8c96a;
-  --color-gold-dim: #a8892a;
+  --color-gold: #ffb800;
+  --color-gold-light: #ffc933;
+  --color-gold-dim: #c99400;
   --color-surface: #0a0a0a;
   --color-surface-elevated: #141414;
   --color-surface-card: #1a1a1a;
@@ -50,4 +50,58 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.2);
+    opacity: 0.85;
+  }
+}
+
+@keyframes hero-ken-burns {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.12);
+  }
+}
+
+.hero-particle {
+  animation: hero-float ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(255, 184, 0, 0.6);
+}
+
+.hero-bg-image {
+  animation: hero-ken-burns 28s ease-in-out infinite alternate;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.islamic-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 184, 0, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
 }

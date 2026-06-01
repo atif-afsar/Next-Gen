@@ -1,0 +1,26 @@
+import { writeFileSync } from 'fs'
+
+const assets = {
+  'about-hero-bg.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuDlrSebA22b-ga_zWDBRoXYgHR40en3NFiFSfUUBS0RClLj8s3_Vrw_1Ufvv4VMxRZipVvYJBwkF2bVeGVecKCC9myih8GwTXjV8HPfw0WktdJic-ouAVi0pCXIEvVO1ElcNGJsrQZ26uAMPqVg-lMJelN3FuQw0QcDMPu3-eA3PlP5PEqvy3CtQdu3srK2aY-EdCbrGXKoWgH_DdiMlPepVJxfo1FkYltPC5HkP4FlwXBT-uW1vI8MIVlMRzamwUq-Y7DjHCvR43g',
+  'about-heritage.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuDzzPAcauKgZzcgQNn1j1NNEYSNP5o8FkcoVNdJwr2q3L6DRewYliAPBObaCE8zZs_yylwbt9fLI_4WQQrDQxRyW_bY_NJir8RbJSkNrpHMwXEm0Jzgq49GooHrL_-agt8u-eDyCTa6TxW1PD6rc6gn5g0nXQw0GPEhDkoEhEhmwkx8XXgi8oNTpN1EbTP-2gCIrCbOV-7Ngb84iUfX-V3IcPP_Qc0aPN4E-oB2uqpclw7gAemp4WjRQDI8vyTlWyLCPDurE77WaSw',
+  'about-founder-1.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuArHmuHcLheLTkuBN_msGLAfn2tbO1fy1qscPWwcZ4iH4ppCjxY7E-fWxDiAlDOHWtNFyFlvC7y6SB6sUrPE2tYW7poVVySl4aLQ2x76_FSLZMdoZRoPtYUJybFJUjhdtnW8tThdhECBG7Qpl0Ycc3V2q36FOgcCArAKALTqp_7YN09Flvd7ChJ8izKVW1LLcCGNuSDNjjK5XF_JsmO1adjIUQvVTqM9ZLUUVZsjNW_ezgWuvSXN0Cow7_5qXXJTbHuI5cXDyrAoA4',
+  'about-founder-2.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuDvD3LflwQAz-WtGP7Fh3r3p0c_2YBstjYOisyFEtn8QhUnn4fbl11dCIS4UEEYskXSoXcwlQ3RsOQJrW6IhhxumIZ7KBurn5xm7YCfoP4hAZpx3viawKzBrEs1HYlCO21k8y2vsJzRamnLQkPTawdf1aopd-HYNzU8dvdjpXYCbdYL1240frpyogvwlcI8cpvy2fdGkRbEPNZg_dLR0INnJ8in2SZ_gm6ZGDdwYu2OR8W72f8vd7x60rMBUM31baEbtADFLxqKe44',
+  'about-founder-3.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuAVxsgH8sWjALKB0HHYO1JdjQiwuV_whC_ZZ1dObYAUMaj9h5oKeGuoZVQFYbqSYG-m7L7dcDhwx0D96IYHjjKTW0htn_EzuVvyAsToENgR1b7JrwTdsm19HgyInzfXyHLeAYQTOJKM1h9cWIwkm2fypqyqi2QRnDaCijc1dNMRZtLaLVEsWUasO9DtK0JI5Xo_DWU_KmOP1RZ5V8uTND-TL14Gdx75yFxXQmUJR3Ghg33XZ5ey4NnimrQEuEPXZeBotQphQIA4cVk',
+  'about-pillar-intellectual.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuBRjiyNXDrNt6auU1duH0d_47U9Jw0ADSzLsb8VIdgOShCmAl0YtpgCbMOW41VHFWlQpx1KX5FyzA-HHdX-7r2lGF3nqEfdh84aT7tYp9cTpg6WcYIT9n4EqqXWl6kuljSA1qMGG38S0XoWaBTpDDv_UPhLB7VSGQL4ttO3F0Si_aH7WaGtHkm43-2qNd_D8UmGjmzl8fELnd1OsZxJtQAoBUvryRhw5jUbCu1z6VjEVM1QY9LTUi9dsderoiLlcL6SlTd6g8rLiGs',
+  'about-pillar-spiritual.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuBaV9o2L9l-SONVOQOgSTt10Ec9YLC9BY_VakDGuyasHEylNQimrDlREGIz9iexwobmdk_ptlX8fIpdP0xp53GOQpYIov_wnjJM8EuvIs2cFVb9G7wkjnVHukPlBF7z1lTdPEJatX5T0lfi7Lk5UwSWeYP85MSZ9i2BLCK4UphSGvUN0igoj_KWNrGybw6TrBYbvICgzS_AIXZZ29ZLaecs6hyD98lGZZOsGJ3-_SiBMDhNlkODzquEzNSXTyLc2ioMosXpVaEiDq8',
+  'about-pillar-leadership.jpg':
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuCYt6BXKnnwkqzuXrUBg1yBtbIy3FItq-V4V-EvyFwr6LHygMEy6fr-LpML1bpaDgiJuUHcqjzPYk0DaYMZAGsehOI5wmsifnHA-OZoCl3SCrWNM95ka3CprSQ_0rNVu1l2MPqlIRVm-kzYOsVHZ4gYSqpoK2tKXDkUmDv7whKx03nmWAX6-WyJsrftBdaM1dxtWtEyhngxI5BNX8klYanux_6xIiCz-758BxY9Ni-1y0scSSYQ1RnxGrSqZ9DOa6uxxKO0YUc7uXc',
+}
+
+for (const [file, url] of Object.entries(assets)) {
+  const res = await fetch(url)
+  writeFileSync(`public/images/${file}`, Buffer.from(await res.arrayBuffer()))
+  console.log('Saved', file)
+}

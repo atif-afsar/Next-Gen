@@ -1,7 +1,5 @@
+import { ABOUT_BG } from '../../lib/images.js'
 import { IconStar, IconUsers } from './icons.jsx'
-
-const BUILDING_IMAGE =
-  'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80'
 
 const stats = [
   {
@@ -18,15 +16,16 @@ const stats = [
 
 export default function LegacySection() {
   return (
-    <section id="mission" className="py-20 md:py-28">
+    <section id="about" className="scroll-mt-24 py-20 md:py-28">
       <div className="container-narrow grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative overflow-hidden rounded-2xl">
+        <div className="group relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.45)]">
           <img
-            src={BUILDING_IMAGE}
-            alt="Islamic architecture at NextGen Academy campus"
-            className="aspect-[4/3] w-full object-cover grayscale"
+            src={ABOUT_BG}
+            alt="NextGen Academy campus — modern Islamic architecture at twilight"
+            className="aspect-square w-full object-cover object-center transition duration-700 group-hover:scale-[1.02]"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 ring-1 ring-inset ring-white/5" />
         </div>
 
         <div>

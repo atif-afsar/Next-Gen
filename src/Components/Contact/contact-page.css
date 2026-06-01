@@ -1,0 +1,55 @@
+/* Stitch light theme — Contact Us | NextGen Academy (Light) */
+.page-contact {
+  --contact-bg: #fbf9f8;
+  --contact-surface: #ffffff;
+  --contact-primary: #7a5900;
+  --contact-primary-light: #ffdea3;
+  --contact-peach: #ffdcc4;
+  --contact-text: #1b1c1c;
+  --contact-muted: #504533;
+  --contact-border: #d4c4ac;
+  background-color: var(--contact-bg);
+  color: var(--contact-text);
+}
+
+.page-contact .contact-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 196, 172, 0.3);
+  box-shadow: 0 4px 24px rgba(26, 26, 26, 0.04);
+}
+
+.page-contact .contact-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 50px rgba(26, 26, 26, 0.08);
+}
+
+.page-contact .contact-input {
+  border-bottom: 1px solid var(--contact-border);
+  background: transparent;
+}
+
+.page-contact .contact-input:focus {
+  outline: none;
+  border-bottom-color: var(--contact-primary);
+}
+
+.page-contact .contact-btn-primary {
+  background-color: var(--contact-primary);
+  color: #ffffff;
+}
+
+.page-contact .contact-btn-primary:hover {
+  background-color: #654800;
+}
+
+.page-contact .material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.page-contact .material-symbols-outlined.icon-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
