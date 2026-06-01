@@ -27,28 +27,33 @@ const pillars = [
 
 export default function Pillars() {
   return (
-    <section className="py-20 md:py-28">
-      <div className="container-narrow grid gap-8 lg:grid-cols-3">
-        {pillars.map(({ title, description, image }) => (
-          <article
-            key={title}
-            className="group relative flex h-[420px] items-end overflow-hidden rounded-2xl border border-white/10 p-8 md:h-[500px] md:p-10"
-          >
-            <img
-              src={image}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-700 group-hover:scale-110 group-hover:opacity-60"
-              aria-hidden
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
-            <div className="relative z-10">
-              <h3 className="font-serif text-2xl text-white md:text-3xl">{title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/60 transition group-hover:text-white/85 md:text-base">
-                {description}
-              </p>
-            </div>
-          </article>
-        ))}
+    <section className="bg-white py-20 md:py-28">
+      <div className="container-narrow">
+        <p className="about-eyebrow mb-4 text-center">Our Distinction</p>
+        <h2 className="about-heading mb-14 text-center text-3xl md:text-5xl">Institutional Pillars</h2>
+
+        <div className="grid gap-8 lg:grid-cols-3">
+          {pillars.map(({ title, description, image }) => (
+            <article
+              key={title}
+              className="group relative flex min-h-[420px] items-end overflow-hidden rounded-2xl border border-[#d4c4ac]/30 shadow-sm md:min-h-[500px]"
+            >
+              <img
+                src={image}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                aria-hidden
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1b1c1c]/95 via-[#1b1c1c]/50 to-[#1b1c1c]/15" />
+              <div className="relative z-10 p-8 md:p-10">
+                <h3 className="font-serif text-2xl text-white md:text-3xl">{title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-base">
+                  {description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

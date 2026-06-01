@@ -1,79 +1,63 @@
-import { CURRICULUM_FINANCIAL, CURRICULUM_ROBOTICS } from '../../lib/images.js'
-import { IconFlask, IconPsychology, IconTranslate } from './icons.jsx'
-
-const wideCards = [
-  {
-    title: 'Robotics & AI Lab',
-    description: 'From coding fundamentals to advanced machine learning models.',
-    image: CURRICULUM_ROBOTICS,
-  },
-  {
-    title: 'Financial Literacy',
-    description: 'Understanding Islamic finance, wealth management, and global economics.',
-    image: CURRICULUM_FINANCIAL,
-  },
-]
-
-const smallCards = [
-  {
-    icon: IconTranslate,
-    title: 'Classical Arabic',
-    description: 'Mastering the language of the Quran for deep theological research.',
-  },
-  {
-    icon: IconFlask,
-    title: 'STEM Integration',
-    description: 'Physics, Chemistry, and Biology taught through a lens of divine design.',
-  },
-  {
-    icon: IconPsychology,
-    title: 'Tarbiyah',
-    description: 'A curated emotional and psychological growth program for future leaders.',
-  },
-]
+import { HOME_CURRICULUM_PHILOSOPHY, HOME_CURRICULUM_STEM } from '../../lib/images.js'
 
 export default function Curriculum() {
   return (
-    <section id="curriculum" className="border-t border-white/5 bg-[#0a0a0a] py-20 md:py-28">
+    <section id="curriculum" className="scroll-mt-24 bg-white py-20 md:py-32">
       <div className="container-narrow">
-        <h2 className="text-center font-serif text-3xl text-white md:text-5xl">
-          The <span className="text-[#ffb800]">NextGen</span> Curriculum
+        <h2 className="text-center font-serif text-3xl text-[#1b1c1c] md:text-5xl">
+          Future-Ready Curriculum
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:h-[600px] md:grid-cols-6 md:grid-rows-2">
-          {wideCards.map(({ title, description, image }) => (
-            <article
-              key={title}
-              className="group relative min-h-[260px] overflow-hidden rounded-3xl border border-white/10 bg-[#141414] p-8 md:col-span-3 md:min-h-0"
-            >
-              <img
-                src={image}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-25 transition duration-700 group-hover:scale-110 group-hover:opacity-35"
-                aria-hidden
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
-              <div className="relative z-10 flex h-full min-h-[200px] flex-col justify-end md:min-h-0">
-                <h3 className="font-serif text-2xl text-[#ffb800] md:text-3xl">{title}</h3>
-                <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70 md:text-base">
-                  {description}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="mt-14 grid grid-cols-1 gap-6 md:h-[600px] md:grid-cols-3 md:grid-rows-2">
+          <article className="home-glass-card group relative min-h-[280px] overflow-hidden rounded-xl md:col-span-2 md:row-span-1">
+            <img
+              src={HOME_CURRICULUM_STEM}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+              aria-hidden
+            />
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent p-8 text-white">
+              <h3 className="font-serif text-2xl md:text-3xl">STEM &amp; Digital Innovation</h3>
+              <p className="mt-2 max-w-lg text-sm opacity-90 md:text-base">
+                Mastering coding, bio-engineering, and the ethical use of technology.
+              </p>
+            </div>
+          </article>
 
-          {smallCards.map(({ icon: Icon, title, description }) => (
-            <article
-              key={title}
-              className="flex flex-col items-center justify-center rounded-3xl border border-white/10 bg-[#141414]/80 p-8 text-center backdrop-blur-sm transition hover:border-[#ffb800]/30 md:col-span-2"
-            >
-              <span className="mb-4 inline-flex text-[#ffb800]">
-                <Icon />
-              </span>
-              <h3 className="font-serif text-lg font-bold text-[#ffb800] md:text-xl">{title}</h3>
-              <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/60">{description}</p>
-            </article>
-          ))}
+          <article className="home-glass-card flex flex-col justify-center rounded-xl bg-[#ffdea3]/20 p-8">
+            <span className="material-symbols-outlined mb-6 text-5xl text-[#7a5900]">
+              precision_manufacturing
+            </span>
+            <h3 className="font-serif text-2xl text-[#1b1c1c]">Robotics</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#504533] md:text-base">
+              Design, build, and program the future. From Grade 6 onward.
+            </p>
+          </article>
+
+          <article className="home-glass-card flex flex-col justify-center rounded-xl bg-[#efeded] p-8">
+            <span className="material-symbols-outlined mb-6 text-5xl text-[#7a5900]">
+              monetization_on
+            </span>
+            <h3 className="font-serif text-2xl text-[#1b1c1c]">Financial Literacy</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#504533] md:text-base">
+              Understanding Islamic finance, investments, and global markets.
+            </p>
+          </article>
+
+          <article className="home-glass-card group relative min-h-[280px] overflow-hidden rounded-xl md:col-span-2">
+            <img
+              src={HOME_CURRICULUM_PHILOSOPHY}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+              aria-hidden
+            />
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent p-8 text-white">
+              <h3 className="font-serif text-2xl md:text-3xl">Philosophy &amp; Rhetoric</h3>
+              <p className="mt-2 max-w-lg text-sm opacity-90 md:text-base">
+                Developing the power of persuasion, critical analysis, and ethical reasoning.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>

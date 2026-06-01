@@ -1,34 +1,43 @@
-import { ABOUT_HERITAGE } from '../../lib/images.js'
-
 export default function Mission() {
   return (
-    <section id="mission" className="scroll-mt-24 py-20 md:py-28">
-      <div className="container-narrow grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative order-2 aspect-square overflow-hidden rounded-2xl border border-white/10 lg:order-1">
-          <img
-            src={ABOUT_HERITAGE}
-            alt="Heritage architecture blending tradition and modernity"
-            className="h-full w-full object-cover transition duration-700 hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent opacity-60" />
-        </div>
+    <section id="mission" className="scroll-mt-24 bg-white py-20 md:py-28">
+      <div className="container-narrow">
+        <div className="flex flex-col gap-12 md:flex-row md:gap-16">
+          <div className="md:w-1/3">
+            <h2 className="about-heading text-3xl md:text-4xl md:sticky md:top-32">
+              The Institutional Legacy
+            </h2>
+          </div>
 
-        <div className="order-1 lg:order-2">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#ffb800]">
-            Our Mission
-          </p>
-          <h2 className="font-serif text-3xl text-white md:text-5xl">Engineering Future Heritage</h2>
-          <p className="mt-6 text-base leading-relaxed text-white/65 md:text-lg">
-            Born from the visionary foundation of IMS, NextGen Academy is a sister institution
-            dedicated to evolving the legacy of excellence. We bridge decades of academic prestige
-            with a forward-leaning curriculum designed for the 21st-century global stage.
-          </p>
-          <blockquote className="glass-panel mt-8 rounded-xl border-l-4 border-[#ffb800] p-8 shadow-[0_0_40px_rgba(255,184,0,0.05)]">
-            <p className="font-serif text-lg italic leading-relaxed text-white/85">
-              &ldquo;Tradition is not the worship of ashes, but the preservation of fire. We take the
-              fire of our ancestors and use it to power the engines of tomorrow.&rdquo;
+          <div className="flex flex-col gap-10 md:w-2/3">
+            <p className="about-body text-lg leading-relaxed">
+              Founded on the principles of the Islamic Model School (IMS), NextGen Academy is not
+              merely a replacement, but a refinement. For decades, IMS served as the bedrock of
+              intellectual and spiritual growth for thousands. Today, we bridge that storied past
+              with a futuristic vision, creating a &ldquo;Heritage of the Future.&rdquo;
             </p>
-          </blockquote>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="about-card-muted border-l-2 border-[#ffdea3] p-6">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-[#7a5900]">
+                  1988 — The Genesis
+                </h4>
+                <p className="about-body mt-2 text-sm leading-relaxed">
+                  Established as a pioneer in holistic faith-based education in the metropolitan
+                  core.
+                </p>
+              </div>
+              <div className="about-card-muted border-l-2 border-[#ffdea3] p-6">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-[#7a5900]">
+                  2024 — NextGen Evolution
+                </h4>
+                <p className="about-body mt-2 text-sm leading-relaxed">
+                  A radical reimagining of the curriculum to meet the demands of a high-tech global
+                  economy.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

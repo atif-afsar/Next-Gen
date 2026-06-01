@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why NextGen Academy | Forging Faith-Powered Intellect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#8e9192",
+                      "primary": "#c9c6c5",
+                      "inverse-on-surface": "#2f3131",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#282a2b",
+                      "outline-variant": "#444748",
+                      "tertiary": "#ffb77f",
+                      "secondary-container": "#f3b300",
+                      "on-tertiary": "#4e2600",
+                      "tertiary-container": "#170700",
+                      "surface-variant": "#333535",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed": "#2f1500",
+                      "on-tertiary-fixed-variant": "#6f3900",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e2e2e2",
+                      "on-surface-variant": "#c4c7c7",
+                      "surface-dim": "#121414",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "on-error": "#690005",
+                      "surface-container": "#1e2020",
+                      "surface-bright": "#37393a",
+                      "on-secondary-fixed": "#261900",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#e5e2e1",
+                      "inverse-primary": "#5f5e5e",
+                      "on-tertiary-container": "#ba6300",
+                      "inverse-surface": "#e2e2e2",
+                      "surface": "#121414",
+                      "secondary": "#ffd481",
+                      "on-secondary": "#402d00",
+                      "tertiary-fixed-dim": "#ffb77f",
+                      "primary-container": "#0b0b0b",
+                      "surface-container-low": "#1a1c1c",
+                      "on-secondary-fixed-variant": "#5d4200",
+                      "on-primary-fixed-variant": "#474646",
+                      "surface-tint": "#c9c6c5",
+                      "secondary-fixed-dim": "#fdbc13",
+                      "secondary-fixed": "#ffdea3",
+                      "on-primary-container": "#7b7979",
+                      "on-surface": "#e2e2e2",
+                      "surface-container-highest": "#333535",
+                      "on-secondary-container": "#644800",
+                      "surface-container-lowest": "#0c0f0f",
+                      "tertiary-fixed": "#ffdcc4",
+                      "background": "#121414",
+                      "on-primary": "#313030"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-mobile": "24px",
+                      "unit": "8px",
+                      "section-gap": "120px",
+                      "margin-desktop": "80px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["EB Garamond"],
+                      "headline-lg": ["EB Garamond"],
+                      "display-lg-mobile": ["EB Garamond"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-sm": ["Space Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "display-lg": ["EB Garamond"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                      "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .light-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .light-sweep::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,212,129,0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.7s;
+            pointer-events: none;
+        }
+        .light-sweep:hover::after {
+            left: 100%;
+            top: 100%;
+        }
+        .khatim-bullet {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: #ffd481;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(255,183,127,0.05)]">
+<nav class="flex justify-between items-center px-margin-desktop py-unit h-20 max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-medium text-secondary">NextGen Academy</div>
+<div class="hidden md:flex gap-10">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Vision</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Academic</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Residential</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Admissions</a>
+</div>
+<button class="bg-secondary-container text-on-secondary py-2 px-6 rounded-lg font-label-sm hover:scale-105 transition-transform active:scale-95">Apply Now</button>
+</nav>
+</header>
+<main class="overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img class="w-full h-full object-cover opacity-40" data-alt="A cinematic, high-impact wide shot of a focused young student with a scholarly posture, seated in a futuristic hybrid space that blends a traditional wood-paneled library with holographic digital displays. The atmosphere is sophisticated and visionary, with warm golden highlights from the holograms illuminating the deep obsidian surroundings. The lighting is dramatic and premium, evoking a sense of elite faith-powered intellect and technological mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7xk-rKTxSaH1ZRc5RZe3hfSx_ST08V7JgdebZON805TIVcb0PPzwJ7mchPJ3AOazS-M0s_xqa3TW8tEwEEhNE26W3E7vrBm47J1BMnj3uxY3bDSHmVTvyEGdPxOM1QYEVU0vgNiGvxyxK3k5lV3tfbMLnTBaH6Un8_P_fMJNY-pQ2VQDC1RwvZDcpL3gXdIAN4E-jIwpm-KCj6xpXMzClLOEut2pRQqWIQc6HVyMBmmg3i7q8_u1nPtGZwIEb859gJjLDBird90U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-3xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] mb-6 block">The Architect's Path</span>
+<h1 class="font-headline-xl text-[64px] leading-[72px] md:text-display-lg md:leading-tight text-on-surface mb-8">Why NextGen? Because the Future Needs Faith-Powered Intellect.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl">We don't just educate; we transform. NextGen Academy is the crucible where the spiritual strength of a Hafiz meets the analytical rigor of a future leader.</p>
+<div class="flex gap-6">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-sm hover:shadow-[0_0_20px_rgba(255,212,129,0.3)] transition-all">Begin Transformation</button>
+<button class="border border-secondary text-secondary px-8 py-4 rounded-lg font-label-sm hover:bg-secondary/5 transition-all">Our Vision</button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Transformation -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-24">
+<h2 class="font-headline-xl text-headline-xl text-secondary mb-4">The Transformation</h2>
+<div class="w-24 h-1 bg-secondary mx-auto opacity-30"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="glass-card p-10 rounded-xl light-sweep group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Foundation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The soul is centered in Iman. We anchor our students in the deep spiritual discipline they forged during their Hifz, ensuring their moral compass is unshakeable.</p>
+</div>
+<div class="glass-card p-10 rounded-xl light-sweep group border-secondary/30 bg-secondary/5">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8" data-icon="schema">schema</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Bridge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our unique transition program seamlessly bridges the gap between traditional memorization and critical academic inquiry, unlocking latent intellectual potential.</p>
+</div>
+<div class="glass-card p-10 rounded-xl light-sweep group">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8" data-icon="star_half">star_half</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Pinnacle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Students emerge as visionaries, equipped with the tools to lead global industries while remaining deeply rooted in their prophetic legacy.</p>
+</div>
+</div>
+</section>
+<!-- 5 Pillars of Excellence -->
+<section class="py-section-gap bg-surface-container-low relative">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-12">5 Pillars of Excellence</h2>
+<div class="space-y-10">
+<div class="flex gap-6 group">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined" data-icon="mosque" data-weight="fill">mosque</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-2">Spiritual Mastery</h4>
+<p class="font-body-md text-on-surface-variant">Moving beyond rote memorization to deep Quranic contemplation (Tadabbur) and spiritual application.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-2">Academic Rigor</h4>
+<p class="font-body-md text-on-surface-variant">World-class ICSE curriculum paired with advanced STEM modules designed for high-performing minds.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined" data-icon="public" data-weight="fill">public</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-2">Global Communication</h4>
+<p class="font-body-md text-on-surface-variant">Mastery of English as the language of commerce and Arabic as the gateway to sacred wisdom.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="glass-card p-8 rounded-xl h-64 flex flex-col justify-end">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="rocket_launch">rocket_launch</span>
+<h4 class="font-headline-lg text-xl text-on-surface">Future Skills</h4>
+<p class="text-sm text-on-surface-variant">AI, Robotics, and Finance for the 21st century.</p>
+</div>
+<div class="glass-card p-8 rounded-xl h-80 bg-secondary/10 border-secondary/20">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="workspace_premium">workspace_premium</span>
+<h4 class="font-headline-lg text-xl text-on-surface">Ethical Leadership</h4>
+<p class="text-sm text-on-surface-variant">Character training that prioritizes the Hereafter while winning in the world.</p>
+</div>
+</div>
+<div class="space-y-4">
+<img class="rounded-xl h-80 object-cover w-full" data-alt="A futuristic classroom setting where students are working with advanced robotics and holographic interfaces. The lighting is a blend of natural afternoon sun and digital blue and gold neon. The aesthetic is clean, premium, and highly technological, emphasizing the 'Future Skills' and 'Academic Rigor' pillars of the academy in a dark mode environment with obsidian surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3X6sP9yEbdQS_Yg10fIuF43kipkcfZxpKZ_-q26mztFCB0nVX0VFh_2Bbxzyeddrkst5a8ME8sOAK5pezwWk5M4n_8LKCzrbCn0xCD1E58ZZVJ8h0j6IPxuks4hNG3v1ULFa0GNqDO5UVgCIuWfw-zcUNO52OGRrGurBPWh1Ge456ciVWfPwIDZt5x_5xHqdjbXZ4Dha82Rxf_c95BqegzQ5qR7qyBOrKL2IRSTpC29U2yWnkPfKrhJl_ZtBtKPJnn6rqTfinb9A"/>
+<div class="glass-card p-8 rounded-xl h-64 flex flex-col justify-center items-center text-center">
+<div class="text-4xl font-headline-xl text-secondary mb-2">100%</div>
+<p class="text-sm text-on-surface-variant">Hifz Retention Priority</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Competitive Edge -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-24">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-4">The Competitive Edge</h2>
+<p class="font-body-md text-on-surface-variant">A Comparison of Trajectories</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-white/10 text-left">
+<th class="py-6 font-label-sm text-secondary uppercase tracking-widest">Dimension</th>
+<th class="py-6 font-label-sm text-on-surface-variant">Traditional Schools</th>
+<th class="py-6 font-label-sm text-secondary">NextGen Academy</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="border-b border-white/5 group hover:bg-white/5 transition-colors">
+<td class="py-8 font-headline-lg text-lg text-on-surface">Approach</td>
+<td class="py-8 text-on-surface-variant">Fragmented &amp; Secular</td>
+<td class="py-8 text-secondary font-medium">Holistic &amp; Tawhid-Centric</td>
+</tr>
+<tr class="border-b border-white/5 group hover:bg-white/5 transition-colors">
+<td class="py-8 font-headline-lg text-lg text-on-surface">Daily Flow</td>
+<td class="py-8 text-on-surface-variant">Routine-based instruction</td>
+<td class="py-8 text-secondary font-medium">Visionary Mastery cycles</td>
+</tr>
+<tr class="border-b border-white/5 group hover:bg-white/5 transition-colors">
+<td class="py-8 font-headline-lg text-lg text-on-surface">Hifz Support</td>
+<td class="py-8 text-on-surface-variant">None or informal</td>
+<td class="py-8 text-secondary font-medium">Structured Muraja'ah integrated</td>
+</tr>
+<tr class="border-b border-white/5 group hover:bg-white/5 transition-colors">
+<td class="py-8 font-headline-lg text-lg text-on-surface">Skillset</td>
+<td class="py-8 text-on-surface-variant">Exam-focused memorization</td>
+<td class="py-8 text-secondary font-medium">Problem-solving &amp; Innovation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Parent Voices -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-16 text-center">Parent Voices</h2>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="glass-card p-12 rounded-2xl relative">
+<span class="material-symbols-outlined text-secondary/20 text-8xl absolute top-8 right-8" data-icon="format_quote">format_quote</span>
+<div class="flex items-center gap-6 mb-8">
+<div class="w-16 h-16 rounded-full bg-secondary/20 border border-secondary/40 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a distinguished, middle-aged father with a professional yet spiritual appearance, wearing a dark navy blazer. He has a warm, proud expression, looking toward the camera. The lighting is soft and cinematic with a dark, blurred luxury library background, maintaining the premium 'Future Heritage' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaA62zGM4QLVhVqfeVKP3vwtjaH2rNblTUg1IPCfaIB8_LYNDV6xyzuMJff_ZBzk8GpTIAKJRfGpDhuYwHtRPlaHusyDToVmaJPZAOZ_QxvHij_i2yuaf3cddmXQaXsKq4KeUPGJcL2E1ucKwtrqniEvZD3RyN7vqZFFYuNP8lz_uZwwEPSDQ1lcE_Fq8I-wFXgt9YyKVq8rRravU5XnNUAdR8obGvuc0JC8wpCko77pMxpsWF0p80CkwLBHSfBCTIPwJpu-u27wQ"/>
+</div>
+<div>
+<h5 class="font-headline-lg text-xl text-on-surface">Dr. Ahmed Rahman</h5>
+<p class="text-sm text-secondary">Cardiologist &amp; Parent of Hafiz Zaid</p>
+</div>
+</div>
+<p class="font-body-lg italic text-on-surface-variant leading-relaxed">"My son had completed his Hifz but we were worried he would lose his edge in modern academics. At NextGen, I saw him transform into a confident coder who can lead Salah with flawless recitation. It's the balance I never thought possible."</p>
+</div>
+<div class="glass-card p-12 rounded-2xl relative">
+<span class="material-symbols-outlined text-secondary/20 text-8xl absolute top-8 right-8" data-icon="format_quote">format_quote</span>
+<div class="flex items-center gap-6 mb-8">
+<div class="w-16 h-16 rounded-full bg-secondary/20 border border-secondary/40 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a visionary mother with an elegant and professional appearance, reflecting intelligence and grace. She is in a modern architectural space with glass and steel elements visible in the background, softly blurred. The lighting is warm and golden, highlighting her serene expression and the premium digital institution setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOeS8VIdEagZBkRVQxlIDc7zebUu1RLQDKhIF8LTHjqFRx5pfMdsk6Jq_IVDhLkh18AgZoApFg1wrmYmu9CQJVx7tf02Ohhc5dezd2TdLPK38XWbE7QOJjGGIabMHiJQEt-M1J_KocQpz2ShM4oEmsBtxsbS3jkH4D1yUTTvJWouQvYAhhr_CoqKjD8ryUuObZFhGBBcCi1cGoCQvfxbIG0igD4s_eOLrfqvl8veHBXmBNSAyaSDn2pMjQGwCWCfj5DLdOh3sRHhY"/>
+</div>
+<div>
+<h5 class="font-headline-lg text-xl text-on-surface">Zainab Al-Farsi</h5>
+<p class="text-sm text-secondary">Software Executive</p>
+</div>
+</div>
+<p class="font-body-lg italic text-on-surface-variant leading-relaxed">"What impressed me most wasn't just the AI labs, but how they teach Ethics through the Seerah. My child isn't just learning to be a professional; he's learning to be a servant of Allah in a modern world."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="absolute inset-0 bg-secondary/5 opacity-30"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
+<h2 class="font-headline-xl text-display-lg-mobile md:text-display-lg text-on-surface mb-8">Invest in a Legacy that Transcends Time.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">The application window for the next cohort of architects is now open. Seats are limited to maintain elite mentorship standards.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-secondary text-on-secondary px-12 py-5 rounded-lg font-label-sm text-lg hover:scale-105 transition-transform">Start the Journey</button>
+<button class="border border-white/20 text-on-surface px-12 py-5 rounded-lg font-label-sm text-lg hover:bg-white/5 transition-all">Download Prospectus</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest relative bottom-0">
+<div class="flex flex-col gap-section-gap px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<div class="font-headline-xl text-headline-xl text-secondary mb-6">NextGen Academy</div>
+<p class="font-body-md text-on-surface-variant">The elite institution for Huffaz graduates destined for global leadership and spiritual excellence.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div>
+<h6 class="font-label-sm text-secondary uppercase mb-6">Academy</h6>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">History</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Curriculum</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Faculty</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-sm text-secondary uppercase mb-6">Admissions</h6>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Inquiry</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Fee Structure</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Scholarships</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-sm text-secondary uppercase mb-6">Connect</h6>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer" data-icon="language">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 font-label-sm text-on-surface-variant">
+<p>© 2024 NextGen Academy. Forging the Future of Islamic Leadership.</p>
+<div class="flex gap-8">
+<a class="hover:text-secondary" href="#">Privacy Policy</a>
+<a class="hover:text-secondary" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle interaction for the hero image parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('section img');
+            if(heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Hover effect for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.classList.add('text-secondary');
+            });
+            link.addEventListener('mouseleave', () => {
+                if(!link.classList.contains('active')) {
+                    link.classList.remove('text-secondary');
+                }
+            });
+        });
+    </script>
+</body></html>

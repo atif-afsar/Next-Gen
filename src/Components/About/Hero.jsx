@@ -1,56 +1,64 @@
-import { ABOUT_HERO_BG } from '../../lib/images.js'
+import { ABOUT_HERO_CAMPUS } from '../../lib/images.js'
+import './about-hero.css'
 
 export default function AboutHero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
+    <header className="about-hero-split relative overflow-hidden bg-[#fbf9f8] pt-28 pb-20 text-[#1b1c1c] md:pt-36 md:pb-28">
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(circle at top right, rgba(255, 184, 0, 0.08), transparent 60%), radial-gradient(circle at bottom left, rgba(255, 212, 129, 0.05), transparent 50%)',
-        }}
+        className="about-hero-accent pointer-events-none absolute top-0 right-0 -z-10 h-full w-2/5 max-w-xl"
+        aria-hidden
       />
-      <img
-        src={ABOUT_HERO_BG}
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.22] mix-blend-luminosity"
-        fetchPriority="high"
-      />
-      <div className="absolute inset-0 bg-[#050505]/40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-transparent to-[#0a0a0a]" />
 
-      <div className="container-narrow relative z-10 px-4 py-28 text-center md:py-36">
-        <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.35em] text-[#ffb800]">
-          Empowering the Future Huffaz
-        </p>
+      <div className="container-narrow relative">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-10 lg:gap-14">
+          <div className="md:col-span-7">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#7a5900]">
+              Our Mission
+            </p>
 
-        <h1 className="font-serif text-4xl leading-[1.1] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          Architecting the Future of
-          <br />
-          <span className="text-[#ffb800]">Faith &amp; Intellect</span>
-        </h1>
+            <h1 className="font-serif text-4xl leading-[1.1] text-balance sm:text-5xl md:text-6xl lg:text-[3.75rem]">
+              Architecting the Future of Faith &amp; Intellect
+            </h1>
 
-        <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-          We transcend the traditional to forge a new path where divine wisdom meets technological
-          mastery. Our mission is to cultivate a generation of leaders who carry the Quran in their
-          hearts and the future in their hands.
-        </p>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#504533]">
+              NextGen Academy represents the evolution of the Islamic Model School legacy—a
+              synthesis of rigorous modern academics and deep-rooted spiritual wisdom.
+            </p>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-          <a
-            href="#mission"
-            className="min-w-[220px] rounded-lg bg-[#ffb800] px-10 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1a1008] transition hover:scale-[1.02] hover:bg-[#ffc933] hover:shadow-[0_0_24px_rgba(255,184,0,0.35)]"
-          >
-            Request a Tour
-          </a>
-          <a
-            href="#model"
-            className="min-w-[220px] rounded-lg border border-[#ffb800]/80 bg-white/5 px-10 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#ffb800] backdrop-blur-sm transition hover:bg-white/10"
-          >
-            Explore Our Model
-          </a>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="#philosophy"
+                className="rounded bg-[#7a5900] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#654800]"
+              >
+                Explore the Vision
+              </a>
+              <a
+                href="#mission"
+                className="rounded border border-[#827560] bg-white px-8 py-4 text-sm font-semibold text-[#1b1c1c] transition hover:bg-[#f5f3f3]"
+              >
+                View History
+              </a>
+            </div>
+          </div>
+
+          <div className="relative md:col-span-5 md:mt-0">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl shadow-2xl">
+              <img
+                src={ABOUT_HERO_CAMPUS}
+                alt="NextGen Academy campus — modern building with glass and stone"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+
+            <div className="about-hero-glass absolute -bottom-6 -left-4 max-w-[240px] rounded-lg p-6 md:-left-8">
+              <p className="font-serif text-xl italic leading-snug text-[#7a5900]">
+                &ldquo;Engineering Future Heritage&rdquo;
+              </p>
+              <p className="mt-2 text-sm text-[#504533]">The NextGen Manifesto</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </header>
   )
 }

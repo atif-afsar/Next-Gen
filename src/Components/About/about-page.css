@@ -1,0 +1,43 @@
+/* About page — Stitch light theme (e60b52ce) */
+.page-about {
+  --about-text: #1b1c1c;
+  --about-muted: #504533;
+  --about-primary: #7a5900;
+  --about-border: #d4c4ac;
+  --about-surface: #f5f3f3;
+  --about-bg: #fbf9f8;
+  color: var(--about-text);
+}
+
+.page-about .about-eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--about-primary);
+}
+
+.page-about .about-heading {
+  font-family: var(--font-serif);
+  color: var(--about-text);
+}
+
+.page-about .about-body {
+  color: var(--about-muted);
+}
+
+.page-about .about-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 196, 172, 0.4);
+}
+
+.page-about .about-card-muted {
+  background: var(--about-surface);
+  border: 1px solid rgba(212, 196, 172, 0.35);
+}
+
+.page-about .about-quote {
+  background: rgba(253, 251, 247, 0.9);
+  border: 1px solid rgba(212, 196, 172, 0.35);
+  border-left: 4px solid var(--about-primary);
+}

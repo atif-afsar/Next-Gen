@@ -1,69 +1,48 @@
-const features = [
+const pillars = [
   {
-    num: '01',
-    title: 'Dual-Stream Hifz',
+    icon: 'auto_stories',
+    title: 'Traditional Hifz',
     description:
-      'A proprietary memorization protocol that enhances cognitive plasticity, integrated seamlessly into the daily schedule.',
+      "A rigorous yet compassionate approach to Qur'anic memorization and understanding, integrated into the daily flow.",
   },
   {
-    num: '02',
-    title: 'ICSE Advanced Tier',
+    icon: 'terminal',
+    title: 'ICSE Excellence',
     description:
-      'Aggressive academic rigor in STEM and Humanities, taught with a global-first perspective and project-based assessments.',
+      'Top-tier Indian Certificate of Secondary Education curriculum with a focused emphasis on STEM and Critical Thinking.',
   },
   {
-    num: '03',
+    icon: 'groups',
     title: 'Leadership Labs',
     description:
-      'Weekly modules focused on public speaking, ethics, geopolitical awareness, and venture design.',
+      'Proprietary experiential workshops focused on emotional intelligence, negotiation, and ethical leadership.',
   },
 ]
 
 export default function IntegrativeModel() {
   return (
-    <section id="model" className="relative scroll-mt-24 overflow-hidden py-20 md:py-28">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ffb800]/5 blur-[120px]" />
+    <section id="model" className="scroll-mt-24 bg-[#fbf9f8] py-20 md:py-28">
+      <div className="container-narrow text-center">
+        <p className="about-eyebrow">The Pedagogy</p>
+        <h2 className="about-heading mt-4 text-3xl md:text-5xl">The Integrative Model</h2>
 
-      <div className="container-narrow relative grid items-center gap-16 lg:grid-cols-2">
-        <div>
-          <h2 className="font-serif text-3xl text-white md:text-5xl">The NextGen Integrative Model</h2>
-          <div className="mt-12 space-y-10">
-            {features.map(({ num, title, description }) => (
-              <div key={num} className="flex gap-6">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#ffb800] text-xs font-bold text-[#ffb800]">
-                  {num}
-                </div>
-                <div>
-                  <h3 className="font-serif text-xl text-white md:text-2xl">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/60 md:text-base">{description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="glass-panel relative flex aspect-square items-center justify-center overflow-hidden rounded-3xl border border-white/5 shadow-[0_0_40px_rgba(255,184,0,0.05)]">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#ffb800]/10 to-transparent" />
-          <div className="relative z-10 text-center">
-            <div className="mb-8 flex justify-center">
-              <div className="animate-spin-slow flex h-32 w-32 items-center justify-center rounded-full border-2 border-dashed border-[#ffb800]/40">
-                <span className="text-5xl text-[#ffb800]">◉</span>
-              </div>
-            </div>
-            <p className="mb-4 text-xs font-semibold tracking-[0.25em] text-[#ffb800]">
-              SYSTEM ARCHITECTURE
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['FAITH', 'LOGIC', 'IMPACT'].map((pill) => (
-                <span
-                  key={pill}
-                  className="glass-panel rounded-full px-4 py-2 text-xs text-white/60"
-                >
-                  {pill}
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {pillars.map(({ icon, title, description }) => (
+            <article
+              key={title}
+              className="group flex flex-col items-center rounded-xl bg-[#f5f3f3] p-10 text-center transition duration-500 hover:bg-[#7a5900]"
+            >
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:scale-110">
+                <span className="material-symbols-outlined text-3xl text-[#7a5900] group-hover:text-[#7a5900]">
+                  {icon}
                 </span>
-              ))}
-            </div>
-          </div>
+              </div>
+              <h3 className="about-heading text-xl group-hover:text-white">{title}</h3>
+              <p className="about-body mt-4 text-sm leading-relaxed group-hover:text-white/85 md:text-base">
+                {description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

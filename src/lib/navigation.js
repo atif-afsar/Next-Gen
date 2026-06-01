@@ -12,7 +12,7 @@ export const NAV_PAGES = [
 export const APPLY_PATH = '/contact'
 
 /** Routes that use the Stitch light theme (cream / olive gold) */
-export const LIGHT_PAGE_PATHS = ['/why-nextgen', '/contact']
+export const LIGHT_PAGE_PATHS = ['/about', '/why-nextgen', '/contact']
 
 export function isLightPage(pathname) {
   return LIGHT_PAGE_PATHS.includes(pathname)

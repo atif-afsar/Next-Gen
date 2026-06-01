@@ -8,6 +8,8 @@ export const CURRICULUM_FINANCIAL = '/images/curriculum-financial.jpg'
 
 /** About page */
 export const ABOUT_HERO_BG = '/images/about-hero-bg.jpg'
+/** About hero — Stitch light split layout (e60b52ce) */
+export const ABOUT_HERO_CAMPUS = '/images/about-hero-campus.jpg'
 export const ABOUT_HERITAGE = '/images/about-heritage.jpg'
 export const ABOUT_FOUNDER_1 = '/images/about-founder-1.jpg'
 export const ABOUT_FOUNDER_2 = '/images/about-founder-2.jpg'
@@ -23,3 +25,7 @@ export const WHY_PARENT_2 = '/images/why-parent-light-2.jpg'
 /** Contact page — light mode */
 export const CONTACT_HERO = '/images/contact-hero.jpg'
 export const CONTACT_CAMPUS = '/images/contact-campus.jpg'
+
+/** Home page — light curriculum bento (Stitch fa8c439b) */
+export const HOME_CURRICULUM_STEM = '/images/home-curriculum-stem.jpg'
+export const HOME_CURRICULUM_PHILOSOPHY = '/images/home-curriculum-philosophy.jpg'

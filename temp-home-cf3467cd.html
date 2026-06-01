@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NextGen Academy | Engineering Future Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gold-glow: 0 4px 30px rgba(243, 179, 0, 0.15);
+        }
+        body {
+            background-color: #050505;
+            color: #e2e2e2;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #121414 0%, #050505 100%);
+        }
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #ffd481 0%, #f3b300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd481 0%, #f3b300 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(243, 179, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        .khatim-pattern {
+            mask-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.05;
+        }
+        .light-sweep::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+            transform: skewX(-25deg);
+            transition: 0.75s;
+        }
+        .light-sweep:hover::before {
+            left: 125%;
+        }
+        .timeline-node::after {
+            content: '';
+            position: absolute;
+            width: 12px; height: 12px;
+            background: #f3b300;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #f3b300;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#5f5e5e",
+                    "on-tertiary": "#4e2600",
+                    "surface-dim": "#121414",
+                    "tertiary": "#ffb77f",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-tint": "#c9c6c5",
+                    "on-secondary-fixed": "#261900",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "primary": "#c9c6c5",
+                    "surface-bright": "#37393a",
+                    "on-tertiary-container": "#ba6300",
+                    "on-background": "#e2e2e2",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-primary-fixed": "#1c1b1b",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-high": "#282a2b",
+                    "secondary": "#ffd481",
+                    "on-secondary": "#402d00",
+                    "on-primary-container": "#7b7979",
+                    "background": "#121414",
+                    "secondary-fixed": "#ffdea3",
+                    "inverse-surface": "#e2e2e2",
+                    "primary-container": "#0b0b0b",
+                    "surface-container": "#1e2020",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "error-container": "#93000a",
+                    "secondary-container": "#f3b300",
+                    "on-secondary-container": "#644800",
+                    "on-surface": "#e2e2e2",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-error": "#690005",
+                    "on-primary": "#313030",
+                    "outline-variant": "#444748",
+                    "tertiary-container": "#170700",
+                    "secondary-fixed-dim": "#fdbc13",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-variant": "#333535",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#2f1500",
+                    "inverse-on-surface": "#2f3131",
+                    "surface": "#121414",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdcc4",
+                    "outline": "#8e9192",
+                    "on-tertiary-fixed-variant": "#6f3900",
+                    "surface-container-highest": "#333535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "24px",
+                    "section-gap": "120px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["EB Garamond"],
+                    "display-lg": ["EB Garamond"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-xl": ["EB Garamond"],
+                    "display-lg-mobile": ["EB Garamond"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="selection:bg-secondary selection:text-on-secondary">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_4px_30px_rgba(243,179,0,0.05)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop py-4">
+<div class="font-display-lg text-headline-lg font-bold text-secondary">NextGen Academy</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-sm text-label-sm text-secondary border-b-2 border-secondary pb-1" href="#">Vision</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Academic</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Residential</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Admissions</a>
+<button class="btn-primary text-on-secondary px-6 py-2 rounded-lg font-label-sm text-label-sm font-bold">Apply Now</button>
+</div>
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="A cinematic, high-contrast portrait of a young Muslim student in a modern dark academy setting, holding a Quran while surrounded by glowing golden holographic displays showing complex mathematical equations and DNA helices. The lighting is dramatic, with warm gold highlights cutting through deep obsidian shadows, creating a futuristic yet spiritual atmosphere. The student looks focused and visionary, embodying the bridge between traditional scholarship and advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQOVm_AUbTfA-iaI2-hMASringh_ctL61oILTnOu0KOsEl5nKmXGLxjtBjJu_oiFJ2kxMEYFcDKfVwSxu0-AIAaYMwNVoBU1ZeoZEQemVBbqd0PcCwmtzCweg7BAgQfPJxlhh72pcwIR9atK0SNCFPZxJuKp6TXmTIOpkhzV0fBoqg4HZewTfMgbJC58W2_irhOQYZOYlBVuhfhawiLc3x0weVuy35TjYGx_zFwV0pmPsHJOXGMBvotOcc6_gbT-i9pLoV0DdmK7M"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="inline-block px-4 py-1 glass-panel rounded-full mb-6">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Engineering Future Heritage</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight">
+                Transforming <span class="gold-gradient-text">Huffaz</span> into <br/>Academic Leaders
+            </h1>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto text-on-surface-variant mb-12">
+                Merging the timeless wisdom of the Quran with the rigor of ICSE K-12 education to forge the next generation of visionary leaders.
+            </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="btn-primary text-on-secondary px-10 py-4 rounded-lg font-label-sm text-label-sm font-bold shadow-lg">Apply Now</button>
+<button class="glass-panel text-on-surface px-10 py-4 rounded-lg font-label-sm text-label-sm border border-secondary/30 hover:bg-secondary/10 transition-all">Download Prospectus</button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-secondary opacity-50">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/5 blur-2xl rounded-3xl group-hover:bg-secondary/10 transition-all duration-500"></div>
+<img class="relative rounded-2xl glass-panel grayscale hover:grayscale-0 transition-all duration-700 aspect-video object-cover" data-alt="An ultra-modern school building exterior at twilight, featuring architectural elements that blend classic Islamic geometric latticework with sleek glass and steel. The lighting is sophisticated, with warm gold LEDs highlighting the structural lines against a deep navy sky. The environment feels prestigious, serene, and technologically advanced, representing a new era of institutional design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt0n1meuMLvBPa8Ywlr9QsgQCbBCZdfCKBpfVhile2KqBnXSHSLnY42CR2NNwlHQu7dytQ_f5OgyMTx9I91yT_hl0nnDlbap22EqK7CwVF_cYotRsvDHVSwh0jL7czn2_iA-uXgOulXCmWvUZq_xoXOJGpWKS2_iOUbRA6bAMBtmoe2GBbyGj4H97-YQj0KrkPSPo1wHTgfGiwtQRIX2gqAWnrRQWfuFoJ1mgsUCP46RH_wFyhdjVLFf2vVqpLla2FNYA3__1Oz7I"/>
+</div>
+<div class="space-y-8">
+<h2 class="font-headline-xl text-headline-xl leading-tight">A Legacy of <span class="text-secondary">Excellence</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Born as the premier sister institution of IMS, NextGen Academy is a purpose-built sanctuary for learning. We provide a complete ICSE K-12 ecosystem designed specifically to transition students from memorization to critical application.
+                </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="p-6 glass-panel rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4">school</span>
+<h4 class="font-label-sm text-label-sm text-secondary font-bold mb-2">ICSE Standard</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Rigorous global curriculum for competitive edge.</p>
+</div>
+<div class="p-6 glass-panel rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-4">diversity_3</span>
+<h4 class="font-label-sm text-label-sm text-secondary font-bold mb-2">IMS Legacy</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Decades of experience in holistic education.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision Cards (Bento style) -->
+<section class="py-section-gap bg-surface-container-lowest/50">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<h2 class="font-headline-xl text-headline-xl gold-gradient-text mb-4">Our Vision Pillars</h2>
+<div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group light-sweep">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">workspace_premium</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-4">Leadership</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cultivating the moral courage to lead with integrity in a complex global landscape.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group light-sweep">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">bolt</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-4">Iman</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Strengthening spiritual anchors to navigate modern scientific and social challenges.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group light-sweep">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">biotech</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-4">Innovation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Encouraging curious minds to build technological solutions for humanity's future.</p>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group light-sweep">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">menu_book</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-4">Knowledge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Achieving mastery across both traditional Islamic and modern academic domains.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dual Pathway Split Screen -->
+<section class="relative py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col lg:flex-row glass-panel rounded-3xl overflow-hidden min-h-[600px]">
+<div class="flex-1 p-12 relative flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/20 bg-primary-container/20 group">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A macro shot of glowing circuit boards and complex architectural blueprints, representing high-end academic excellence and STEM focus. The lighting is cool white with golden data nodes, creating a high-tech laboratory aesthetic that is clean and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk3uItydXyW_VdN4Hf5c9iLVZhdARWbo-IUfLlgVnKcGHXzBO-wUOgpItGGznCeHUmjfK6azrTMMCK6kbVrh0S2l3mF6ONXk4JEpasBLDV-YEy6edcHxJhETVwWEmhdXH8FKPrZHsC8PGdwDhmC2Ztduf1vfbfMN6BuIdTSCXFDks0YmZ0CH8JWVqnpdy6qrrwwwE-2MhN5KR_dEEUWxIzMNYv4b7JYjah8JA5Q7rxOxkLEq3UuMTkwzNoopYpn_qxAvhJkzR26Cc"/>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">terminal</span>
+<h3 class="font-display-lg text-headline-xl mb-6">Academic Excellence</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+                                ICSE STEM Specialization
+                            </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+                                Financial Literacy &amp; FinTech
+                            </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+                                Robotics &amp; AI Research
+                            </li>
+</ul>
+</div>
+</div>
+<div class="flex-1 p-12 relative flex flex-col justify-center bg-secondary/5 group">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Intricate Islamic geometric patterns in gold leaf set against a deep charcoal stone background. The lighting is soft and directional, highlighting the textures and the heritage feel of traditional scholarship, reimagined through a modern minimalist lens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS0M5UOQB6noeHL1SU_MiaoofoUxJ_AvDcLxhUdFk2mXOaDuZ31woho6WI7Z9X6bmHBdiTBLOMclda1ulnHf7XIDFZdrGMkZ0etb4YNzB3m9HURPKxced1UyGetN0Z_yDyOPnV52zPDtMJ3PwkLTqS8I-hd3Bnk6laZNzD8RlUDEUtGl1231EM9WgJuTl1zZl3Yfl9t2OYrXBrgc1gNgbiR4tDx0fsBl9qra00me6HI7h29E42ZodRt6fumLXznoTLvya9Yq5MR68"/>
+</div>
+<div class="relative z-10 text-right">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">auto_stories</span>
+<h3 class="font-display-lg text-headline-xl mb-6">Islamic Scholarship</h3>
+<ul class="space-y-4">
+<li class="flex items-center justify-end gap-3 font-body-md text-on-surface-variant">
+                                Quranic Reintegration
+                                <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+</li>
+<li class="flex items-center justify-end gap-3 font-body-md text-on-surface-variant">
+                                Classical Arabic Mastery
+                                <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+</li>
+<li class="flex items-center justify-end gap-3 font-body-md text-on-surface-variant">
+                                Character Engineering (Tarbiyah)
+                                <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Glowing Connection Point -->
+<div class="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 glass-panel rounded-full items-center justify-center border-secondary shadow-[0_0_50px_rgba(243,179,0,0.3)] z-20">
+<span class="material-symbols-outlined text-secondary text-3xl">all_inclusive</span>
+</div>
+</div>
+</section>
+<!-- Academic Bento Grid -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-xl text-headline-xl text-center mb-16">The <span class="text-secondary">NextGen</span> Curriculum</h2>
+<div class="grid grid-cols-1 md:grid-cols-6 grid-rows-2 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-3 glass-panel rounded-3xl p-8 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="A clean, high-tech robotics lab featuring sleek white robotic arms and students in modern uniforms using holographic interfaces. The lighting is bright and technical, with golden accents on the screens, creating an atmosphere of elite STEM education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaHFpTlGK64-Fbvu0_GYpnthHMHSMz_z24VHVGOebmST1Bsx0-NmAO6pI8OBSQRILN6Wvnwlv9CTZiQ3pcMCSk-f_1VGVRVE0CMQrA85GDN2avz7e9RATNLtBCH2wktcokvlsBdACi6qgK6gh87ZPdwnTbXfH0gmywACVGd7s9GYJYMPizYs5gAC6F03Pr7kimgpODEaSpaUwVz2QO5JQNY3NrudowRCHZMChlnVBXYx5tJPvNJIY5e73SjNUL6TECOCKJNnz1i_A"/>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<h4 class="font-headline-lg text-secondary mb-2">Robotics &amp; AI Lab</h4>
+<p class="font-body-md text-on-surface-variant max-w-sm">From coding fundamentals to advanced machine learning models.</p>
+</div>
+</div>
+<div class="md:col-span-3 glass-panel rounded-3xl p-8 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="A modern financial trading floor interior with glass panels displaying glowing gold stock market graphs and candlestick charts. The environment is professional and high-end, representing a premium financial literacy center for advanced students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ1BG0RoDfFUC0qdhFa4FAX1EO4N-EvSCR5jtEcG9spfSP_BBbSHMZuP7iVC9eNNRIuqM8rv1VC9jvXby4SDaMpJr377zwlarH1G95-Rj56cqmEtoV6n73gAt7Zk7H9mAEfUOVJHuuix37TEK3Ai9JVp8KVTVlLilROqxvBIqACAGmxaMbgzlZxYgsQ0w9Oml_Phr7pZ0r2WUoK0WorbcP3QUKXp3eJZ9h2IBbr518wE_mcUBR-EV0_MPL5peSllpfakLRqZQo5Zc"/>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<h4 class="font-headline-lg text-secondary mb-2">Financial Literacy</h4>
+<p class="font-body-md text-on-surface-variant max-w-sm">Understanding Islamic finance, wealth management, and global economics.</p>
+</div>
+</div>
+<div class="md:col-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">translate</span>
+<h4 class="font-label-sm text-secondary font-bold mb-2">Classical Arabic</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Mastering the language of the Quran for deep theological research.</p>
+</div>
+<div class="md:col-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">science</span>
+<h4 class="font-label-sm text-secondary font-bold mb-2">STEM Integration</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Physics, Chemistry, and Biology taught through a lens of divine design.</p>
+</div>
+<div class="md:col-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">psychology</span>
+<h4 class="font-label-sm text-secondary font-bold mb-2">Tarbiyah</h4>
+<p class="font-body-md text-sm text-on-surface-variant">A curated emotional and psychological growth program for future leaders.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Journey Timeline -->
+<section class="py-section-gap bg-surface-container-lowest/30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-xl text-headline-xl text-center mb-24">The <span class="text-secondary">Leadership</span> Timeline</h2>
+<div class="relative pt-12">
+<!-- Timeline Line -->
+<div class="absolute top-0 left-0 w-full h-1 bg-outline-variant/20 rounded-full">
+<div class="h-full bg-secondary w-2/3 shadow-[0_0_15px_#f3b300]"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mt-[-6px]">
+<div class="relative">
+<div class="timeline-node absolute -top-1.5 left-0"></div>
+<div class="pt-12">
+<span class="font-label-sm text-secondary mb-2 block">Grade 5-7</span>
+<h4 class="font-headline-lg text-2xl mb-4">Foundation</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Core academic reintegration and linguistic foundations.</p>
+</div>
+</div>
+<div class="relative">
+<div class="timeline-node absolute -top-1.5 left-0"></div>
+<div class="pt-12">
+<span class="font-label-sm text-secondary mb-2 block">Grade 8-10</span>
+<h4 class="font-headline-lg text-2xl mb-4">Specialization</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Focus on STEM or Humanities with leadership labs.</p>
+</div>
+</div>
+<div class="relative opacity-60">
+<div class="timeline-node absolute -top-1.5 left-0"></div>
+<div class="pt-12">
+<span class="font-label-sm text-secondary mb-2 block">Grade 11-12</span>
+<h4 class="font-headline-lg text-2xl mb-4">Synthesis</h4>
+<p class="font-body-md text-sm text-on-surface-variant">University preparation and global social projects.</p>
+</div>
+</div>
+<div class="relative opacity-30">
+<div class="timeline-node absolute -top-1.5 left-0 border-outline"></div>
+<div class="pt-12">
+<span class="font-label-sm text-on-surface-variant mb-2 block">Post-Grad</span>
+<h4 class="font-headline-lg text-2xl mb-4">Heritage</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Alumni leadership within the global Muslim community.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="glass-panel p-16 rounded-[40px] border-secondary/20 relative overflow-hidden group">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-secondary/5 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/5 blur-[120px] rounded-full"></div>
+<h2 class="font-display-lg text-headline-xl md:text-display-lg mb-8 leading-tight relative z-10">
+                    Prepare Your Child for <span class="gold-gradient-text">Leadership</span> <br/>in This World and the Hereafter.
+                </h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center relative z-10">
+<button class="btn-primary text-on-secondary px-12 py-5 rounded-xl font-label-sm text-label-sm font-bold shadow-2xl">Start Admission Process</button>
+<button class="px-12 py-5 rounded-xl font-label-sm text-label-sm border border-secondary text-secondary hover:bg-secondary/10 transition-all">Book a Campus Tour</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-desktop">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-xl text-secondary mb-6">NextGen Academy</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Engineering the future leaders of the Ummah through integrated excellence.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">video_camera_front</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-sm text-secondary font-bold uppercase tracking-widest">Ecosystem</h5>
+<ul class="space-y-2">
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Vision &amp; Philosophy</a></li>
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Legacy (IMS)</a></li>
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Academic Labs</a></li>
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Residential Life</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-sm text-secondary font-bold uppercase tracking-widest">Resources</h5>
+<ul class="space-y-2">
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Admissions Guide</a></li>
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Curriculum Prospectus</a></li>
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Student Leadership</a></li>
+<li><a class="font-body-md text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-sm text-secondary font-bold uppercase tracking-widest">Connect</h5>
+<div class="p-4 glass-panel rounded-xl">
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Stay updated with our visionary journey.</p>
+<div class="flex">
+<input class="bg-black/40 border-outline-variant rounded-l-lg p-2 flex-1 focus:ring-secondary text-sm" placeholder="Email Address" type="email"/>
+<button class="btn-primary px-4 rounded-r-lg"><span class="material-symbols-outlined text-black">send</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant/50">© 2024 NextGen Academy. Engineering Future Heritage. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-panel').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

@@ -1,43 +1,48 @@
 const values = [
   {
+    num: '01',
     title: 'Vision',
-    description: 'Looking beyond the horizon to see possibilities others miss.',
-    icon: '👁',
+    description:
+      "We look beyond the horizon, preparing students for industries and challenges that don't yet exist.",
+    offset: true,
   },
   {
+    num: '02',
     title: 'Integrity',
-    description: 'Steadfast character aligned with divine principles.',
-    icon: '🛡',
+    description:
+      'Character is our core curriculum. We cultivate an unbreakable moral compass guided by faith.',
+    offset: false,
   },
   {
+    num: '03',
     title: 'Innovation',
-    description: 'Constant evolution in thought, method, and execution.',
-    icon: '💡',
+    description:
+      'Applying timeless wisdom to modern problems requires a spirit of relentless experimentation.',
+    offset: true,
   },
   {
+    num: '04',
     title: 'Service',
-    description: 'Leadership is the humble service of humanity and faith.',
-    icon: '🤝',
+    description:
+      'True leadership is the ability to serve the community and the world at large with humility.',
+    offset: false,
   },
 ]
 
 export default function CoreValues() {
   return (
-    <section className="border-t border-white/5 bg-[#141414] py-20 md:py-28">
-      <div className="container-narrow text-center">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#ffb800]">
-          The Foundation
-        </p>
-        <h2 className="font-serif text-3xl text-white md:text-5xl">Our Core Values</h2>
+    <section className="overflow-hidden bg-white py-20 md:py-28">
+      <div className="container-narrow">
+        <h2 className="about-heading mb-14 text-3xl md:text-5xl">The Pillars of Our Ethos</h2>
 
-        <div className="mt-14 grid grid-cols-2 gap-10 md:grid-cols-4">
-          {values.map(({ title, description, icon }) => (
-            <article key={title} className="group text-center">
-              <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#ffb800]/10 text-3xl transition duration-300 group-hover:rotate-45 group-hover:bg-[#ffb800]/20">
-                <span className="-rotate-0 transition group-hover:-rotate-45">{icon}</span>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {values.map(({ num, title, description, offset }) => (
+            <article key={title} className={offset ? 'lg:translate-y-12' : ''}>
+              <div className="about-card h-full p-8 transition duration-300 hover:-translate-y-2 md:p-10">
+                <p className="mb-6 font-serif text-4xl text-[#ffdea3] opacity-80">{num}</p>
+                <h3 className="about-heading text-xl">{title}</h3>
+                <p className="about-body mt-4 text-sm leading-relaxed">{description}</p>
               </div>
-              <h3 className="font-serif text-xl text-white">{title}</h3>
-              <p className="mt-2 text-sm text-white/55">{description}</p>
             </article>
           ))}
         </div>

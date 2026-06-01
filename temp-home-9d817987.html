@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#fdbc13",
+                        "on-tertiary": "#4e2600",
+                        "surface-variant": "#333535",
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#ba6300",
+                        "secondary": "#ffd481",
+                        "outline": "#8e9192",
+                        "surface-tint": "#c9c6c5",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-dim": "#121414",
+                        "surface-container-high": "#282a2b",
+                        "secondary-container": "#f3b300",
+                        "on-secondary": "#402d00",
+                        "tertiary-container": "#170700",
+                        "tertiary-fixed": "#ffdcc4",
+                        "inverse-on-surface": "#2f3131",
+                        "on-primary-fixed": "#1c1b1b",
+                        "background": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#6f3900",
+                        "on-secondary-fixed": "#261900",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-fixed-dim": "#ffb77f",
+                        "surface": "#121414",
+                        "on-secondary-container": "#644800",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1a1c1c",
+                        "primary-container": "#0b0b0b",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-bright": "#37393a",
+                        "error-container": "#93000a",
+                        "outline-variant": "#444748",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-primary-container": "#7b7979",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container": "#1e2020",
+                        "secondary-fixed": "#ffdea3",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "tertiary": "#ffb77f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#333535",
+                        "primary": "#c9c6c5",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-primary": "#313030",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "section-gap": "120px",
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Space Grotesk"],
+                        "headline-xl": ["EB Garamond"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gold-glow-shadow {
+            box-shadow: 0 0 40px rgba(253, 188, 19, 0.05);
+        }
+        .light-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .light-sweep::after {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 50%;
+            height: 300%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(25deg);
+            transition: all 0.7s;
+        }
+        .light-sweep:hover::after {
+            left: 150%;
+        }
+        .islamic-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(253,188,19,0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(253, 188, 19, 0.08), transparent 60%),
+                        radial-gradient(circle at bottom left, rgba(255, 212, 129, 0.05), transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(253,188,19,0.05)]">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20">
+<div class="font-display-lg text-headline-lg text-secondary-fixed-dim">NextGen Academy</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors" href="#">Our Story</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim border-b-2 border-secondary-fixed-dim pb-1" href="#">Leadership</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors" href="#">Model</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors" href="#">Mentors</a>
+</div>
+<button class="bg-gradient-to-r from-secondary-fixed-dim to-secondary-container text-on-secondary px-8 py-3 rounded-lg font-label-sm uppercase tracking-widest hover:shadow-[0_0_20px_rgba(253,188,19,0.3)] transition-all active:scale-95">
+                Apply Now
+            </button>
+</nav>
+</header>
+<main class="islamic-pattern pt-20">
+<!-- Section 1: Visionary Hero -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 mix-blend-luminosity" data-alt="A cinematic wide-angle shot of a futuristic library with architectural geometry reflecting Islamic art influences. Soft golden light beams filter through high, narrow windows, illuminating dust particles and digital floating holograms above polished dark marble floors. The atmosphere is serene, high-end, and deeply intellectual, blending traditional heritage with ultra-modern technology in a premium dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlrSebA22b-ga_zWDBRoXYgHR40en3NFiFSfUUBS0RClLj8s3_Vrw_1Ufvv4VMxRZipVvYJBwkF2bVeGVecKCC9myih8GwTXjV8HPfw0WktdJic-ouAVi0pCXIEvVO1ElcNGJsrQZ26uAMPqVg-lMJelN3FuQw0QcDMPu3-eA3PlP5PEqvy3CtQdu3srK2aY-EdCbrGXKoWgH_DdiMlPepVJxfo1FkYltPC5HkP4FlwXBT-uW1vI8MIVlMRzamwUq-Y7DjHCvR43g"/>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile md:px-0">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-[0.3em] mb-6 block">Empowering the Future Huffaz</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-8">
+                    Architecting the Future of <span class="text-secondary">Faith &amp; Intellect</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    We transcend the traditional to forge a new path where divine wisdom meets technological mastery. Our mission is to cultivate a generation of leaders who carry the Quran in their hearts and the future in their hands.
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="w-full md:w-auto px- unit*12 py-4 bg-secondary-fixed-dim text-on-secondary font-label-sm uppercase tracking-widest rounded-lg transition-transform hover:scale-105 active:scale-95">Discover Our Vision</button>
+<button class="w-full md:w-auto px- unit*12 py-4 border border-secondary-fixed-dim text-secondary font-label-sm uppercase tracking-widest rounded-lg bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10">The Legacy of IMS</button>
+</div>
+</div>
+</section>
+<!-- Section 2: The IMS Legacy -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-gutter items-center">
+<div class="order-2 md:order-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">Our Heritage</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-6">Engineering Future Heritage</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Born from the visionary foundation of IMS, NextGen Academy is a sister institution dedicated to evolving the legacy of excellence. We bridge decades of academic prestige with a forward-leaning curriculum designed for the 21st-century global stage.
+                    </p>
+<div class="glass-panel p-8 rounded-xl border-l-4 border-l-secondary-fixed-dim gold-glow-shadow">
+<p class="italic text-on-surface">"Tradition is not the worship of ashes, but the preservation of fire. We take the fire of our ancestors and use it to power the engines of tomorrow."</p>
+</div>
+</div>
+<div class="order-1 md:order-2 relative aspect-square overflow-hidden rounded-2xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A split-screen composition showing the side-by-side transition of architectural styles. On the left, classical Islamic arched doorways and intricate brickwork in soft sepia tones. On the right, a seamless blend into a modern glass and steel skyscraper with glowing gold vertical light strips. The composition is clean and minimalist, reflecting a journey from historic heritage to futuristic engineering excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzzPAcauKgZzcgQNn1j1NNEYSNP5o8FkcoVNdJwr2q3L6DRewYliAPBObaCE8zZs_yylwbt9fLI_4WQQrDQxRyW_bY_NJir8RbJSkNrpHMwXEm0Jzgq49GooHrL_-agt8u-eDyCTa6TxW1PD6rc6gn5g0nXQw0GPEhDkoEhEhmwkx8XXgi8oNTpN1EbTP-2gCIrCbOV-7Ngb84iUfX-V3IcPP_Qc0aPN4E-oB2uqpclw7gAemp4WjRQDI8vyTlWyLCPDurE77WaSw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60"></div>
+</div>
+</div>
+</section>
+<!-- Section 3: The 'Architects of Tomorrow' Philosophy -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-white mb-4">Architects of Tomorrow Philosophy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A unique educational model where spiritual rigor is the catalyst for academic achievement.</p>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-panel p-10 rounded-xl light-sweep group hover:-translate-y-2 transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed-dim/20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">auto_awesome</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Spiritual Core</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The Quranic foundation isn't just a subject; it's the operating system of our students' minds, providing moral clarity in a complex world.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-10 rounded-xl light-sweep group hover:-translate-y-2 transition-transform duration-500 border-t-2 border-t-secondary/20">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed-dim/20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">biotech</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Technological Edge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Students master the tools of the future—AI, coding, and strategic engineering—to become creators rather than just consumers of technology.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-10 rounded-xl light-sweep group hover:-translate-y-2 transition-transform duration-500">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed-dim/20 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">diversity_3</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Global Leadership</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Developing emotional intelligence and cultural fluency to navigate and lead within the world's most elite professional circles.</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Our Leadership -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">The Visionaries</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Minds Behind the NextGen Revolution</h2>
+</div>
+<div class="flex gap-4">
+<button class="p-4 rounded-full border border-outline-variant hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined group-hover:text-secondary">arrow_back</span>
+</button>
+<button class="p-4 rounded-full border border-outline-variant hover:border-secondary transition-colors group">
+<span class="material-symbols-outlined group-hover:text-secondary">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Leader 1 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A high-end studio portrait of a visionary male academic leader in a charcoal suit, with subtle warm golden lighting from the side. He has a thoughtful expression. The background is a deep, textured dark grey with soft bokeh effects. Professional, elite institutional style with a focus on wisdom and leadership character." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArHmuHcLheLTkuBN_msGLAfn2tbO1fy1qscPWwcZ4iH4ppCjxY7E-fWxDiAlDOHWtNFyFlvC7y6SB6sUrPE2tYW7poVVySl4aLQ2x76_FSLZMdoZRoPtYUJybFJUjhdtnW8tThdhECBG7Qpl0Ycc3V2q36FOgcCArAKALTqp_7YN09Flvd7ChJ8izKVW1LLcCGNuSDNjjK5XF_JsmO1adjIUQvVTqM9ZLUUVZsjNW_ezgWuvSXN0Cow7_5qXXJTbHuI5cXDyrAoA4"/>
+<div class="absolute inset-0 border-4 border-secondary/0 group-hover:border-secondary/20 transition-all duration-500 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white">Dr. Ibrahim Al-Farsi</h4>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest mb-2">Chancellor &amp; Lead Visionary</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Former Senior Architect at Global Intel, now dedicated to building the spiritual framework for future leaders.</p>
+</div>
+<!-- Leader 2 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional portrait of a female educational leader in elegant dark business attire, looking confidently at the camera. Soft ambient lighting highlights her features against a minimalist, high-end dark office setting. The aesthetic is premium and institutional, emphasizing authority, intelligence, and modern leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvD3LflwQAz-WtGP7Fh3r3p0c_2YBstjYOisyFEtn8QhUnn4fbl11dCIS4UEEYskXSoXcwlQ3RsOQJrW6IhhxumIZ7KBurn5xm7YCfoP4hAZpx3viawKzBrEs1HYlCO21k8y2vsJzRamnLQkPTawdf1aopd-HYNzU8dvdjpXYCbdYL1240frpyogvwlcI8cpvy2fdGkRbEPNZg_dLR0INnJ8in2SZ_gm6ZGDdwYu2OR8W72f8vd7x60rMBUM31baEbtADFLxqKe44"/>
+<div class="absolute inset-0 border-4 border-secondary/0 group-hover:border-secondary/20 transition-all duration-500 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white">Maryam Suleiman</h4>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest mb-2">Director of Innovation</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Pioneer in integrative learning models, bridging the gap between sacred texts and computational science.</p>
+</div>
+<!-- Leader 3 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A studio portrait of a senior male mentor with a salt-and-pepper beard, wearing a traditional yet modern dark thobe. He has a warm, inviting, yet authoritative gaze. The lighting is dramatic, high-contrast chiaroscuro style, emphasizing texture and depth against a black background. Symbols of wisdom and heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVxsgH8sWjALKB0HHYO1JdjQiwuV_whC_ZZ1dObYAUMaj9h5oKeGuoZVQFYbqSYG-m7L7dcDhwx0D96IYHjjKTW0htn_EzuVvyAsToENgR1b7JrwTdsm19HgyInzfXyHLeAYQTOJKM1h9cWIwkm2fypqyqi2QRnDaCijc1dNMRZtLaLVEsWUasO9DtK0JI5Xo_DWU_KmOP1RZ5V8uTND-TL14Gdx75yFxXQmUJR3Ghg33XZ5ey4NnimrQEuEPXZeBotQphQIA4cVk"/>
+<div class="absolute inset-0 border-4 border-secondary/0 group-hover:border-secondary/20 transition-all duration-500 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white">Sheikh Yusuf Zaid</h4>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest mb-2">Head of Spiritual Excellence</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Master of Hifz with 30 years of experience in mentoring global scholars in character and ethics.</p>
+</div>
+</div>
+</section>
+<!-- Section 5: The NextGen Model -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid lg:grid-cols-2 gap-section-gap items-center">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-8">The NextGen Integrative Model</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-secondary text-secondary flex items-center justify-center font-label-sm">01</div>
+<div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-2">Dual-Stream Hifz</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">A proprietary memorization protocol that enhances cognitive plasticity, integrated seamlessly into the daily schedule.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-secondary text-secondary flex items-center justify-center font-label-sm">02</div>
+<div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-2">ICSE Advanced Tier</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Aggressive academic rigor in STEM and Humanities, taught with a global-first perspective and project-based assessments.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-secondary text-secondary flex items-center justify-center font-label-sm">03</div>
+<div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-2">Leadership Labs</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Weekly modules focused on public speaking, ethics, geopolitical awareness, and venture design.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<!-- Futuristic Visualization placeholder -->
+<div class="glass-panel aspect-square rounded-3xl p- unit*12 flex items-center justify-center border-white/5 relative overflow-hidden gold-glow-shadow">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent"></div>
+<div class="relative z-10 text-center">
+<div class="mb-8 flex justify-center">
+<div class="w-32 h-32 rounded-full border-2 border-dashed border-secondary/40 animate-spin-slow flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-6xl">hub</span>
+</div>
+</div>
+<p class="font-label-sm text-secondary tracking-[0.2em] mb-4">SYSTEM ARCHITECTURE</p>
+<div class="flex gap-4 justify-center">
+<div class="px-4 py-2 glass-panel rounded-full text-[12px] text-white/60">FAITH</div>
+<div class="px-4 py-2 glass-panel rounded-full text-[12px] text-white/60">LOGIC</div>
+<div class="px-4 py-2 glass-panel rounded-full text-[12px] text-white/60">IMPACT</div>
+</div>
+</div>
+</div>
+<style>
+                            @keyframes spin-slow {
+                                from { transform: rotate(0deg); }
+                                to { transform: rotate(360deg); }
+                            }
+                            .animate-spin-slow {
+                                animation: spin-slow 12s linear infinite;
+                            }
+                        </style>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Core Values -->
+<section class="py-section-gap bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">The NextGen DNA</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Our Core Values</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="text-center group">
+<div class="mb-6 mx-auto w-20 h-20 rounded-2xl bg-secondary-fixed-dim/10 flex items-center justify-center group-hover:bg-secondary-fixed-dim/20 transition-all duration-300 transform group-hover:rotate-45">
+<span class="material-symbols-outlined text-secondary text-4xl -rotate-45">visibility</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg text-white mb-2">Vision</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Looking beyond the horizon to see possibilities others miss.</p>
+</div>
+<div class="text-center group">
+<div class="mb-6 mx-auto w-20 h-20 rounded-2xl bg-secondary-fixed-dim/10 flex items-center justify-center group-hover:bg-secondary-fixed-dim/20 transition-all duration-300 transform group-hover:rotate-45">
+<span class="material-symbols-outlined text-secondary text-4xl -rotate-45">shield</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg text-white mb-2">Integrity</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Steadfast character aligned with divine principles.</p>
+</div>
+<div class="text-center group">
+<div class="mb-6 mx-auto w-20 h-20 rounded-2xl bg-secondary-fixed-dim/10 flex items-center justify-center group-hover:bg-secondary-fixed-dim/20 transition-all duration-300 transform group-hover:rotate-45">
+<span class="material-symbols-outlined text-secondary text-4xl -rotate-45">lightbulb</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg text-white mb-2">Innovation</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Constant evolution in thought, method, and execution.</p>
+</div>
+<div class="text-center group">
+<div class="mb-6 mx-auto w-20 h-20 rounded-2xl bg-secondary-fixed-dim/10 flex items-center justify-center group-hover:bg-secondary-fixed-dim/20 transition-all duration-300 transform group-hover:rotate-45">
+<span class="material-symbols-outlined text-secondary text-4xl -rotate-45">volunteer_activism</span>
+</div>
+<h5 class="font-headline-lg text-headline-lg text-white mb-2">Service</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Leadership is the humble service of humanity and faith.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Institutional Pillars -->
+<section class="py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="relative h-[500px] group rounded-2xl overflow-hidden glass-panel flex items-end p-10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" data-alt="A close-up shot of an open, ancient manuscript with glowing digital annotations projected above it. Intricate calligraphy meets neon blue and gold UI elements. The lighting is low-key, focusing on the interplay between old and new knowledge. Representing Intellectual Rigor in a high-tech academic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRjiyNXDrNt6auU1duH0d_47U9Jw0ADSzLsb8VIdgOShCmAl0YtpgCbMOW41VHFWlQpx1KX5FyzA-HHdX-7r2lGF3nqEfdh84aT7tYp9cTpg6WcYIT9n4EqqXWl6kuljSA1qMGG38S0XoWaBTpDDv_UPhLB7VSGQL4ttO3F0Si_aH7WaGtHkm43-2qNd_D8UmGjmzl8fELnd1OsZxJtQAoBUvryRhw5jUbCu1z6VjEVM1QY9LTUi9dsderoiLlcL6SlTd6g8rLiGs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-headline-xl text-headline-xl text-white mb-4">Intellectual Rigor</h3>
+<p class="text-on-surface-variant group-hover:text-white transition-colors">A commitment to deep critical thinking and the pursuit of absolute mastery in all fields of knowledge.</p>
+</div>
+</div>
+<div class="relative h-[500px] group rounded-2xl overflow-hidden glass-panel flex items-end p-10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" data-alt="An ethereal view of a modern mosque interior at twilight. Minimalist architectural lines, warm hidden lighting, and a feeling of infinite space and peace. The image captures the essence of Spiritual Excellence with a premium, futuristic aesthetic that feels both holy and technologically sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaV9o2L9l-SONVOQOgSTt10Ec9YLC9BY_VakDGuyasHEylNQimrDlREGIz9iexwobmdk_ptlX8fIpdP0xp53GOQpYIov_wnjJM8EuvIs2cFVb9G7wkjnVHukPlBF7z1lTdPEJatX5T0lfi7Lk5UwSWeYP85MSZ9i2BLCK4UphSGvUN0igoj_KWNrGybw6TrBYbvICgzS_AIXZZ29ZLaecs6hyD98lGZZOsGJ3-_SiBMDhNlkODzquEzNSXTyLc2ioMosXpVaEiDq8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-headline-xl text-headline-xl text-white mb-4">Spiritual Excellence</h3>
+<p class="text-on-surface-variant group-hover:text-white transition-colors">Refining the soul to achieve Ihsan—performing every action with perfection as if in the presence of the Divine.</p>
+</div>
+</div>
+<div class="relative h-[500px] group rounded-2xl overflow-hidden glass-panel flex items-end p-10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" data-alt="A silhouettes of young professionals engaged in a high-stakes discussion around a sleek, glowing glass table in a skyscraper boardroom. City lights twinkle in the background. The mood is high-energy and ambitious. Representing Leadership Character and the global stage our graduates will inhabit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYt6BXKnnwkqzuXrUBg1yBtbIy3FItq-V4V-EvyFwr6LHygMEy6fr-LpML1bpaDgiJuUHcqjzPYk0DaYMZAGsehOI5wmsifnHA-OZoCl3SCrWNM95ka3CprSQ_0rNVu1l2MPqlIRVm-kzYOsVHZ4gYSqpoK2tKXDkUmDv7whKx03nmWAX6-WyJsrftBdaM1dxtWtEyhngxI5BNX8klYanux_6xIiCz-758BxY9Ni-1y0scSSYQ1RnxGrSqZ9DOa6uxxKO0YUc7uXc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-headline-xl text-headline-xl text-white mb-4">Leadership Character</h3>
+<p class="text-on-surface-variant group-hover:text-white transition-colors">Cultivating the inner strength and outer skill required to lead movements and influence the global narrative.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap relative">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center">
+<div class="glass-panel p-16 rounded-3xl border border-secondary/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-secondary-fixed-dim/5 blur-3xl rounded-full"></div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-6 relative z-10">Join the Next Generation of Visionaries</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 relative z-10">Applications for the next academic cycle are now open. Begin your journey toward becoming an Architect of Tomorrow.</p>
+<button class="px- unit*16 py-5 bg-gradient-to-r from-secondary-fixed-dim to-secondary-container text-on-secondary font-label-sm uppercase tracking-[0.2em] rounded-lg transition-all hover:shadow-[0_0_30px_rgba(253,188,19,0.4)] relative z-10">Apply For Admission</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Anchor -->
+<footer class="bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-desktop">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-xl text-secondary mb-6">NextGen Academy</div>
+<p class="text-on-surface-variant mb-6">Engineering future heritage through faith and advanced intellect.</p>
+</div>
+<div>
+<h6 class="font-label-sm uppercase tracking-widest text-white mb-6">Institution</h6>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Our Story</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Leadership</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-sm uppercase tracking-widest text-white mb-6">Admissions</h6>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Process</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Scholarships</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-sm uppercase tracking-widest text-white mb-6">Legal</h6>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-opacity" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-sm">© 2024 NextGen Academy. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll interaction
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

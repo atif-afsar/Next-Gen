@@ -1,0 +1,11 @@
+.about-hero-split .about-hero-glass {
+  background: rgba(253, 251, 247, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 196, 172, 0.35);
+  box-shadow: 0 12px 40px rgba(26, 26, 26, 0.08);
+}
+
+.about-hero-split .about-hero-accent {
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(12deg);
+}
