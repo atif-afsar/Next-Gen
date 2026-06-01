@@ -52,24 +52,23 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/25" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0a0a0a]/95" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_45%,rgba(255,184,0,0.08)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(0,0,0,0.35)_0%,transparent_65%)]" />
       <DustParticles />
 
       {/* Content */}
       <div className="container-narrow relative z-10 px-4 py-28 text-center md:py-36">
-        <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#ffb800] sm:text-xs">
+        <p className="hero-eyebrow mb-6 text-[11px] font-semibold uppercase tracking-[0.4em] sm:text-xs">
           Empowering the Future Huffaz
         </p>
 
         <h1 className="font-serif text-[2.25rem] leading-[1.12] sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.08]">
-          <span className="block text-white">
-            Architecting the Future of{' '}
-            <span className="text-[#ffb800]">Faith</span>
+          <span className="hero-headline-white block">
+            Architecting the Future of <span className="hero-gold-text">Faith</span>
           </span>
-          <span className="mt-1 block text-[#ffb800]">&amp; Intellect</span>
+          <span className="hero-gold-text mt-1 block">&amp; Intellect</span>
         </h1>
 
-        <p className="mx-auto mt-8 max-w-xl text-[15px] leading-[1.75] text-white/85 sm:max-w-2xl sm:text-base md:text-[17px] md:leading-[1.8]">
+        <p className="mx-auto mt-8 max-w-xl text-[15px] leading-[1.75] text-white/95 sm:max-w-2xl sm:text-base md:text-[17px] md:leading-[1.8] [text-shadow:0_1px_8px_rgba(0,0,0,0.85)]">
           We transcend the traditional to forge a new path where divine wisdom meets technological
           mastery. Our mission is to cultivate a generation of leaders who carry the Quran in their
           hearts and the future in their hands.
