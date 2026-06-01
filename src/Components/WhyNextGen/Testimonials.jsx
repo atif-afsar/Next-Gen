@@ -1,4 +1,5 @@
 import { WHY_PARENT_1, WHY_PARENT_2 } from '../../lib/images.js'
+import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
 const testimonials = [
   {
@@ -19,37 +20,46 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-16 sm:py-20 md:py-24">
       <div className="container-narrow">
-        <h2 className="text-center font-serif text-3xl text-[#1b1c1c] md:text-5xl">
-          Parent Perspectives
-        </h2>
+        <Reveal className="text-center">
+          <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-5xl">
+            Parent Perspectives
+          </h2>
+        </Reveal>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
+        <RevealStagger className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:gap-8 md:grid-cols-2">
           {testimonials.map(({ name, role, image, quote }) => (
-            <article
+            <RevealItem
               key={name}
-              className="relative flex flex-col gap-6 border border-[#d4c4ac] bg-white p-10"
+              as="article"
+              className="relative flex flex-col gap-5 border border-[#d4c4ac] bg-white p-6 sm:gap-6 sm:p-8 md:p-10"
             >
-              <span
-                className="pointer-events-none absolute right-6 top-6 font-serif text-6xl text-[#7a5900]/20"
-                aria-hidden
-              >
-                &ldquo;
-              </span>
-              <p className="relative z-10 text-lg italic leading-relaxed text-[#504533]">
-                &ldquo;{quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-4">
-                <img src={image} alt={name} className="h-16 w-16 rounded-full object-cover" />
-                <div>
-                  <h3 className="text-sm font-semibold text-[#1b1c1c]">{name}</h3>
-                  <p className="text-xs text-[#504533]">{role}</p>
+              <motion.div whileHover={{ y: -4 }} className="flex h-full flex-col gap-5 sm:gap-6">
+                <span
+                  className="pointer-events-none absolute right-4 top-4 font-serif text-5xl text-[#7a5900]/20 sm:right-6 sm:top-6 sm:text-6xl"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <p className="relative z-10 text-base italic leading-relaxed text-[#504533] sm:text-lg">
+                  &ldquo;{quote}&rdquo;
+                </p>
+                <div className="mt-auto flex items-center gap-3 sm:gap-4">
+                  <img
+                    src={image}
+                    alt={name}
+                    className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-[#1b1c1c]">{name}</h3>
+                    <p className="text-xs text-[#504533]">{role}</p>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </motion.div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )

@@ -1,3 +1,5 @@
+import { motion, RevealStagger, RevealItem } from './motion.jsx'
+
 const steps = [
   {
     num: '01',
@@ -21,23 +23,29 @@ const steps = [
 
 export default function Transformation() {
   return (
-    <section className="border-y border-[#d4c4ac]/30 bg-white py-20 md:py-24">
+    <section className="border-y border-[#d4c4ac]/30 bg-white py-16 sm:py-20 md:py-24">
       <div className="container-narrow">
-        <div className="grid gap-12 md:grid-cols-3 md:gap-8">
+        <RevealStagger className="grid grid-cols-1 gap-12 sm:gap-10 md:grid-cols-3 md:gap-8">
           {steps.map(({ num, title, description }) => (
-            <article key={num} className="group relative">
-              <span
-                className="pointer-events-none absolute -left-2 -top-10 font-serif text-[5rem] leading-none text-[#7a5900]/10 transition group-hover:text-[#7a5900]/20 md:text-[6rem]"
-                aria-hidden
-              >
-                {num}
-              </span>
-              <h3 className="relative mt-8 font-serif text-2xl text-[#1b1c1c] md:text-3xl">{title}</h3>
-              <p className="relative mt-4 text-[#504533]">{description}</p>
-              <div className="mt-6 h-1 w-0 bg-[#7a5900] transition-all duration-700 group-hover:w-full" />
-            </article>
+            <RevealItem key={num} as="article" className="group relative">
+              <motion.div whileHover={{ y: -4 }}>
+                <span
+                  className="pointer-events-none absolute -left-2 -top-8 font-serif text-[4rem] leading-none text-[#7a5900]/10 transition group-hover:text-[#7a5900]/20 sm:-top-10 sm:text-[5rem] md:text-[6rem]"
+                  aria-hidden
+                >
+                  {num}
+                </span>
+                <h3 className="relative mt-6 font-serif text-xl text-[#1b1c1c] sm:mt-8 sm:text-2xl md:text-3xl">
+                  {title}
+                </h3>
+                <p className="relative mt-3 text-sm leading-relaxed text-[#504533] sm:mt-4 sm:text-base">
+                  {description}
+                </p>
+                <div className="mt-5 h-1 w-0 bg-[#7a5900] transition-all duration-700 group-hover:w-full sm:mt-6" />
+              </motion.div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )

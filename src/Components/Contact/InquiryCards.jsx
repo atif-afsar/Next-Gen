@@ -1,3 +1,5 @@
+import { motion, RevealStagger, RevealItem } from './motion.jsx'
+
 const cards = [
   {
     icon: 'school',
@@ -33,31 +35,38 @@ const cards = [
 
 export default function InquiryCards() {
   return (
-    <section className="py-16 md:py-20">
-      <div className="container-narrow grid gap-6 md:grid-cols-3">
-        {cards.map(({ icon, iconBg, iconColor, title, description, link, href }) => (
-          <article
-            key={title}
-            className="contact-card group p-8 transition duration-300 hover:-translate-y-1"
-          >
-            <div
-              className={`mb-6 flex h-12 w-12 items-center justify-center rounded-lg ${iconBg}`}
+    <section className="py-12 sm:py-16 md:py-20">
+      <div className="container-narrow">
+        <RevealStagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
+          {cards.map(({ icon, iconBg, iconColor, title, description, link, href }) => (
+            <RevealItem
+              key={title}
+              as="article"
+              className="contact-card group p-6 sm:p-8"
             >
-              <span className={`material-symbols-outlined ${iconColor}`}>{icon}</span>
-            </div>
-            <h3 className="font-serif text-2xl text-[#1b1c1c]">{title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[#504533] md:text-base">
-              {description}
-            </p>
-            <a
-              href={href}
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#7a5900] group-hover:underline"
-            >
-              {link}
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-          </article>
-        ))}
+              <motion.div whileHover={{ y: -6 }} className="h-full">
+                <div
+                  className={`mb-5 flex h-11 w-11 items-center justify-center rounded-lg sm:mb-6 sm:h-12 sm:w-12 ${iconBg}`}
+                >
+                  <span className={`material-symbols-outlined text-xl sm:text-2xl ${iconColor}`}>
+                    {icon}
+                  </span>
+                </div>
+                <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:mt-3 sm:text-base">
+                  {description}
+                </p>
+                <a
+                  href={href}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#7a5900] group-hover:underline sm:mt-6"
+                >
+                  {link}
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </motion.div>
+            </RevealItem>
+          ))}
+        </RevealStagger>
       </div>
     </section>
   )

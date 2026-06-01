@@ -1,42 +1,64 @@
 import { Link } from 'react-router-dom'
+import { motion, staggerContainer, staggerItem } from './motion.jsx'
 
 export default function WhyNextGenHero() {
   return (
-    <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden py-24">
+    <section className="relative flex min-h-[75dvh] items-center justify-center overflow-hidden py-16 sm:min-h-[80dvh] sm:py-20 md:py-24">
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffdea3_0%,transparent_70%)]" />
       </div>
 
-      <div className="container-narrow relative z-10 px-4 text-center">
-        <span className="mb-8 inline-block rounded-full border border-[#d4c4ac] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#7a5900]">
+      <motion.div
+        className="container-narrow relative z-10 px-4 text-center"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.span
+          variants={staggerItem}
+          className="mb-6 inline-block rounded-full border border-[#d4c4ac] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7a5900] sm:mb-8 sm:px-4 sm:py-1.5 sm:text-xs"
+        >
           The Architect&apos;s Path
-        </span>
+        </motion.span>
 
-        <h1 className="font-serif text-4xl leading-[1.15] text-[#1b1c1c] md:text-6xl lg:text-7xl">
+        <motion.h1
+          variants={staggerItem}
+          className="font-serif text-3xl leading-[1.15] text-[#1b1c1c] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+        >
           Why NextGen? Because the Future Needs{' '}
           <span className="italic text-[#7a5900]">Faith-Powered Intellect.</span>
-        </h1>
+        </motion.h1>
 
-        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#504533]">
+        <motion.p
+          variants={staggerItem}
+          className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#504533] sm:mt-8 sm:text-lg"
+        >
           We do not just teach students; we architect leaders. NextGen Academy bridges the gap
           between rigorous academic excellence and profound spiritual depth.
-        </p>
+        </motion.p>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
+        <motion.div
+          variants={staggerItem}
+          className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4"
+        >
+          <motion.a
             href="#curriculum"
-            className="why-btn-primary rounded-lg px-10 py-4 text-sm font-semibold uppercase tracking-wider shadow-lg shadow-[#7a5900]/20 transition"
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="why-btn-primary w-full rounded-lg px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-wider shadow-lg shadow-[#7a5900]/20 sm:w-auto sm:px-10 sm:py-4 sm:text-sm"
           >
             Explore the Curriculum
-          </a>
-          <Link
-            to="/contact"
-            className="why-btn-outline rounded-lg px-10 py-4 text-sm font-semibold uppercase tracking-wider transition"
-          >
-            Virtual Campus Tour
-          </Link>
-        </div>
-      </div>
+          </motion.a>
+          <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+            <Link
+              to="/contact"
+              className="why-btn-outline block w-full rounded-lg px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-wider sm:px-10 sm:py-4 sm:text-sm"
+            >
+              Virtual Campus Tour
+            </Link>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

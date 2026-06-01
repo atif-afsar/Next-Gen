@@ -1,40 +1,58 @@
 import { Link } from 'react-router-dom'
+import { motion, Reveal, scaleIn, viewport } from './motion.jsx'
 
 export default function CTASection() {
   return (
-    <section id="admissions" className="scroll-mt-24 py-16 md:py-24">
+    <section id="admissions" className="scroll-mt-20 px-4 py-12 sm:scroll-mt-24 sm:py-16 md:py-24">
       <div className="container-narrow">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7a5900] to-[#f4b400] px-8 py-14 text-center md:px-16 md:py-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={scaleIn}
+          custom={0}
+          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7a5900] to-[#f4b400] px-6 py-12 text-center sm:px-10 sm:py-14 md:px-16 md:py-20"
+        >
           <div className="pointer-events-none absolute inset-0 opacity-10" aria-hidden>
             <svg className="h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 100">
               <path d="M0 100 L100 0 L100 100 Z" fill="white" />
             </svg>
           </div>
 
-          <div className="relative z-10 mx-auto max-w-2xl space-y-6">
-            <h2 className="font-serif text-3xl leading-snug text-[#261900] md:text-4xl lg:text-5xl">
+          <motion.div
+            className="relative z-10 mx-auto max-w-2xl space-y-5 sm:space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={{ delay: 0.15, duration: 0.55 }}
+          >
+            <h2 className="font-serif text-2xl leading-snug text-[#261900] sm:text-3xl md:text-4xl lg:text-5xl">
               Prepare Your Child for Leadership in this Life and the Next
             </h2>
-            <p className="text-lg text-[#261900]/80">
+            <p className="text-base text-[#261900]/85 sm:text-lg">
               Join an elite community of scholars, innovators, and leaders. Admissions are currently
               open for the upcoming academic year.
             </p>
-            <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row">
-              <Link
-                to="/contact#apply"
-                className="min-w-[200px] rounded-lg bg-[#261900] px-10 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#1b1c1c]"
-              >
-                Start Application
-              </Link>
-              <Link
-                to="/contact"
-                className="min-w-[200px] rounded-lg border border-[#261900]/30 bg-white/10 px-10 py-4 text-xs font-semibold uppercase tracking-widest text-[#261900] backdrop-blur-md transition hover:bg-white/20"
-              >
-                Visit Our Campus
-              </Link>
+            <div className="flex flex-col items-stretch justify-center gap-3 pt-2 sm:flex-row sm:items-center sm:gap-4">
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+                <Link
+                  to="/contact#apply"
+                  className="block w-full rounded-lg bg-[#261900] px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#1b1c1c] sm:min-w-[200px] sm:px-10 sm:py-4"
+                >
+                  Start Application
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
+                <Link
+                  to="/contact"
+                  className="block w-full rounded-lg border border-[#261900]/30 bg-white/10 px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-[#261900] backdrop-blur-md transition hover:bg-white/20 sm:min-w-[200px] sm:px-10 sm:py-4"
+                >
+                  Visit Our Campus
+                </Link>
+              </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

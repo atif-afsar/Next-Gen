@@ -41,3 +41,13 @@
   border: 1px solid rgba(212, 196, 172, 0.35);
   border-left: 4px solid var(--about-primary);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-about *,
+  .page-about *::before,
+  .page-about *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -8,7 +8,7 @@ import WhyNextGenCTA from '../Components/WhyNextGen/CTA.jsx'
 
 export default function WhyNextGen() {
   return (
-    <main className="page-why pt-20">
+    <main className="page-why pt-16 sm:pt-20">
       <WhyNextGenHero />
       <Transformation />
       <Pillars />

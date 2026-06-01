@@ -53,3 +53,13 @@
 .page-contact .material-symbols-outlined.icon-fill {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-contact *,
+  .page-contact *::before,
+  .page-contact *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

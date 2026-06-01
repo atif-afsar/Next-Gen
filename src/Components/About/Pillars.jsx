@@ -3,6 +3,7 @@ import {
   ABOUT_PILLAR_LEADERSHIP,
   ABOUT_PILLAR_SPIRITUAL,
 } from '../../lib/images.js'
+import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
 const pillars = [
   {
@@ -27,33 +28,40 @@ const pillars = [
 
 export default function Pillars() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-16 sm:py-20 md:py-28">
       <div className="container-narrow">
-        <p className="about-eyebrow mb-4 text-center">Our Distinction</p>
-        <h2 className="about-heading mb-14 text-center text-3xl md:text-5xl">Institutional Pillars</h2>
+        <Reveal className="text-center">
+          <p className="about-eyebrow mb-3 text-xs sm:mb-4 sm:text-sm">Our Distinction</p>
+          <h2 className="about-heading mb-10 text-2xl sm:mb-14 sm:text-3xl md:text-5xl">
+            Institutional Pillars
+          </h2>
+        </Reveal>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <RevealStagger className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-3">
           {pillars.map(({ title, description, image }) => (
-            <article
+            <RevealItem
               key={title}
-              className="group relative flex min-h-[420px] items-end overflow-hidden rounded-2xl border border-[#d4c4ac]/30 shadow-sm md:min-h-[500px]"
+              as="article"
+              className="group relative flex min-h-[300px] items-end overflow-hidden rounded-2xl border border-[#d4c4ac]/30 shadow-sm sm:min-h-[380px] md:min-h-[460px] lg:min-h-[500px]"
             >
-              <img
-                src={image}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                aria-hidden
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1b1c1c]/95 via-[#1b1c1c]/50 to-[#1b1c1c]/15" />
-              <div className="relative z-10 p-8 md:p-10">
-                <h3 className="font-serif text-2xl text-white md:text-3xl">{title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-base">
-                  {description}
-                </p>
-              </div>
-            </article>
+              <motion.div whileHover={{ y: -4 }} className="relative flex h-full w-full items-end">
+                <img
+                  src={image}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  aria-hidden
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b1c1c]/95 via-[#1b1c1c]/50 to-[#1b1c1c]/15" />
+                <div className="relative z-10 w-full p-6 sm:p-8 md:p-10">
+                  <h3 className="font-serif text-xl text-white sm:text-2xl md:text-3xl">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/90 sm:mt-4 md:text-base">
+                    {description}
+                  </p>
+                </div>
+              </motion.div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )

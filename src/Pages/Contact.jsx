@@ -7,7 +7,7 @@ import Location from '../Components/Contact/Location.jsx'
 
 export default function Contact() {
   return (
-    <main className="page-contact pt-20">
+    <main className="page-contact pt-16 sm:pt-20">
       <ContactHero />
       <InquiryCards />
       <Consultation />

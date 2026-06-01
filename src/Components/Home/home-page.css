@@ -30,3 +30,13 @@
 .page-home-sections .material-symbols-outlined.icon-outline {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-home-sections *,
+  .page-home-sections *::before,
+  .page-home-sections *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

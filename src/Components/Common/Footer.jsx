@@ -4,8 +4,8 @@ import { FOOTER_COLUMNS, FOOTER_MISSION, isLightPage } from '../../lib/navigatio
 function FooterLink({ path, label, variant }) {
   const linkClass =
     variant === 'light'
-      ? 'text-sm text-[#5f5e5e] transition hover:text-[#7a5900]'
-      : 'text-sm text-white/55 transition hover:text-gold'
+      ? 'inline-block py-1 text-sm text-[#5f5e5e] transition hover:text-[#7a5900] sm:py-0.5'
+      : 'inline-block py-1 text-sm text-white/55 transition hover:text-gold sm:py-0.5'
 
   if (path === '#') {
     return (
@@ -30,23 +30,23 @@ export default function Footer() {
     <footer
       className={
         light
-          ? 'border-t border-[#d4c4ac]/20 bg-white py-16'
-          : 'border-t border-white/5 bg-[#0a0a0a] py-16'
+          ? 'border-t border-[#d4c4ac]/20 bg-white py-10 sm:py-12 md:py-16'
+          : 'border-t border-white/5 bg-[#0a0a0a] py-10 sm:py-12 md:py-16'
       }
     >
       <div className="container-narrow">
-        <div className="flex flex-col gap-12 md:flex-row md:justify-between">
-          <div className="max-w-xs">
+        <div className="flex flex-col gap-10 sm:gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+          <div className="max-w-md lg:max-w-xs">
             <Link
               to="/"
-              className={`font-serif text-2xl font-medium ${
+              className={`font-serif text-xl font-medium sm:text-2xl ${
                 light ? 'text-[#1b1c1c]' : 'text-gold'
               }`}
             >
               NextGen Academy
             </Link>
             <p
-              className={`mt-4 text-sm leading-relaxed ${
+              className={`mt-3 text-sm leading-relaxed sm:mt-4 ${
                 light ? 'text-[#5f5e5e]' : 'text-white/55'
               }`}
             >
@@ -54,17 +54,23 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-12">
-            {FOOTER_COLUMNS.map(({ title, links }) => (
-              <div key={title}>
+          <nav
+            className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 sm:gap-x-10 sm:gap-y-10 lg:w-auto lg:max-w-xl lg:flex-1 lg:justify-end"
+            aria-label="Footer"
+          >
+            {FOOTER_COLUMNS.map(({ title, links }, index) => (
+              <div
+                key={title}
+                className={index === FOOTER_COLUMNS.length - 1 ? 'col-span-2 sm:col-span-1' : ''}
+              >
                 <h4
-                  className={`text-xs font-semibold uppercase tracking-widest ${
+                  className={`text-[10px] font-semibold uppercase tracking-widest sm:text-xs ${
                     light ? 'text-[#7a5900]' : 'text-gold'
                   }`}
                 >
                   {title}
                 </h4>
-                <ul className="mt-4 space-y-2">
+                <ul className="mt-3 space-y-1.5 sm:mt-4 sm:space-y-2">
                   {links.map(({ label, path }) => (
                     <li key={label}>
                       <FooterLink path={path} label={label} variant={variant} />
@@ -73,11 +79,11 @@ export default function Footer() {
                 </ul>
               </div>
             ))}
-          </div>
+          </nav>
         </div>
 
         <p
-          className={`mt-12 border-t pt-8 text-center text-sm md:text-left ${
+          className={`mt-8 border-t pt-6 text-center text-xs leading-relaxed sm:mt-10 sm:pt-8 sm:text-sm md:text-left lg:mt-12 ${
             light
               ? 'border-[#d4c4ac]/20 text-[#5f5e5e]/60'
               : 'border-white/5 text-white/40'

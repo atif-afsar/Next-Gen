@@ -1,3 +1,5 @@
+import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
+
 const values = [
   {
     num: '01',
@@ -31,21 +33,34 @@ const values = [
 
 export default function CoreValues() {
   return (
-    <section className="overflow-hidden bg-white py-20 md:py-28">
+    <section className="overflow-hidden bg-white py-16 sm:py-20 md:py-28">
       <div className="container-narrow">
-        <h2 className="about-heading mb-14 text-3xl md:text-5xl">The Pillars of Our Ethos</h2>
+        <Reveal>
+          <h2 className="about-heading mb-10 text-2xl sm:mb-14 sm:text-3xl md:text-5xl">
+            The Pillars of Our Ethos
+          </h2>
+        </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealStagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {values.map(({ num, title, description, offset }) => (
-            <article key={title} className={offset ? 'lg:translate-y-12' : ''}>
-              <div className="about-card h-full p-8 transition duration-300 hover:-translate-y-2 md:p-10">
-                <p className="mb-6 font-serif text-4xl text-[#ffdea3] opacity-80">{num}</p>
-                <h3 className="about-heading text-xl">{title}</h3>
-                <p className="about-body mt-4 text-sm leading-relaxed">{description}</p>
-              </div>
-            </article>
+            <RevealItem
+              key={title}
+              as="article"
+              className={offset ? 'lg:translate-y-12' : ''}
+            >
+              <motion.div
+                whileHover={{ y: -8 }}
+                className="about-card h-full p-6 sm:p-8 md:p-10"
+              >
+                <p className="mb-4 font-serif text-3xl text-[#ffdea3] opacity-80 sm:mb-6 sm:text-4xl">
+                  {num}
+                </p>
+                <h3 className="about-heading text-lg sm:text-xl">{title}</h3>
+                <p className="about-body mt-3 text-sm leading-relaxed sm:mt-4">{description}</p>
+              </motion.div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )

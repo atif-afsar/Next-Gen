@@ -1,3 +1,5 @@
+import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
+
 const cards = [
   {
     title: 'Spiritual Core',
@@ -22,32 +24,39 @@ const cards = [
 
 export default function Philosophy() {
   return (
-    <section id="philosophy" className="scroll-mt-24 bg-[#f5f3f3] py-20 md:py-28">
+    <section id="philosophy" className="scroll-mt-20 bg-[#f5f3f3] py-16 sm:scroll-mt-24 sm:py-20 md:py-28">
       <div className="container-narrow text-center">
-        <p className="about-eyebrow">The Philosophy</p>
-        <h2 className="about-heading mt-4 text-3xl md:text-5xl">
-          Architects of Tomorrow Philosophy
-        </h2>
-        <p className="about-body mx-auto mt-4 max-w-2xl">
-          A unique educational model where spiritual rigor is the catalyst for academic achievement.
-        </p>
+        <Reveal>
+          <p className="about-eyebrow text-xs sm:text-sm">The Philosophy</p>
+          <h2 className="about-heading mt-3 text-2xl sm:mt-4 sm:text-3xl md:text-5xl">
+            Architects of Tomorrow Philosophy
+          </h2>
+          <p className="about-body mx-auto mt-3 max-w-2xl text-sm sm:mt-4 sm:text-base">
+            A unique educational model where spiritual rigor is the catalyst for academic achievement.
+          </p>
+        </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <RevealStagger className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
           {cards.map(({ title, description, icon, accent }) => (
-            <article
+            <RevealItem
               key={title}
-              className={`about-card rounded-xl p-8 text-left transition hover:-translate-y-1 md:p-10 ${
+              as="article"
+              className={`about-card h-full rounded-xl p-6 text-left sm:p-8 md:p-10 ${
                 accent ? 'border-t-2 border-t-[#7a5900]/40' : ''
               }`}
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#ffdea3]/40 text-xl text-[#7a5900]">
-                {icon}
-              </div>
-              <h3 className="about-heading text-2xl">{title}</h3>
-              <p className="about-body mt-4 text-sm leading-relaxed md:text-base">{description}</p>
-            </article>
+              <motion.div whileHover={{ y: -6 }} className="h-full text-left">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#ffdea3]/40 text-lg text-[#7a5900] sm:mb-6 sm:h-14 sm:w-14 sm:text-xl">
+                  {icon}
+                </div>
+                <h3 className="about-heading text-xl sm:text-2xl">{title}</h3>
+                <p className="about-body mt-3 text-sm leading-relaxed sm:mt-4 md:text-base">
+                  {description}
+                </p>
+              </motion.div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   )

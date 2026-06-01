@@ -1,73 +1,88 @@
 import { Link } from 'react-router-dom'
 import { ACADEMIC_TRACK, ISLAMIC_TRACK } from '../../lib/homeContent.js'
+import { motion, Reveal, viewport, EASE_OUT } from './motion.jsx'
+
+function TrackCard({ label, items, accentClass, iconColor, fromLeft }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: fromLeft ? -36 : 36 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={viewport}
+      transition={{ duration: 0.65, ease: EASE_OUT }}
+      whileHover={{ y: -4, transition: { duration: 0.25 } }}
+      className={`rounded-xl border bg-white p-6 shadow-sm sm:p-8 ${accentClass}`}
+    >
+      <span
+        className={`mb-4 block text-xs font-semibold uppercase tracking-wider ${iconColor}`}
+      >
+        {label}
+      </span>
+      <ul className="space-y-2.5 text-sm text-[#504533] sm:space-y-3 sm:text-base">
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-2">
+            <span className={`material-symbols-outlined icon-outline shrink-0 text-lg ${iconColor}`}>
+              check_circle
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  )
+}
 
 export default function DualFocus() {
   return (
-    <section className="overflow-hidden bg-[#fbf9f8] py-20 md:py-32">
+    <section className="overflow-hidden bg-[#fbf9f8] py-16 sm:py-20 md:py-32">
       <div className="container-narrow">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-          <div className="z-10 flex-1 space-y-6 lg:max-w-md">
-            <h2 className="font-serif text-3xl leading-tight text-[#1b1c1c] md:text-5xl">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-16">
+          <Reveal className="w-full text-center lg:max-w-md lg:text-left">
+            <h2 className="font-serif text-2xl leading-tight text-[#1b1c1c] sm:text-3xl md:text-5xl">
               The Integration of Two Worlds
             </h2>
-            <p className="text-lg leading-relaxed text-[#504533]">
+            <p className="mt-4 text-base leading-relaxed text-[#504533] sm:mt-6 sm:text-lg">
               We don&apos;t believe in &quot;dual curriculum&quot; as a separation. We believe in a
               single, unified journey where Islamic scholarship informs scientific inquiry, and
               vice-versa.
             </p>
-          </div>
+          </Reveal>
 
           <div className="w-full flex-1">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-xl border border-[#7a5900]/20 bg-white p-8 shadow-sm">
-                <span className="mb-4 block text-xs font-semibold uppercase tracking-wider text-[#7a5900]">
-                  Academic Track
-                </span>
-                <ul className="space-y-3 text-sm text-[#504533] md:text-base">
-                  {ACADEMIC_TRACK.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <span className="material-symbols-outlined icon-outline text-lg text-[#7a5900]">
-                        check_circle
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-xl border border-[#914c00]/20 bg-white p-8 shadow-sm">
-                <span className="mb-4 block text-xs font-semibold uppercase tracking-wider text-[#914c00]">
-                  Islamic Scholarship
-                </span>
-                <ul className="space-y-3 text-sm text-[#504533] md:text-base">
-                  {ISLAMIC_TRACK.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <span className="material-symbols-outlined icon-outline text-lg text-[#914c00]">
-                        check_circle
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+              <TrackCard
+                label="Academic Track"
+                items={ACADEMIC_TRACK}
+                accentClass="border-[#7a5900]/20"
+                iconColor="text-[#7a5900]"
+                fromLeft
+              />
+              <TrackCard
+                label="Islamic Scholarship"
+                items={ISLAMIC_TRACK}
+                accentClass="border-[#914c00]/20"
+                iconColor="text-[#914c00]"
+              />
             </div>
 
-            <div className="relative mt-10">
+            <Reveal delay={0.2} className="relative mt-8 sm:mt-10">
               <div className="home-merging-path rounded-full shadow-[0_0_20px_rgba(244,180,0,0.3)]" />
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#7a5900] px-6 py-2 text-xs font-semibold uppercase tracking-widest text-white shadow-lg">
+              <div className="absolute -top-3 left-1/2 max-w-[90vw] -translate-x-1/2 whitespace-nowrap rounded-full bg-[#7a5900] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:-top-4 sm:px-6 sm:py-2 sm:text-xs">
                 Unified Path
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
 
-        <div className="mt-14 text-center">
-          <Link
-            to="/about"
-            className="inline-block rounded-lg bg-[#7a5900] px-10 py-4 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#654800]"
-          >
-            Learn More
-          </Link>
-        </div>
+        <Reveal delay={0.15} className="mt-10 text-center sm:mt-14">
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+            <Link
+              to="/about"
+              className="inline-block w-full max-w-xs rounded-lg bg-[#7a5900] px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#654800] sm:w-auto sm:px-10 sm:py-4"
+            >
+              Learn More
+            </Link>
+          </motion.div>
+        </Reveal>
       </div>
     </section>
   )
