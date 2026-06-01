@@ -31,15 +31,13 @@ const listVariants = {
 }
 
 const linkVariants = {
-  initial: { y: 28, opacity: 0 },
+  initial: { y: 24 },
   animate: {
     y: 0,
-    opacity: 1,
     transition: { duration: 0.45, ease: EASE_OUT },
   },
   exit: {
-    y: 16,
-    opacity: 0,
+    y: 12,
     transition: { duration: 0.25, ease: 'easeIn' },
   },
 }
@@ -62,19 +60,35 @@ export default function Navbar() {
 
   function linkClassName({ isActive }) {
     if (light) {
-      return `relative text-sm font-medium tracking-wide transition-colors duration-300 hover:text-[#7a5900] ${
+      return `relative text-base font-medium tracking-wide transition-colors duration-300 hover:text-[#7a5900] ${
         isActive ? 'font-semibold text-[#7a5900]' : 'text-[#504533]'
       }`
     }
-    return `relative text-sm font-medium tracking-wide transition-colors duration-300 hover:text-gold ${
+    return `relative text-base font-medium tracking-wide transition-colors duration-300 hover:text-gold ${
       isActive ? 'text-gold' : 'text-white/80'
     }`
   }
 
-  function barColor() {
-    if (isOpen) return light ? 'bg-[#1b1c1c]' : 'bg-white'
-    return light ? 'bg-[#1b1c1c]' : 'bg-white'
+  /** Hamburger + logo colors: match open mobile menu surface, not animated opacity */
+  const barClass = light ? 'bg-[#1b1c1c]' : 'bg-white'
+  const logoClass = light ? 'text-[#1b1c1c]' : 'text-gold'
+
+  function mobileLinkClass(isActive) {
+    if (light) {
+      return isActive
+        ? 'text-[#7a5900]'
+        : 'text-[#1b1c1c]/75 hover:text-[#7a5900]'
+    }
+    return isActive ? 'text-gold' : 'text-white/90 hover:text-gold'
   }
+
+  const headerClass = isOpen
+    ? light
+      ? 'max-md:border-[#d4c4ac]/30 max-md:bg-[#fcfaf7] max-md:shadow-none md:border-b md:border-[#d4c4ac]/30 md:bg-white/70 md:shadow-[0_10px_30px_rgba(26,26,26,0.04)] md:backdrop-blur-xl'
+      : 'max-md:border-white/10 max-md:bg-[#0f0f0f] max-md:shadow-none md:border-b md:border-white/5 md:bg-[#0a0a0a]/80 md:backdrop-blur-md'
+    : light
+      ? 'border-b border-[#d4c4ac]/30 bg-white/70 shadow-[0_10px_30px_rgba(26,26,26,0.04)] backdrop-blur-xl'
+      : 'border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md'
 
   return (
     <>
@@ -82,11 +96,7 @@ export default function Navbar() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: EASE_OUT }}
-        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-          light
-            ? 'border-b border-[#d4c4ac]/30 bg-white/70 shadow-[0_10px_30px_rgba(26,26,26,0.04)] backdrop-blur-xl'
-            : 'border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md'
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${headerClass}`}
       >
         <nav className="container-narrow flex h-16 items-center justify-between md:h-20">
           <motion.div
@@ -96,16 +106,14 @@ export default function Navbar() {
           >
             <Link
               to="/"
-              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 md:text-2xl ${
-                light ? 'text-[#1b1c1c]' : 'text-gold'
-              }`}
+              className={`font-serif text-xl font-semibold tracking-wide md:text-2xl ${logoClass}`}
             >
               NextGen Academy
             </Link>
           </motion.div>
 
           <motion.ul
-            className="hidden items-center gap-8 md:flex"
+            className="hidden items-center gap-10 md:flex"
             initial="initial"
             animate="animate"
             variants={{
@@ -178,12 +186,12 @@ export default function Navbar() {
                       : { rotate: 0, y: 0, width: '100%' }
                   }
                   transition={{ duration: 0.3, ease: EASE_OUT }}
-                  className={`block h-[1.5px] origin-center ${barColor()}`}
+                  className={`block h-[1.5px] origin-center ${barClass}`}
                 />
                 <motion.span
                   animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                   transition={{ duration: 0.2 }}
-                  className={`block h-[1.5px] w-full ${barColor()}`}
+                  className={`block h-[1.5px] w-full ${barClass}`}
                 />
                 <motion.span
                   animate={
@@ -192,7 +200,7 @@ export default function Navbar() {
                       : { rotate: 0, y: 0, width: '100%' }
                   }
                   transition={{ duration: 0.3, ease: EASE_OUT }}
-                  className={`block h-[1.5px] origin-center ${barColor()}`}
+                  className={`block h-[1.5px] origin-center ${barClass}`}
                 />
               </div>
             </motion.button>
@@ -215,37 +223,35 @@ export default function Navbar() {
             />
 
             <motion.div
+              key={light ? 'menu-light' : 'menu-dark'}
               variants={menuVariants}
               initial="initial"
               animate="animate"
               exit="exit"
-              className={`fixed inset-x-0 top-0 z-40 flex h-[100dvh] w-full flex-col justify-between px-6 pb-12 pt-28 md:hidden ${
+              className={`fixed inset-x-0 top-0 z-[45] flex h-[100dvh] w-full flex-col px-6 pb-8 pt-24 md:hidden ${
                 light ? 'bg-[#fcfaf7]' : 'bg-[#0f0f0f]'
               }`}
             >
-              <motion.ul variants={listVariants} initial="initial" animate="animate" exit="exit" className="flex flex-col gap-6 pl-2">
+              <motion.ul
+                variants={listVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="flex flex-1 flex-col justify-center gap-2 py-6 sm:gap-3"
+              >
                 {NAV_PAGES.map(({ label, path }) => (
-                  <li key={path} className="overflow-hidden">
-                    <motion.div variants={linkVariants}>
-                      <NavLink
-                        to={path}
-                        end={path === '/'}
-                        className={({ isActive }) =>
-                          `font-serif text-3xl font-medium tracking-wide transition-colors ${
-                            isActive
-                              ? light
-                                ? 'text-[#7a5900]'
-                                : 'text-gold'
-                              : light
-                                ? 'text-[#504533]/70'
-                                : 'text-white/45'
-                          }`
-                        }
-                      >
-                        {label}
-                      </NavLink>
-                    </motion.div>
-                  </li>
+                  <motion.li key={path} variants={linkVariants} className="overflow-hidden">
+                    <NavLink
+                      to={path}
+                      end={path === '/'}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `block py-2 font-serif text-3xl font-medium tracking-wide sm:py-2.5 sm:text-4xl ${mobileLinkClass(isActive)}`
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  </motion.li>
                 ))}
               </motion.ul>
 
@@ -254,7 +260,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 16 }}
                 transition={{ delay: 0.35, duration: 0.4, ease: EASE_OUT }}
-                className="px-2"
+                className="shrink-0 pt-4"
               >
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <NavLink
