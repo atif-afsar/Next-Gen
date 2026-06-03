@@ -1,48 +1,62 @@
+import { TEL_URL, TEL_SECONDARY_URL, WHATSAPP_URL, ADDRESS_SHORT } from './contact.js'
+
 /**
  * Page-based navigation — each entry maps to src/Pages/{Page}.jsx
- * and src/Components/{Page}/
  */
 export const NAV_PAGES = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Why NextGen', path: '/why-nextgen' },
+  { label: 'Programs', path: '/programs' },
+  { label: 'Admissions', path: '/admissions' },
   { label: 'Contact', path: '/contact' },
 ]
 
-export const APPLY_PATH = '/contact'
+export const APPLY_PATH = '/admissions'
 
 /** Routes that use the Stitch light theme (cream / olive gold) */
-export const LIGHT_PAGE_PATHS = ['/about', '/why-nextgen', '/contact']
+export const LIGHT_PAGE_PATHS = [
+  '/about',
+  '/why-nextgen',
+  '/programs',
+  '/residential-program',
+  '/admissions',
+  '/gallery',
+  '/contact',
+]
 
 export function isLightPage(pathname) {
   return LIGHT_PAGE_PATHS.includes(pathname)
 }
 
 export const FOOTER_MISSION =
-  'Cultivating the visionaries and stewards of tomorrow through rigorous faith-based leadership.'
+  'NextGen Academy, Green Fort City, Near AMU Fort, Aligarh — transforming Huffaz into academic leaders through faith with future education, Iman with excellence, and a residential path from Hifz to leadership.'
 
-/** Shared footer link columns — used on every page */
+/** Shared footer link columns */
 export const FOOTER_COLUMNS = [
   {
     title: 'Explore',
     links: [
       { label: 'Home', path: '/' },
       { label: 'About', path: '/about' },
-      { label: 'Why NextGen', path: '/why-nextgen' },
-      { label: 'Curriculum', path: '/why-nextgen#curriculum' },
+      { label: 'Programs', path: '/programs' },
+      { label: 'Residential Program', path: '/residential-program' },
+      { label: 'Gallery', path: '/gallery' },
     ],
   },
   {
-    title: 'People',
+    title: 'Connect',
     links: [
-      { label: 'Faculty', path: '#' },
       { label: 'Contact Us', path: '/contact' },
-      { label: 'Admissions', path: '/contact#apply' },
+      { label: 'Admissions', path: '/admissions' },
+      { label: 'Call Us', path: TEL_URL, external: true },
+      { label: 'WhatsApp', path: WHATSAPP_URL, external: true },
     ],
   },
   {
-    title: 'Legal',
+    title: 'Visit',
     links: [
+      { label: ADDRESS_SHORT, path: '/contact#location' },
+      { label: 'Why NextGen', path: '/why-nextgen' },
       { label: 'Privacy Policy', path: '#' },
       { label: 'Terms of Service', path: '#' },
     ],

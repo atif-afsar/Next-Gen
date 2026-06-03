@@ -33,8 +33,9 @@ export default function WhyNextGenHero() {
           variants={staggerItem}
           className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#504533] sm:mt-8 sm:text-lg"
         >
-          We do not just teach students; we architect leaders. NextGen Academy bridges the gap
-          between rigorous academic excellence and profound spiritual depth.
+          NextGen Academy Aligarh offers a Hifz plus academic program and residential environment
+          where Huffaz become faith-powered leaders — Iman with academic excellence, character, and
+          innovation.
         </motion.p>
 
         <motion.div

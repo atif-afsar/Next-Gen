@@ -1,20 +1,17 @@
+import PageShell from '../Components/Common/PageShell.jsx'
 import '../Components/WhyNextGen/why-page.css'
-import WhyNextGenHero from '../Components/WhyNextGen/Hero.jsx'
-import Transformation from '../Components/WhyNextGen/Transformation.jsx'
-import Pillars from '../Components/WhyNextGen/Pillars.jsx'
-import CompetitiveEdge from '../Components/WhyNextGen/CompetitiveEdge.jsx'
-import Testimonials from '../Components/WhyNextGen/Testimonials.jsx'
-import WhyNextGenCTA from '../Components/WhyNextGen/CTA.jsx'
+import WhyNextGenPageContent from '../Components/WhyNextGen/PageContent.jsx'
 
 export default function WhyNextGen() {
   return (
-    <main className="page-why pt-16 sm:pt-20">
-      <WhyNextGenHero />
-      <Transformation />
-      <Pillars />
-      <CompetitiveEdge />
-      <Testimonials />
-      <WhyNextGenCTA />
-    </main>
+    <PageShell
+      page="whyNextGen"
+      breadcrumbs={[
+        { name: 'Home', path: '/' },
+        { name: 'Why NextGen', path: '/why-nextgen' },
+      ]}
+    >
+      <WhyNextGenPageContent />
+    </PageShell>
   )
 }

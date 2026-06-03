@@ -1,4 +1,6 @@
 import { ABOUT_HERO_CAMPUS } from '../../lib/images.js'
+import { ADDRESS_SHORT } from '../../lib/contact.js'
+import OptimizedImage from '../Common/OptimizedImage.jsx'
 import {
   motion,
   EASE_OUT,
@@ -41,8 +43,9 @@ export default function AboutHero() {
               variants={staggerItem}
               className="mt-4 max-w-xl text-base leading-relaxed text-[#504533] sm:mt-6 sm:text-lg"
             >
-              NextGen Academy represents the evolution of the Islamic Model School legacy—a
-              synthesis of rigorous modern academics and deep-rooted spiritual wisdom.
+              NextGen Academy Aligarh — at {ADDRESS_SHORT} — transforms Huffaz into academic leaders
+              through faith with future education, residential character building, and Islamic values
+              with modern STEM education.
             </motion.p>
 
             <motion.div
@@ -75,10 +78,13 @@ export default function AboutHero() {
             transition={{ duration: 0.85, delay: 0.2, ease: EASE_OUT }}
           >
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl shadow-2xl sm:max-w-none">
-              <img
+              <OptimizedImage
                 src={ABOUT_HERO_CAMPUS}
-                alt="NextGen Academy campus — modern building with glass and stone"
+                alt="NextGen Academy campus at Green Fort City, Near AMU Fort, Aligarh"
                 className="h-full w-full object-cover object-center"
+                priority
+                width={800}
+                height={1000}
               />
             </div>
 

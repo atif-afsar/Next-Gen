@@ -1,0 +1,62 @@
+.page-loader {
+  --loader-duration: 720ms;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: #0a0a0a;
+  contain: strict;
+  transition: opacity var(--loader-exit, 160ms) ease-out, visibility var(--loader-exit, 160ms) ease-out;
+}
+
+.page-loader--exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-loader__text {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fafafa;
+  text-align: center;
+}
+
+.page-loader__line {
+  width: min(12rem, 70vw);
+  height: 2px;
+  background: rgba(255, 184, 0, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.page-loader__line-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #ffb800;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+  animation: page-loader-line-fill var(--loader-duration) cubic-bezier(0.33, 1, 0.38, 1) forwards;
+}
+
+@keyframes page-loader-line-fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader__line-fill {
+    animation-duration: 200ms !important;
+  }
+}

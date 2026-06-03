@@ -41,9 +41,9 @@ export default function DualFocus() {
               The Integration of Two Worlds
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[#504533] sm:mt-6 sm:text-lg">
-              We don&apos;t believe in &quot;dual curriculum&quot; as a separation. We believe in a
-              single, unified journey where Islamic scholarship informs scientific inquiry, and
-              vice-versa.
+              At our Islamic residential school in Aligarh, the Hifz plus academic program is one
+              unified journey — where Islamic scholarship strengthens STEM, robotics, and leadership
+              for Hifz-completed students.
             </p>
           </Reveal>
 

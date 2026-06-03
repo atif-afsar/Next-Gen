@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { WHATSAPP_URL, MAP_URL } from '../../lib/contact.js'
 import { motion, RevealStagger, RevealItem } from './motion.jsx'
 
 const cards = [
@@ -5,31 +7,43 @@ const cards = [
     icon: 'school',
     iconBg: 'bg-[#ffdea3]',
     iconColor: 'text-[#7a5900]',
-    title: 'Admissions Inquiry',
+    title: 'Admissions & Enrollment',
     description:
-      'Explore the path to enrollment. Our advisory team provides personalized guidance for prospective leaders.',
-    link: 'Contact Admissions',
-    href: 'mailto:admissions@nextgen.edu',
+      'Ready to apply? Start on our dedicated admissions page — eligibility, process, and application form.',
+    link: 'Go to Admissions',
+    to: '/admissions',
+    external: false,
   },
   {
-    icon: 'handshake',
+    icon: 'event',
+    iconBg: 'bg-[#dcf8e8]',
+    iconColor: 'text-[#128C7E]',
+    title: 'Campus Visit',
+    description:
+      'Schedule a tour of NextGen Academy at Green Fort City, Near AMU Fort, Aligarh.',
+    link: 'Book a visit',
+    to: '/contact#visit',
+    external: false,
+  },
+  {
+    icon: 'chat',
     iconBg: 'bg-[#ffdcc4]',
     iconColor: 'text-[#8f4d2e]',
-    title: 'Global Partnerships',
-    description:
-      'We collaborate with world-class institutions and industries to redefine the boundaries of academic innovation.',
-    link: 'Partner With Us',
-    href: '#partnerships',
+    title: 'WhatsApp',
+    description: 'Quick questions about location, timings, or how to reach us.',
+    link: 'Chat on WhatsApp',
+    href: WHATSAPP_URL,
+    external: true,
   },
   {
-    icon: 'public',
+    icon: 'location_on',
     iconBg: 'bg-[#e5e2e1]',
     iconColor: 'text-[#504533]',
-    title: 'Media & Press',
-    description:
-      'Access our latest insights, leadership reports, and media resources for global educational commentary.',
-    link: 'Press Kit',
-    href: '#press',
+    title: 'Directions',
+    description: 'Open our campus location in Google Maps.',
+    link: 'View on Maps',
+    href: MAP_URL,
+    external: true,
   },
 ]
 
@@ -37,18 +51,14 @@ export default function InquiryCards() {
   return (
     <section className="py-12 sm:py-16 md:py-20">
       <div className="container-narrow">
-        <RevealStagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
-          {cards.map(({ icon, iconBg, iconColor, title, description, link, href }) => (
-            <RevealItem
-              key={title}
-              as="article"
-              className="contact-card group p-6 sm:p-8"
-            >
+        <RevealStagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+          {cards.map(({ icon, iconBg, iconColor, title, description, link, to, href, external }) => (
+            <RevealItem key={title} as="article" className="contact-card group p-6 sm:p-8">
               <motion.div whileHover={{ y: -6 }} className="h-full">
                 <div
                   className={`mb-5 flex h-11 w-11 items-center justify-center rounded-lg sm:mb-6 sm:h-12 sm:w-12 ${iconBg}`}
                 >
-                  <span className={`material-symbols-outlined text-xl sm:text-2xl ${iconColor}`}>
+                  <span className={`material-symbols-outlined text-xl sm:text-2xl ${iconColor}`} aria-hidden>
                     {icon}
                   </span>
                 </div>
@@ -56,13 +66,28 @@ export default function InquiryCards() {
                 <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:mt-3 sm:text-base">
                   {description}
                 </p>
-                <a
-                  href={href}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#7a5900] group-hover:underline sm:mt-6"
-                >
-                  {link}
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
+                {to ? (
+                  <Link
+                    to={to}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#7a5900] group-hover:underline sm:mt-6"
+                  >
+                    {link}
+                    <span className="material-symbols-outlined text-sm" aria-hidden>
+                      arrow_forward
+                    </span>
+                  </Link>
+                ) : (
+                  <a
+                    href={href}
+                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#7a5900] group-hover:underline sm:mt-6"
+                  >
+                    {link}
+                    <span className="material-symbols-outlined text-sm" aria-hidden>
+                      arrow_forward
+                    </span>
+                  </a>
+                )}
               </motion.div>
             </RevealItem>
           ))}

@@ -14,10 +14,10 @@ export default function Mission() {
           <div className="flex flex-col gap-8 md:w-2/3 md:gap-10">
             <Reveal delay={0.1}>
               <p className="about-body text-base leading-relaxed sm:text-lg">
-                Founded on the principles of the Islamic Model School (IMS), NextGen Academy is not
-                merely a replacement, but a refinement. For decades, IMS served as the bedrock of
-                intellectual and spiritual growth for thousands. Today, we bridge that storied past
-                with a futuristic vision, creating a &ldquo;Heritage of the Future.&rdquo;
+                Founded on the principles of Islamic Mission School (IMS) in Aligarh, NextGen Academy
+                is the evolution families trust — refining decades of faith-based education into a
+                Hifz plus academic program from Grade 5 through graduation. At Green Fort City, Near AMU Fort, we
+                nurture the Hifz-to-leadership journey with Iman, discipline, and innovation.
               </p>
             </Reveal>
 

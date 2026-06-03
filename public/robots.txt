@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nextgenacademy.org.in/sitemap.xml
+
+# Block build artifacts if ever exposed
+Disallow: /assets/*.map

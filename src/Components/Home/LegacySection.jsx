@@ -6,6 +6,7 @@ export default function LegacySection() {
     <section
       id="about"
       className="scroll-mt-20 bg-[#f5f3f3] py-16 sm:scroll-mt-24 sm:py-20 md:py-32"
+      aria-labelledby="legacy-heading"
     >
       <div className="container-narrow text-center">
         <motion.div
@@ -19,21 +20,23 @@ export default function LegacySection() {
             variants={staggerItem}
             className="text-xs font-semibold uppercase tracking-widest text-[#7a5900] sm:text-sm"
           >
-            Established on Tradition
+            Islamic Mission School Heritage
           </motion.p>
           <motion.h2
+            id="legacy-heading"
             variants={staggerItem}
             className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-5xl"
           >
-            A Legacy of Excellence
+            Faith With Future Education in Aligarh
           </motion.h2>
           <motion.p
             variants={staggerItem}
             className="text-base leading-relaxed text-[#504533] sm:text-lg"
           >
-            Founded on the principles of intellectual rigor and spiritual depth, NextGen Academy has
-            consistently produced graduates who lead in the boardroom as effectively as they lead in
-            the masjid. Our pedagogy respects the past while defining the future.
+            NextGen Academy, Green Fort City, Near AMU Fort, Aligarh, carries forward the legacy of
+            Islamic Mission School (IMS). For parents seeking a Hifz plus academic program, we offer
+            a residential environment where Huffaz grow into scholars, innovators, and leaders —
+            with character, discipline, and Islamic values alongside modern education.
           </motion.p>
         </motion.div>
 

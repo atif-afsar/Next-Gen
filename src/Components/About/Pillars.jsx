@@ -48,8 +48,12 @@ export default function Pillars() {
                 <img
                   src={image}
                   alt=""
+                  role="presentation"
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  aria-hidden
+                  loading="lazy"
+                  decoding="async"
+                  width={640}
+                  height={800}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1b1c1c]/95 via-[#1b1c1c]/50 to-[#1b1c1c]/15" />
                 <div className="relative z-10 w-full p-6 sm:p-8 md:p-10">

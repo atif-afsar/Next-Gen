@@ -1,6 +1,9 @@
 import { motion } from 'motion/react'
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js'
 
 export const EASE_OUT = [0.16, 1, 0.3, 1]
+
+const INSTANT = { duration: 0 }
 export const EASE_SPRING = { type: 'spring', stiffness: 120, damping: 22 }
 
 export const viewport = { once: true, amount: 0.2, margin: '0px 0px -60px 0px' }
@@ -74,16 +77,18 @@ export function Reveal({
   id,
   ...props
 }) {
+  const reduced = usePrefersReducedMotion()
   const Component = Tag === 'section' ? motion.section : motion.div
   return (
     <Component
       id={id}
       className={className}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduced ? false : 'hidden'}
+      whileInView={reduced ? undefined : 'visible'}
       viewport={viewport}
-      variants={fadeUp}
+      variants={reduced ? undefined : fadeUp}
       custom={delay}
+      transition={reduced ? INSTANT : undefined}
       {...props}
     >
       {children}

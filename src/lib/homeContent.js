@@ -48,7 +48,7 @@ export const ISLAMIC_TRACK = [
 export const TIMELINE_STAGES = [
   {
     step: '01',
-    grades: 'Grade 5-7',
+    grades: 'Grade 5–7',
     phase: 'Foundation',
     description: 'Focus on Hifz intensity and core cognitive skills.',
   },

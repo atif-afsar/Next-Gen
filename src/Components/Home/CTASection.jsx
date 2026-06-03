@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion, Reveal, scaleIn, viewport } from './motion.jsx'
+import { motion, scaleIn, viewport } from './motion.jsx'
 
 export default function CTASection() {
   return (
@@ -30,13 +30,13 @@ export default function CTASection() {
               Prepare Your Child for Leadership in this Life and the Next
             </h2>
             <p className="text-base text-[#261900]/85 sm:text-lg">
-              Join an elite community of scholars, innovators, and leaders. Admissions are currently
-              open for the upcoming academic year.
+              Give your child a residential path from Hifz to leadership at NextGen Academy,
+              Aligarh. Admissions are open from Grade 5 through graduation for Hifz-completed and aspiring Huffaz.
             </p>
             <div className="flex flex-col items-stretch justify-center gap-3 pt-2 sm:flex-row sm:items-center sm:gap-4">
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Link
-                  to="/contact#apply"
+                  to="/admissions#apply"
                   className="block w-full rounded-lg bg-[#261900] px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#1b1c1c] sm:min-w-[200px] sm:px-10 sm:py-4"
                 >
                   Start Application

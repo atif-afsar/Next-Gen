@@ -1,17 +1,19 @@
 import { HOME_CURRICULUM_PHILOSOPHY, HOME_CURRICULUM_STEM } from '../../lib/images.js'
+import OptimizedImage from '../Common/OptimizedImage.jsx'
 import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
-function ImageCard({ src, title, description, className = '' }) {
+function ImageCard({ src, alt, title, description, className = '' }) {
   return (
     <motion.article
       whileHover={{ scale: 1.01 }}
       className={`home-glass-card group relative min-h-[240px] overflow-hidden rounded-xl sm:min-h-[280px] ${className}`}
     >
-      <img
+      <OptimizedImage
         src={src}
-        alt=""
+        alt={alt}
         className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
-        aria-hidden
+        width={800}
+        height={600}
       />
       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-8">
         <h3 className="font-serif text-xl text-white sm:text-2xl md:text-3xl">{title}</h3>
@@ -61,7 +63,7 @@ export default function Curriculum() {
             <IconCard
               icon="precision_manufacturing"
               title="Robotics"
-              description="Design, build, and program the future. From Grade 6 onward."
+              description="Design, build, and program the future. From Grade 5 through graduation."
               bgClass="bg-[#ffdea3]/20"
             />
           </RevealItem>
@@ -78,6 +80,7 @@ export default function Curriculum() {
           <RevealItem className="md:col-span-2">
             <ImageCard
               src={HOME_CURRICULUM_PHILOSOPHY}
+              alt="Students in philosophy and leadership discussion at NextGen Academy"
               title="Philosophy & Rhetoric"
               description="Developing the power of persuasion, critical analysis, and ethical reasoning."
               className="h-full min-h-[260px]"

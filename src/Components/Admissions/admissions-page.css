@@ -1,0 +1,49 @@
+.page-admissions {
+  --admissions-bg: #fbf9f8;
+  --admissions-surface: #ffffff;
+  --admissions-primary: #7a5900;
+  --admissions-primary-light: #ffdea3;
+  --admissions-text: #1b1c1c;
+  --admissions-muted: #504533;
+  --admissions-border: #d4c4ac;
+  background-color: var(--admissions-bg);
+  color: var(--admissions-text);
+}
+
+.page-admissions .admissions-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 196, 172, 0.3);
+  box-shadow: 0 4px 24px rgba(26, 26, 26, 0.04);
+}
+
+.page-admissions .admissions-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 50px rgba(26, 26, 26, 0.08);
+}
+
+.page-admissions .admissions-input {
+  border-bottom: 1px solid var(--admissions-border);
+  background: transparent;
+}
+
+.page-admissions .admissions-input:focus {
+  outline: none;
+  border-bottom-color: var(--admissions-primary);
+}
+
+.page-admissions .admissions-btn-primary {
+  background-color: var(--admissions-primary);
+  color: #ffffff;
+}
+
+.page-admissions .admissions-btn-primary:hover {
+  background-color: #654800;
+}
+
+.page-admissions .material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 1.5rem;
+  line-height: 1;
+}

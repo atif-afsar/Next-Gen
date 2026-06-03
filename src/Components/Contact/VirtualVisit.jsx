@@ -32,15 +32,14 @@ export default function VirtualVisit() {
   const [selectedSlot, setSelectedSlot] = useState(null)
 
   return (
-    <section className="py-14 sm:py-16 md:py-24">
+    <section id="visit" className="scroll-mt-24 py-14 sm:py-16 md:py-24">
       <div className="container-narrow px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-4xl">
-            Virtual Visit &amp; Consultations
+            Schedule a campus visit
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-[#504533] sm:mt-4 sm:text-base">
-            Select a preferred window for a 1-on-1 virtual tour or a leadership screening with our
-            admissions panel.
+            Pick a preferred time for an in-person or virtual tour of NextGen Academy, Aligarh.
           </p>
         </Reveal>
 

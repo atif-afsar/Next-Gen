@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { isLightPage } from '../../lib/navigation.js'
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
+import FloatingContact from './FloatingContact.jsx'
 import ScrollToHash from './ScrollToHash.jsx'
 
 export default function Layout() {
@@ -20,6 +21,7 @@ export default function Layout() {
       <Navbar />
       <Outlet />
       <Footer />
+      <FloatingContact />
     </div>
   )
 }

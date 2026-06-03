@@ -1,4 +1,6 @@
 import { HERO_BG } from '../../lib/images.js'
+import { TAGLINE } from '../../lib/seo.js'
+import OptimizedImage from '../Common/OptimizedImage.jsx'
 import { motion, EASE_OUT, staggerContainer, staggerItem } from './motion.jsx'
 
 const PARTICLES = [
@@ -38,25 +40,25 @@ function DustParticles() {
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden pt-16 sm:pt-20">
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.08, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.4, ease: EASE_OUT }}
-      >
-        <img
+    <section
+      className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden pt-16 sm:pt-20"
+      aria-labelledby="home-hero-heading"
+    >
+      <div className="absolute inset-0" aria-hidden>
+        <OptimizedImage
           src={HERO_BG}
-          alt=""
+          alt="NextGen Academy — Islamic residential school campus in Aligarh at dusk"
           className="hero-bg-image h-full w-full object-cover object-center"
-          fetchPriority="high"
+          priority
+          width={1920}
+          height={1080}
         />
-      </motion.div>
+      </div>
 
-      <div className="absolute inset-0 bg-black/25" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0a0a0a]/95" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(0,0,0,0.35)_0%,transparent_65%)]" />
+      <div className="absolute inset-0 bg-black/25" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0a0a0a]/95" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" aria-hidden />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(0,0,0,0.35)_0%,transparent_65%)]" aria-hidden />
       <DustParticles />
 
       <motion.div
@@ -69,26 +71,27 @@ export default function Hero() {
           variants={staggerItem}
           className="hero-eyebrow mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] sm:mb-6 sm:text-xs sm:tracking-[0.4em]"
         >
-          Empowering the Future Huffaz
+          {TAGLINE}
         </motion.p>
 
         <motion.h1
+          id="home-hero-heading"
           variants={staggerItem}
           className="font-serif text-[1.75rem] leading-[1.12] xs:text-[2rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.08]"
         >
           <span className="hero-headline-white block">
-            Architecting the Future of <span className="hero-gold-text">Faith</span>
+            NextGen Academy — <span className="hero-gold-text">Aligarh</span>
           </span>
-          <span className="hero-gold-text mt-1 block sm:mt-2">&amp; Intellect</span>
+          <span className="hero-gold-text mt-1 block sm:mt-2">Hifz to Leadership</span>
         </motion.h1>
 
         <motion.p
           variants={staggerItem}
           className="mx-auto mt-6 max-w-xl px-1 text-sm leading-[1.75] text-white/95 sm:mt-8 sm:max-w-2xl sm:text-base md:text-[17px] md:leading-[1.8] [text-shadow:0_1px_8px_rgba(0,0,0,0.85)]"
         >
-          We transcend the traditional to forge a new path where divine wisdom meets technological
-          mastery. Our mission is to cultivate a generation of leaders who carry the Quran in their
-          hearts and the future in their hands.
+          A premium Islamic residential school in Aligarh from Grade 5 through graduation — especially Hifz-completed
+          students. We unite Iman with academic excellence, character, discipline, and innovation at
+          Green Fort City, Near AMU Fort.
         </motion.p>
 
         <motion.div
@@ -96,20 +99,22 @@ export default function Hero() {
           className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-11 sm:flex-row sm:items-center sm:gap-5"
         >
           <motion.a
-            href="#about"
+            href="/about"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="w-full rounded-md bg-[#ffb800] px-6 py-3.5 text-center text-[10px] font-bold uppercase tracking-[0.16em] text-[#1a1008] shadow-[0_4px_24px_rgba(255,184,0,0.35)] sm:min-w-[220px] sm:w-auto sm:px-9 sm:text-[11px] sm:tracking-[0.18em]"
+            aria-label="Discover NextGen Academy vision"
           >
             Discover Our Vision
           </motion.a>
           <motion.a
-            href="#about"
+            href="/programs"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="w-full rounded-md border border-[#ffb800]/90 bg-black/20 px-6 py-3.5 text-center text-[10px] font-bold uppercase tracking-[0.16em] text-[#ffb800] backdrop-blur-sm sm:min-w-[220px] sm:w-auto sm:px-9 sm:text-[11px] sm:tracking-[0.18em]"
+            aria-label="Explore Hifz plus academic programs"
           >
-            The Legacy of IMS
+            Hifz Plus Academic Program
           </motion.a>
         </motion.div>
       </motion.div>
