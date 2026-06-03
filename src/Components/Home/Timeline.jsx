@@ -1,7 +1,10 @@
 import { TIMELINE_STAGES } from '../../lib/homeContent.js'
-import { motion, Reveal, RevealStagger, RevealItem, viewport, staggerContainer, staggerItem } from './motion.jsx'
+import { motion, Reveal, RevealStagger, RevealItem, staggerContainer, staggerItem } from './motion.jsx'
+import { useMotionViewport } from '../../hooks/useMotionViewport.js'
 
 export default function Timeline() {
+  const motionViewport = useMotionViewport()
+
   return (
     <section
       id="leadership"
@@ -22,7 +25,7 @@ export default function Timeline() {
           className="relative mt-12 hidden md:mt-16 md:block"
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
+          viewport={motionViewport}
           variants={staggerContainer}
         >
           <div className="absolute left-0 right-0 top-6 h-px bg-[#d4c4ac]/50" />

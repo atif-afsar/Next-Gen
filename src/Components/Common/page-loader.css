@@ -9,7 +9,6 @@
   justify-content: center;
   gap: 1.25rem;
   background: #0a0a0a;
-  contain: strict;
   transition: opacity var(--loader-exit, 160ms) ease-out, visibility var(--loader-exit, 160ms) ease-out;
 }
 

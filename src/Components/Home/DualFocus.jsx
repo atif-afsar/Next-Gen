@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { ACADEMIC_TRACK, ISLAMIC_TRACK } from '../../lib/homeContent.js'
-import { motion, Reveal, viewport, EASE_OUT } from './motion.jsx'
+import { useMotionViewport } from '../../hooks/useMotionViewport.js'
+import { motion, Reveal, EASE_OUT } from './motion.jsx'
 
-function TrackCard({ label, items, accentClass, iconColor, fromLeft }) {
+function TrackCard({ label, items, accentClass, iconColor, fromLeft, motionViewport }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: fromLeft ? -36 : 36 }}
+      initial={{ opacity: 1, x: fromLeft ? -24 : 24 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={viewport}
+      viewport={motionViewport}
       transition={{ duration: 0.65, ease: EASE_OUT }}
       whileHover={{ y: -4, transition: { duration: 0.25 } }}
       className={`rounded-xl border bg-white p-6 shadow-sm sm:p-8 ${accentClass}`}
@@ -32,6 +33,8 @@ function TrackCard({ label, items, accentClass, iconColor, fromLeft }) {
 }
 
 export default function DualFocus() {
+  const motionViewport = useMotionViewport()
+
   return (
     <section className="overflow-hidden bg-[#fbf9f8] py-16 sm:py-20 md:py-32">
       <div className="container-narrow">
@@ -55,12 +58,14 @@ export default function DualFocus() {
                 accentClass="border-[#7a5900]/20"
                 iconColor="text-[#7a5900]"
                 fromLeft
+                motionViewport={motionViewport}
               />
               <TrackCard
                 label="Islamic Scholarship"
                 items={ISLAMIC_TRACK}
                 accentClass="border-[#914c00]/20"
                 iconColor="text-[#914c00]"
+                motionViewport={motionViewport}
               />
             </div>
 

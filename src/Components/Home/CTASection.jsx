@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
-import { motion, scaleIn, viewport } from './motion.jsx'
+import { useMotionViewport } from '../../hooks/useMotionViewport.js'
+import { motion, scaleIn } from './motion.jsx'
 
 export default function CTASection() {
+  const motionViewport = useMotionViewport()
+
   return (
     <section id="admissions" className="scroll-mt-20 px-4 py-12 sm:scroll-mt-24 sm:py-16 md:py-24">
       <div className="container-narrow">
@@ -23,7 +26,7 @@ export default function CTASection() {
             className="relative z-10 mx-auto max-w-2xl space-y-5 sm:space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewport}
+            viewport={motionViewport}
             transition={{ delay: 0.15, duration: 0.55 }}
           >
             <h2 className="font-serif text-2xl leading-snug text-[#261900] sm:text-3xl md:text-4xl lg:text-5xl">

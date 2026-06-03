@@ -2,9 +2,9 @@ import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './Components/Common/Layout.jsx'
 import PageLoader from './Components/Common/PageLoader.jsx'
+import Home from './Pages/Home.jsx'
 import { usePageLoader } from './hooks/usePageLoader.js'
 
-const Home = lazy(() => import('./Pages/Home.jsx'))
 const About = lazy(() => import('./Pages/About.jsx'))
 const WhyNextGen = lazy(() => import('./Pages/WhyNextGen.jsx'))
 const Programs = lazy(() => import('./Pages/Programs.jsx'))
@@ -12,6 +12,17 @@ const ResidentialProgram = lazy(() => import('./Pages/ResidentialProgram.jsx'))
 const Admissions = lazy(() => import('./Pages/Admissions.jsx'))
 const Gallery = lazy(() => import('./Pages/Gallery.jsx'))
 const Contact = lazy(() => import('./Pages/Contact.jsx'))
+
+function PageFallback() {
+  return (
+    <div
+      className="flex min-h-[50vh] items-center justify-center bg-[#0a0a0a] text-sm text-white/50"
+      aria-hidden
+    >
+      Loading…
+    </div>
+  )
+}
 
 function App() {
   const { isLoading, isExiting, onFillComplete } = usePageLoader()
@@ -21,7 +32,7 @@ function App() {
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
-      document.body.style.overflow = prev
+      document.body.style.overflow = prev || ''
     }
   }, [isLoading])
 
@@ -31,18 +42,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route
-              path="/"
-              element={
-                <Suspense fallback={null}>
-                  <Home />
-                </Suspense>
-              }
-            />
+            <Route path="/" element={<Home />} />
             <Route
               path="/about"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <About />
                 </Suspense>
               }
@@ -50,7 +54,7 @@ function App() {
             <Route
               path="/why-nextgen"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <WhyNextGen />
                 </Suspense>
               }
@@ -58,7 +62,7 @@ function App() {
             <Route
               path="/programs"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <Programs />
                 </Suspense>
               }
@@ -66,7 +70,7 @@ function App() {
             <Route
               path="/residential-program"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <ResidentialProgram />
                 </Suspense>
               }
@@ -74,7 +78,7 @@ function App() {
             <Route
               path="/admissions"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <Admissions />
                 </Suspense>
               }
@@ -82,7 +86,7 @@ function App() {
             <Route
               path="/gallery"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <Gallery />
                 </Suspense>
               }
@@ -90,7 +94,7 @@ function App() {
             <Route
               path="/contact"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<PageFallback />}>
                   <Contact />
                 </Suspense>
               }

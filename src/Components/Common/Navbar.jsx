@@ -217,7 +217,7 @@ export default function Navbar() {
 
       <div
         aria-hidden={!isOpen}
-        inert={!isOpen ? '' : undefined}
+        inert={!isOpen ? true : undefined}
         className={`fixed inset-x-0 top-0 z-[45] flex h-[100dvh] w-full flex-col overscroll-contain px-6 pb-8 pt-24 transition-[opacity,visibility] duration-200 ease-out will-change-[opacity] md:hidden ${
           light ? 'bg-[#fcfaf7]' : 'bg-[#0f0f0f]'
         } ${isOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'}`}

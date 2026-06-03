@@ -41,7 +41,7 @@ function DustParticles() {
 export default function Hero() {
   return (
     <section
-      className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden pt-16 sm:pt-20"
+      className="home-hero-section relative z-0 flex items-center justify-center overflow-hidden pt-16 sm:pt-20"
       aria-labelledby="home-hero-heading"
     >
       <div className="absolute inset-0" aria-hidden>
@@ -77,7 +77,7 @@ export default function Hero() {
         <motion.h1
           id="home-hero-heading"
           variants={staggerItem}
-          className="font-serif text-[1.75rem] leading-[1.12] xs:text-[2rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.08]"
+          className="font-serif text-[1.75rem] leading-[1.12] sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.08]"
         >
           <span className="hero-headline-white block">
             NextGen Academy — <span className="hero-gold-text">Aligarh</span>

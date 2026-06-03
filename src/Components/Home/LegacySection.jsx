@@ -1,7 +1,10 @@
 import { LEGACY_STATS } from '../../lib/homeContent.js'
-import { motion, RevealStagger, RevealItem, staggerContainer, staggerItem, viewport } from './motion.jsx'
+import { motion, RevealStagger, RevealItem, staggerContainer, staggerItem } from './motion.jsx'
+import { useMotionViewport } from '../../hooks/useMotionViewport.js'
 
 export default function LegacySection() {
+  const motionViewport = useMotionViewport()
+
   return (
     <section
       id="about"
@@ -13,7 +16,7 @@ export default function LegacySection() {
           className="mx-auto max-w-3xl space-y-4 sm:space-y-6"
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
+          viewport={motionViewport}
           variants={staggerContainer}
         >
           <motion.p

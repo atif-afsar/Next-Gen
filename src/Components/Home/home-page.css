@@ -1,4 +1,14 @@
+/* Hero — svh fallback for mobile browser chrome */
+.home-hero-section {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+}
+
 .page-home-sections {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
   --home-bg: #fbf9f8;
   --home-surface-low: #f5f3f3;
   --home-primary: #7a5900;

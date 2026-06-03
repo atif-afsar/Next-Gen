@@ -14,10 +14,7 @@ export default function Home() {
     <PageShell page="home" preload={HERO_BG} includeFaq>
       <main>
         <Hero />
-        <div
-          className="page-home-sections relative z-10 -mt-px"
-          aria-label="Academy overview"
-        >
+        <div className="page-home-sections" aria-label="Academy overview">
           <div
             className="h-16 bg-gradient-to-b from-[#0a0a0a] via-[#141210] to-[#f5f3f3] sm:h-20 md:h-28"
             aria-hidden
