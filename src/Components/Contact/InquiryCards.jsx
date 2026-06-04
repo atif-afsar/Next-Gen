@@ -9,9 +9,9 @@ const cards = [
     iconColor: 'text-[#7a5900]',
     title: 'Admissions & Enrollment',
     description:
-      'Ready to apply? Start on our dedicated admissions page — eligibility, process, and application form.',
-    link: 'Go to Admissions',
-    to: '/admissions',
+      'Submit the application enquiry form on this page, or visit Admissions for eligibility and the full process.',
+    link: 'Go to application form',
+    to: '/contact#apply',
     external: false,
   },
   {

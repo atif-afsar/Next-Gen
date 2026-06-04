@@ -1,3 +1,4 @@
+import ApplicationForm from '../Admissions/ApplicationForm.jsx'
 import ContactHero from './Hero.jsx'
 import ContactDirect from './ContactDirect.jsx'
 import InquiryCards from './InquiryCards.jsx'
@@ -10,6 +11,7 @@ export default function ContactPageContent() {
       <ContactHero />
       <ContactDirect />
       <InquiryCards />
+      <ApplicationForm variant="contact" />
       <VirtualVisit />
       <Location />
     </main>

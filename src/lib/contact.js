@@ -16,6 +16,9 @@ export const WHATSAPP_URL = `https://wa.me/${PHONE_E164}?text=${encodeURICompone
   'Hello NextGen Academy, I would like to know more about admissions.'
 )}`
 
+/** Admissions and enquiry inbox */
+export const ADMISSIONS_EMAIL = 'wenextgenacademy@gmail.com'
+
 export const ADDRESS_LINE = ADDRESS.formatted
 export const ADDRESS_SHORT = 'Green Fort City, Near AMU Fort, Aligarh'
 
