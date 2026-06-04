@@ -59,7 +59,7 @@ export default function Navbar() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: EASE_OUT }}
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${headerClass}`}
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 max-md:duration-150 ${headerClass}`}
       >
         <nav className="container-narrow flex h-16 items-center justify-between md:h-20">
           <motion.div
@@ -91,21 +91,30 @@ export default function Navbar() {
                   decoding="async"
                 />
               </span>
-              <span className="flex min-w-0 flex-col leading-none">
+              <span className="flex min-w-0 flex-col justify-center gap-1">
                 <span
-                  className={`font-serif text-base font-semibold tracking-wide sm:text-lg md:text-xl ${
+                  className={`whitespace-nowrap font-serif text-[1.05rem] leading-none tracking-[-0.02em] sm:text-lg md:text-[1.35rem] ${
                     light ? 'text-[#1b1c1c]' : 'text-white'
                   }`}
                 >
-                  NextGen
+                  <span className="font-semibold">NextGen</span>
+                  <span
+                    className={`font-normal transition-colors duration-300 group-hover:brightness-110 ${
+                      light ? 'text-[#7a5900]' : 'text-gold'
+                    }`}
+                  >
+                    {' '}
+                    Academy
+                  </span>
                 </span>
                 <span
-                  className={`mt-0.5 text-[9px] font-semibold uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.22em] md:text-[11px] ${
-                    light ? 'text-[#7a5900]' : 'text-gold'
+                  aria-hidden
+                  className={`h-px w-14 rounded-full sm:w-[4.75rem] ${
+                    light
+                      ? 'bg-gradient-to-r from-[#7a5900]/55 via-[#7a5900]/25 to-transparent'
+                      : 'bg-gradient-to-r from-gold/80 via-gold/35 to-transparent'
                   }`}
-                >
-                  Academy
-                </span>
+                />
               </span>
             </Link>
           </motion.div>
@@ -208,7 +217,7 @@ export default function Navbar() {
           type="button"
           aria-label="Close menu"
           tabIndex={isOpen ? 0 : -1}
-          className={`absolute inset-0 bg-black/50 transition-opacity duration-200 ease-out ${
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-150 ease-out ${
             isOpen ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={() => setIsOpen(false)}
@@ -218,16 +227,11 @@ export default function Navbar() {
       <div
         aria-hidden={!isOpen}
         inert={!isOpen ? true : undefined}
-        className={`fixed inset-x-0 top-0 z-[45] flex h-[100dvh] w-full flex-col overscroll-contain px-6 pb-8 pt-24 transition-[opacity,visibility] duration-200 ease-out will-change-[opacity] md:hidden ${
+        className={`fixed inset-y-0 right-0 z-[45] flex h-[100dvh] w-full flex-col overscroll-contain px-6 pb-8 pt-24 transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-none md:hidden ${
           light ? 'bg-[#fcfaf7]' : 'bg-[#0f0f0f]'
-        } ${isOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'}`}
-        style={{ transform: 'translateZ(0)' }}
+        } ${isOpen ? 'translate-x-0 motion-reduce:opacity-100' : 'pointer-events-none translate-x-full motion-reduce:opacity-0'}`}
       >
-        <ul
-          className={`flex flex-1 flex-col justify-center gap-2 py-6 transition-opacity duration-200 ease-out sm:gap-3 ${
-            isOpen ? 'opacity-100 delay-75' : 'opacity-0 delay-0'
-          }`}
-        >
+        <ul className="flex flex-1 flex-col justify-center gap-2 py-6 sm:gap-3">
           {NAV_PAGES.map(({ label, path }) => (
             <li key={path}>
               <NavLink
@@ -245,11 +249,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div
-          className={`shrink-0 pt-4 transition-opacity duration-200 ease-out ${
-            isOpen ? 'opacity-100 delay-100' : 'opacity-0 delay-0'
-          }`}
-        >
+        <div className="shrink-0 pt-4">
           <NavLink
             to={APPLY_PATH}
             tabIndex={isOpen ? 0 : -1}
