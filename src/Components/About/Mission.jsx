@@ -16,7 +16,7 @@ export default function Mission() {
               <p className="about-body text-base leading-relaxed sm:text-lg">
                 Founded on the principles of Islamic Mission School (IMS) in Aligarh, NextGen Academy
                 is the evolution families trust — refining decades of faith-based education into a
-                Hifz plus academic program from Grade 5 through graduation. At Green Fort City, Near AMU Fort, we
+                Hifz plus academic program from Grade 5 through graduation. At Near Fort, Fort Enclave Colony, we
                 nurture the Hifz-to-leadership journey with Iman, discipline, and innovation.
               </p>
             </Reveal>

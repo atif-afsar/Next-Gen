@@ -31,7 +31,7 @@ export default function Location() {
       >
         <OptimizedImage
           src={CONTACT_CAMPUS}
-          alt="NextGen Academy residential campus at Green Fort City, Near AMU Fort, Aligarh"
+            alt="NextGen Academy residential campus at Near Fort, Fort Enclave Colony, Aligarh"
           className="h-full w-full object-cover"
           width={1600}
           height={900}

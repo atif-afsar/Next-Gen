@@ -20,7 +20,7 @@ const cards = [
     iconColor: 'text-[#128C7E]',
     title: 'Campus Visit',
     description:
-      'Schedule a tour of NextGen Academy at Green Fort City, Near AMU Fort, Aligarh.',
+      'Schedule a tour of NextGen Academy at Near Fort, Fort Enclave Colony, Aligarh.',
     link: 'Book a visit',
     to: '/contact#visit',
     external: false,

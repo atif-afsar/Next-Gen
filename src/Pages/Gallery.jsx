@@ -14,8 +14,8 @@ import { Reveal } from '../Components/Home/motion.jsx'
 const GALLERY_ITEMS = [
   {
     src: ABOUT_HERO_CAMPUS,
-    alt: 'NextGen Academy campus building at Green Fort City, Aligarh',
-    caption: 'Campus — Green Fort City, Near AMU Fort',
+    alt: 'NextGen Academy campus building at Near Fort, Fort Enclave Colony, Aligarh',
+    caption: 'Campus — Near Fort, Fort Enclave Colony',
   },
   {
     src: CONTACT_CAMPUS,

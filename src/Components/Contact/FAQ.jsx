@@ -13,7 +13,7 @@ export default function FAQ() {
             Frequently asked questions
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-[#504533] sm:text-base">
-            Answers for parents exploring NextGen Academy, Green Fort City, Near AMU Fort, Aligarh.
+            Answers for parents exploring NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh.
           </p>
         </Reveal>
         <dl className="mt-8 space-y-6">

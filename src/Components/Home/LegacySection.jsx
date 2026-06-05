@@ -36,7 +36,7 @@ export default function LegacySection() {
             variants={staggerItem}
             className="text-base leading-relaxed text-[#504533] sm:text-lg"
           >
-            NextGen Academy, Green Fort City, Near AMU Fort, Aligarh, carries forward the legacy of
+            NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh, carries forward the legacy of
             Islamic Mission School (IMS). For parents seeking a Hifz plus academic program, we offer
             a residential environment where Huffaz grow into scholars, innovators, and leaders —
             with character, discipline, and Islamic values alongside modern education.

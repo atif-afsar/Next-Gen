@@ -80,7 +80,7 @@ export default function AboutHero() {
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl shadow-2xl sm:max-w-none">
               <OptimizedImage
                 src={ABOUT_HERO_CAMPUS}
-                alt="NextGen Academy campus at Green Fort City, Near AMU Fort, Aligarh"
+                  alt="NextGen Academy campus at Near Fort, Fort Enclave Colony, Aligarh"
                 className="h-full w-full object-cover object-center"
                 priority
                 width={800}

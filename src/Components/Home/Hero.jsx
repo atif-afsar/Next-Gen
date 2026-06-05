@@ -80,7 +80,7 @@ export default function Hero() {
           className="font-serif text-[1.75rem] leading-[1.12] sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[1.08]"
         >
           <span className="hero-headline-white block">
-            NextGen Academy — <span className="hero-gold-text">Aligarh</span>
+            NextGen Academy <span className="hero-gold-text">Aligarh</span>
           </span>
           <span className="hero-gold-text mt-1 block sm:mt-2">Hifz to Leadership</span>
         </motion.h1>
@@ -89,9 +89,9 @@ export default function Hero() {
           variants={staggerItem}
           className="mx-auto mt-6 max-w-xl px-1 text-sm leading-[1.75] text-white/95 sm:mt-8 sm:max-w-2xl sm:text-base md:text-[17px] md:leading-[1.8] [text-shadow:0_1px_8px_rgba(0,0,0,0.85)]"
         >
-          A premium Islamic residential school in Aligarh from Grade 5 through graduation — especially Hifz-completed
-          students. We unite Iman with academic excellence, character, discipline, and innovation at
-          Green Fort City, Near AMU Fort.
+          NextGen Academy Aligarh is a premium Islamic residential school from Grade 5 through graduation — especially
+          Hifz-completed students. We unite Iman with academic excellence, character, discipline, and innovation at our
+          campus.
         </motion.p>
 
         <motion.div

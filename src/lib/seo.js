@@ -26,12 +26,12 @@ export const KEYWORDS = [
 ].join(', ')
 
 export const ADDRESS = {
-  street: 'Green Fort City, Near AMU Fort',
+  street: 'Near Fort, Fort Enclave Colony',
   locality: 'Aligarh',
-  region: 'Uttar Pradesh',
+  region: 'UP',
   postalCode: '202002',
-  country: 'IN',
-  formatted: 'Green Fort City, Near AMU Fort, Aligarh, Uttar Pradesh, India',
+  country: 'India',
+  formatted: 'Near Fort, Fort Enclave Colony, Aligarh, UP, India',
 }
 
 export const GEO = {
@@ -61,7 +61,7 @@ export const PAGE_SEO = {
     path: '/about',
     title: `About ${SITE_NAME} Aligarh | Islamic Mission School Heritage`,
     description:
-      'Discover NextGen Academy in Aligarh — the evolution of Islamic Mission School (IMS), uniting Iman with academic excellence for Huffaz and young leaders at Green Fort City, Near AMU Fort.',
+      'Discover NextGen Academy in Aligarh — the evolution of Islamic Mission School (IMS), uniting Iman with academic excellence for Huffaz and young leaders at Near Fort, Fort Enclave Colony.',
     keywords:
       'NextGen Academy Aligarh, Islamic Mission School NextGen Academy, about NextGen Academy, IMS sister organization, Islamic academic leadership Aligarh',
   },
@@ -77,7 +77,7 @@ export const PAGE_SEO = {
     path: '/admissions',
     title: `Admissions | ${SITE_NAME} Aligarh — Enroll Grade 5 Through Graduation`,
     description:
-      'Apply to NextGen Academy, Green Fort City, Near AMU Fort, Aligarh. Admissions for Hifz-completed and aspiring Huffaz in our residential Islamic leadership school. Call 7037511306 or 9955570749.',
+      'Apply to NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh. Admissions for Hifz-completed and aspiring Huffaz in our residential Islamic leadership school. Call 7037511306 or 9955570749.',
     keywords:
       'NextGen Academy admissions, Islamic residential school admissions Aligarh, Hifz completed students school enrollment',
   },
@@ -93,14 +93,14 @@ export const PAGE_SEO = {
     path: '/gallery',
     title: `Gallery | ${SITE_NAME} Campus — Aligarh`,
     description:
-      'View life at NextGen Academy, Green Fort City, Near AMU Fort, Aligarh — campus, classrooms, residential facilities, and student life at our Islamic leadership academy.',
+      'View life at NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh — campus, classrooms, residential facilities, and student life at our Islamic leadership academy.',
     keywords: 'NextGen Academy campus, Islamic school Aligarh photos, NextGen Academy gallery',
   },
   contact: {
     path: '/contact',
     title: `Contact ${SITE_NAME} Aligarh | Admissions & Campus Visit`,
     description:
-      'Contact NextGen Academy at Green Fort City, Near AMU Fort, Aligarh. Call 7037511306 or 9955570749 for admissions, campus tours, and Hifz plus academic program enquiries.',
+      'Contact NextGen Academy at Near Fort, Fort Enclave Colony, Aligarh. Call 7037511306 or 9955570749 for admissions, campus tours, and Hifz plus academic program enquiries.',
     keywords:
       'NextGen Academy contact, NextGen Academy Aligarh phone, Islamic residential school Aligarh contact',
   },
@@ -129,7 +129,7 @@ export const FAQ_ITEMS = [
   {
     question: 'Where is NextGen Academy located?',
     answer:
-      'NextGen Academy is at Green Fort City, Near AMU Fort, Aligarh, Uttar Pradesh, India — easily accessible for families across Aligarh and the region.',
+      'NextGen Academy is at Near Fort, Fort Enclave Colony, Aligarh, UP, India — easily accessible for families across Aligarh and the region.',
   },
   {
     question: 'Is NextGen Academy connected to Islamic Mission School (IMS)?',

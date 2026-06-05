@@ -20,9 +20,9 @@ export const WHATSAPP_URL = `https://wa.me/${PHONE_E164}?text=${encodeURICompone
 export const ADMISSIONS_EMAIL = 'wenextgenacademy@gmail.com'
 
 export const ADDRESS_LINE = ADDRESS.formatted
-export const ADDRESS_SHORT = 'Green Fort City, Near AMU Fort, Aligarh'
+export const ADDRESS_SHORT = 'Near Fort, Fort Enclave Colony, Aligarh, UP, India'
 
 export const MAP_QUERY = encodeURIComponent(
-  'NextGen Academy Green Fort City Near AMU Fort Aligarh'
+  'NextGen Academy Near Fort, Fort Enclave Colony, Aligarh, UP, India'
 )
 export const MAP_URL = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`

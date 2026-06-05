@@ -29,7 +29,7 @@ export function isLightPage(pathname) {
 }
 
 export const FOOTER_MISSION =
-  'NextGen Academy, Green Fort City, Near AMU Fort, Aligarh — transforming Huffaz into academic leaders through faith with future education, Iman with excellence, and a residential path from Hifz to leadership.'
+  'NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh — transforming Huffaz into academic leaders through faith with future education, Iman with excellence, and a residential path from Hifz to leadership.'
 
 /** Shared footer link columns */
 export const FOOTER_COLUMNS = [
