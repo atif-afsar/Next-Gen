@@ -1,5 +1,5 @@
 import { MUSLIM_ACADEMIC_LEADERSHIP } from '../../lib/siteContent.js'
-import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
+import { Reveal, RevealStagger, RevealItem, RichTextWithHighlights } from './motion.jsx'
 
 export default function Philosophy() {
   return (
@@ -14,11 +14,9 @@ export default function Philosophy() {
 
         <RevealStagger className="mt-10 sm:mt-14">
           <RevealItem as="article" className="about-card mx-auto max-w-3xl rounded-xl p-6 text-left sm:p-10">
-            <motion.div whileHover={{ y: -4 }}>
-              <p className="about-body text-sm leading-relaxed sm:text-base md:text-lg">
-                {MUSLIM_ACADEMIC_LEADERSHIP.text}
-              </p>
-            </motion.div>
+            <p className="about-body text-sm leading-relaxed sm:text-base md:text-lg">
+              <RichTextWithHighlights text={MUSLIM_ACADEMIC_LEADERSHIP.text} />
+            </p>
           </RevealItem>
         </RevealStagger>
       </div>

@@ -1,12 +1,8 @@
 import { ABOUT_PAGE_HERO } from '../../lib/images.js'
 import { ABOUT } from '../../lib/siteContent.js'
 import OptimizedImage from '../Common/OptimizedImage.jsx'
-import {
-  motion,
-  EASE_OUT,
-  staggerContainer,
-  staggerItem,
-} from './motion.jsx'
+import { AnimatedButton } from '../Common/animations.jsx'
+import { motion, EASE_OUT, heroLoadContainer, heroLoadItem } from './motion.jsx'
 import './about-hero.css'
 
 export default function AboutHero() {
@@ -21,51 +17,47 @@ export default function AboutHero() {
         <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 md:grid-cols-12 md:gap-10 lg:gap-14">
           <motion.div
             className="md:col-span-7"
-            variants={staggerContainer}
+            variants={heroLoadContainer}
             initial="hidden"
             animate="visible"
           >
             <motion.p
-              variants={staggerItem}
+              variants={heroLoadItem}
               className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#7a5900] sm:mb-4 sm:text-sm"
             >
               {ABOUT.eyebrow}
             </motion.p>
 
             <motion.h1
-              variants={staggerItem}
+              variants={heroLoadItem}
               className="font-serif text-3xl leading-[1.12] text-balance sm:text-4xl md:text-5xl lg:text-[3.75rem] lg:leading-[1.1]"
             >
               {ABOUT.title}
             </motion.h1>
 
             <motion.p
-              variants={staggerItem}
+              variants={heroLoadItem}
               className="mt-4 max-w-xl text-base leading-relaxed text-[#504533] sm:mt-6 sm:text-lg"
             >
               {ABOUT.paragraphs[0]}
             </motion.p>
 
             <motion.div
-              variants={staggerItem}
+              variants={heroLoadItem}
               className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
             >
-              <motion.a
+              <AnimatedButton
                 href="#vision-mission"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
                 className="w-full rounded bg-[#7a5900] px-6 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#654800] sm:w-auto sm:px-8 sm:py-4"
               >
                 Vision &amp; Mission
-              </motion.a>
-              <motion.a
+              </AnimatedButton>
+              <AnimatedButton
                 href="#why-leadership"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
                 className="w-full rounded border border-[#827560] bg-white px-6 py-3.5 text-center text-sm font-semibold text-[#1b1c1c] transition hover:bg-[#f5f3f3] sm:w-auto sm:px-8 sm:py-4"
               >
                 Why Academic Leadership
-              </motion.a>
+              </AnimatedButton>
             </motion.div>
           </motion.div>
 
@@ -75,7 +67,7 @@ export default function AboutHero() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.85, delay: 0.2, ease: EASE_OUT }}
           >
-            <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl shadow-2xl sm:max-w-none">
+            <div className="premium-image relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl shadow-2xl sm:max-w-none">
               <OptimizedImage
                 src={ABOUT_PAGE_HERO}
                 alt="Balancing academic excellence and Iman — the heart of NextGen Academy"

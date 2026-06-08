@@ -1,5 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom'
+import { AnimatePresence, motion } from 'motion/react'
 import { isLightPage } from '../../lib/navigation.js'
+import { EASE_OUT } from '../../lib/animations.js'
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js'
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
 import FloatingContact from './FloatingContact.jsx'
@@ -8,6 +11,23 @@ import ScrollToHash from './ScrollToHash.jsx'
 export default function Layout() {
   const { pathname } = useLocation()
   const light = isLightPage(pathname)
+  const reduced = usePrefersReducedMotion()
+
+  const pageContent = reduced ? (
+    <Outlet />
+  ) : (
+    <AnimatePresence mode="wait">
+      <motion.main
+        key={pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.35, ease: EASE_OUT }}
+      >
+        <Outlet />
+      </motion.main>
+    </AnimatePresence>
+  )
 
   return (
     <div
@@ -19,7 +39,7 @@ export default function Layout() {
     >
       <ScrollToHash />
       <Navbar />
-      <Outlet />
+      {pageContent}
       <Footer />
       <FloatingContact />
     </div>

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
+import { AnimatedButton } from './animations.jsx'
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js'
 import {
   APPLY_PATH,
   isLightPage,
@@ -20,7 +22,7 @@ function NavItem({ to, end, children, light, className = '' }) {
       to={to}
       end={end}
       className={({ isActive }) => {
-        const base = `relative block whitespace-nowrap px-2 py-2 text-sm font-medium transition-colors duration-200 ${className}`
+        const base = `group relative block whitespace-nowrap px-2 py-2 text-sm font-medium transition-colors duration-200 ${className}`
         if (light) {
           return `${base} ${isActive ? 'text-[#7a5900]' : 'text-[#504533] hover:text-[#7a5900]'}`
         }
@@ -30,11 +32,12 @@ function NavItem({ to, end, children, light, className = '' }) {
       {({ isActive }) => (
         <>
           {children}
-          {isActive && (
-            <span
-              className={`absolute inset-x-2 bottom-0 h-0.5 rounded-full ${light ? 'bg-[#7a5900]' : 'bg-gold'}`}
-            />
-          )}
+          <span
+            className={`absolute inset-x-2 bottom-0 h-0.5 origin-center rounded-full transition-transform duration-300 ease-out ${
+              light ? 'bg-[#7a5900]' : 'bg-gold'
+            } ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+            aria-hidden
+          />
         </>
       )}
     </NavLink>
@@ -146,6 +149,7 @@ function ProgramsDropdown({ light, pathname, onNavigate }) {
 export default function Navbar() {
   const { pathname } = useLocation()
   const light = isLightPage(pathname)
+  const reduced = usePrefersReducedMotion()
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -183,7 +187,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -24, opacity: 0 }}
+        initial={reduced ? false : { y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: EASE_OUT }}
         className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${headerClass}`}
@@ -258,16 +262,17 @@ export default function Navbar() {
 
           {/* Right: CTA + hamburger */}
           <div className="flex items-center justify-end gap-2 sm:gap-3">
-            <NavLink
+            <AnimatedButton
               to={APPLY_PATH}
-              className={`hidden whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold transition active:scale-[0.98] sm:px-5 sm:py-2.5 sm:text-sm lg:inline-block ${
+              wrapperClassName="hidden lg:inline-flex"
+              className={`whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold transition sm:px-5 sm:py-2.5 sm:text-sm ${
                 light
                   ? 'bg-[#ffdea3] text-[#1b1c1c] shadow-sm hover:bg-[#ffd088]'
                   : 'bg-gold text-black hover:bg-[#e8c96a]'
               }`}
             >
               Apply Now
-            </NavLink>
+            </AnimatedButton>
 
             <button
               type="button"

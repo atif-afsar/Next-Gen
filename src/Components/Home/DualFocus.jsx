@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { DUAL_PATHWAYS } from '../../lib/siteContent.js'
-import { Reveal, RevealStagger, RevealItem } from './motion.jsx'
+import { HighlightText, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
 const PATH_STYLES = [
   {
@@ -19,7 +19,7 @@ const PATH_STYLES = [
 
 function PathwayCard({ path, style }) {
   return (
-    <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#d4c4ac]/35 bg-white shadow-[0_4px_24px_rgba(26,26,26,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(122,89,0,0.08)]">
+    <article className="premium-card-hover group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#d4c4ac]/35 bg-white shadow-[0_4px_24px_rgba(26,26,26,0.05)]">
       <div className={`border-t-4 ${style.accent} p-6 sm:p-8`}>
         <div className="mb-5 flex items-start gap-4">
           <span
@@ -28,7 +28,9 @@ function PathwayCard({ path, style }) {
             <span className="material-symbols-outlined text-2xl">{path.icon}</span>
           </span>
           <div className="min-w-0">
-            <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">{path.title}</h3>
+            <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">
+              <HighlightText>{path.title}</HighlightText>
+            </h3>
             <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:text-base">{path.summary}</p>
           </div>
         </div>

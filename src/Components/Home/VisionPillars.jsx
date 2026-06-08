@@ -16,7 +16,7 @@ export default function VisionPillars() {
             <RevealItem
               key={title}
               as="article"
-              className="home-glass-card group h-full rounded-lg p-6 transition duration-300 hover:-translate-y-2 sm:p-8"
+              className="home-glass-card group h-full rounded-lg p-6 sm:p-8"
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#ffdea3]/40 text-[#7a5900] sm:mb-6 sm:h-12 sm:w-12">
                 <span className="material-symbols-outlined text-xl sm:text-2xl">{icon}</span>

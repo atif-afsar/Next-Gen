@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useMotionViewport } from '../../hooks/useMotionViewport.js'
 import { ADMISSIONS } from '../../lib/siteContent.js'
+import { AnimatedButton } from '../Common/animations.jsx'
 import { motion, scaleIn } from './motion.jsx'
 
 export default function CTASection() {
@@ -37,22 +37,18 @@ export default function CTASection() {
               {ADMISSIONS.description} Open for {ADMISSIONS.grades} ({ADMISSIONS.ageGroup}).
             </p>
             <div className="flex flex-col items-stretch justify-center gap-3 pt-2 sm:flex-row sm:items-center sm:gap-4">
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
-                <Link
-                  to="/admissions#apply"
-                  className="block w-full rounded-lg bg-[#261900] px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#1b1c1c] sm:min-w-[200px] sm:px-10 sm:py-4"
-                >
-                  Start Application
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
-                <Link
-                  to="/admissions#hifz-plus"
-                  className="block w-full rounded-lg border border-[#261900]/30 bg-white/10 px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-[#261900] backdrop-blur-md transition hover:bg-white/20 sm:min-w-[200px] sm:px-10 sm:py-4"
-                >
-                  Hifz Plus Program
-                </Link>
-              </motion.div>
+              <AnimatedButton
+                to="/admissions#apply"
+                className="block w-full rounded-lg bg-[#261900] px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#1b1c1c] sm:min-w-[200px] sm:px-10 sm:py-4"
+              >
+                Start Application
+              </AnimatedButton>
+              <AnimatedButton
+                to="/admissions#hifz-plus"
+                className="block w-full rounded-lg border border-[#261900]/30 bg-white/10 px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-[#261900] backdrop-blur-md transition hover:bg-white/20 sm:min-w-[200px] sm:px-10 sm:py-4"
+              >
+                Hifz Plus Program
+              </AnimatedButton>
             </div>
           </motion.div>
         </motion.div>

@@ -16,7 +16,7 @@ export default function LegacySection() {
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14 xl:gap-16">
           {/* Image column */}
           <Reveal className="lg:col-span-5">
-            <div className="mx-auto max-w-md overflow-hidden rounded-2xl border border-[#d4c4ac]/40 bg-white shadow-[0_14px_40px_rgba(26,26,26,0.12)] lg:mx-0 lg:max-w-none">
+            <div className="premium-image mx-auto max-w-md overflow-hidden rounded-2xl border border-[#d4c4ac]/40 bg-white shadow-[0_14px_40px_rgba(26,26,26,0.12)] lg:mx-0 lg:max-w-none">
               <OptimizedImage
                 src={HOME_ABOUT_HERITAGE}
                 alt="Young learner bridging Islamic heritage and academic leadership at NextGen Academy"

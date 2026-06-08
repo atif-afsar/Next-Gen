@@ -1,75 +1,48 @@
 import { motion } from 'motion/react'
+import {
+  EASE_OUT,
+  EASE_SPRING,
+  SECTION_REVEAL,
+  FADE_IN,
+  SCALE_IN,
+  SLIDE_FROM_LEFT,
+  SLIDE_FROM_RIGHT,
+  STAGGER_CONTAINER,
+  STAGGER_ITEM,
+  HERO_LOAD_CONTAINER,
+  HERO_LOAD_ITEM,
+  CARD_HOVER_LIFT,
+} from '../../lib/animations.js'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js'
 import { useMotionViewport } from '../../hooks/useMotionViewport.js'
 
-export const EASE_OUT = [0.16, 1, 0.3, 1]
+export {
+  EASE_OUT,
+  EASE_SPRING,
+  STAGGER_CONTAINER as staggerContainer,
+  STAGGER_ITEM as staggerItem,
+  HERO_LOAD_CONTAINER as heroLoadContainer,
+  HERO_LOAD_ITEM as heroLoadItem,
+  SECTION_REVEAL as fadeUp,
+  FADE_IN as fadeIn,
+  SCALE_IN as scaleIn,
+  SLIDE_FROM_LEFT as slideFromLeft,
+  SLIDE_FROM_RIGHT as slideFromRight,
+  motion,
+}
 
-const INSTANT = { duration: 0 }
-export const EASE_SPRING = { type: 'spring', stiffness: 120, damping: 22 }
+export {
+  FadeInSection,
+  StaggerContainer,
+  AnimatedCard,
+  AnimatedButton,
+  HighlightText,
+  RichTextWithHighlights,
+  PageFade,
+} from '../Common/animations.jsx'
 
-/** @deprecated use useMotionViewport() — kept for imports that pass viewport to motion.div */
+/** @deprecated use useMotionViewport() */
 export const viewport = { once: true, amount: 0.15, margin: '0px 0px -24px 0px' }
-
-/* Hidden states keep opacity: 1 so content stays visible if whileInView never fires (common on mobile) */
-export const fadeUp = {
-  hidden: { opacity: 1, y: 24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, delay, ease: EASE_OUT },
-  }),
-}
-
-export const fadeIn = {
-  hidden: { opacity: 1 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    transition: { duration: 0.55, delay, ease: EASE_OUT },
-  }),
-}
-
-export const scaleIn = {
-  hidden: { opacity: 1, scale: 0.97 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.55, delay, ease: EASE_OUT },
-  }),
-}
-
-export const slideFromLeft = {
-  hidden: { opacity: 1, x: -24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, delay, ease: EASE_OUT },
-  }),
-}
-
-export const slideFromRight = {
-  hidden: { opacity: 1, x: 24 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, delay, ease: EASE_OUT },
-  }),
-}
-
-export const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
-  },
-}
-
-export const staggerItem = {
-  hidden: { opacity: 1, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: EASE_OUT },
-  },
-}
 
 /** Scroll-triggered section wrapper */
 export function Reveal({
@@ -100,7 +73,7 @@ export function Reveal({
       initial="hidden"
       whileInView="visible"
       viewport={motionViewport}
-      variants={fadeUp}
+      variants={SECTION_REVEAL}
       custom={delay}
       {...props}
     >
@@ -126,15 +99,21 @@ export function RevealStagger({ children, className = '', as: Tag = 'div' }) {
       initial="hidden"
       whileInView="visible"
       viewport={motionViewport}
-      variants={staggerContainer}
+      variants={STAGGER_CONTAINER}
     >
       {children}
     </Component>
   )
 }
 
-export function RevealItem({ children, className = '', as: Tag = 'div' }) {
+export function RevealItem({
+  children,
+  className = '',
+  as: Tag = 'div',
+  hoverLift = true,
+}) {
   const reduced = usePrefersReducedMotion()
+
   if (reduced) {
     const Plain =
       Tag === 'li' ? 'li' : Tag === 'article' ? 'article' : 'div'
@@ -143,11 +122,15 @@ export function RevealItem({ children, className = '', as: Tag = 'div' }) {
 
   const Component =
     Tag === 'li' ? motion.li : Tag === 'article' ? motion.article : motion.div
+
   return (
-    <Component className={className} variants={staggerItem}>
+    <Component
+      className={`${hoverLift ? 'premium-card-hover' : ''} ${className}`.trim()}
+      variants={STAGGER_ITEM}
+      whileHover={hoverLift ? CARD_HOVER_LIFT : undefined}
+      transition={{ duration: 0.25, ease: EASE_OUT }}
+    >
       {children}
     </Component>
   )
 }
-
-export { motion }

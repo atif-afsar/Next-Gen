@@ -172,3 +172,59 @@ body {
 .animate-spin-slow {
   animation: spin-slow 12s linear infinite;
 }
+
+@keyframes ambient-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-ambient-float {
+  animation: ambient-float 14s ease-in-out infinite;
+}
+
+/* Premium card hover — lift + shadow */
+.premium-card-hover {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.premium-card-hover:hover {
+  box-shadow: 0 12px 40px rgba(122, 89, 0, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-card-hover:hover {
+    transform: none !important;
+  }
+
+  .hero-ambient-float {
+    animation: none !important;
+  }
+}
+
+/* Image reveal wrapper — scale on hover without layout shift */
+.premium-image {
+  overflow: hidden;
+}
+
+.premium-image img {
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.premium-image:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-image:hover img {
+    transform: none;
+  }
+}
