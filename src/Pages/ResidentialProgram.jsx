@@ -1,6 +1,6 @@
 import PageShell from '../Components/Common/PageShell.jsx'
 import '../Components/WhyNextGen/why-page.css'
-import WhyNextGenPageContent from '../Components/WhyNextGen/PageContent.jsx'
+import ResidentialPageContent from '../Components/Residential/PageContent.jsx'
 
 export default function ResidentialProgram() {
   return (
@@ -11,7 +11,7 @@ export default function ResidentialProgram() {
         { name: 'Residential Program', path: '/residential-program' },
       ]}
     >
-      <WhyNextGenPageContent />
+      <ResidentialPageContent />
     </PageShell>
   )
 }

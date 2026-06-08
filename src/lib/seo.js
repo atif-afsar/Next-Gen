@@ -2,11 +2,11 @@
 
 export const SITE_URL = 'https://nextgenacademy.org.in'
 export const SITE_NAME = 'NextGen Academy'
-export const TAGLINE = 'Building the Architects of Tomorrow'
-export const CORE_MESSAGE = 'Transforming Huffaz into Academic Leaders'
+export const TAGLINE = 'Building Academic Leadership for New India'
+export const CORE_MESSAGE = 'Where minds graduate with honors, and hearts graduate with Iman.'
 
 export const DEFAULT_DESCRIPTION =
-  'NextGen Academy is a premium Islamic academic leadership and residential academy in Aligarh, designed for students from Grade 5 through graduation, especially Hifz-completed students, combining academic excellence, Islamic values, leadership development, STEM, robotics, and residential schooling.'
+  'NextGen Academy empowers young learners to become compassionate academic leaders, ethical educators, and community scholars — a sister organization of Islamic Mission School in Aligarh, combining ICSE excellence, Islamic scholarship, STEM, and residential education for Grades 5–8.'
 
 export const KEYWORDS = [
   'NextGen Academy',
@@ -53,7 +53,7 @@ export const LOGO_URL = `${SITE_URL}/favicon.png`
 export const PAGE_SEO = {
   home: {
     path: '/',
-    title: `${SITE_NAME} | ${TAGLINE} — Islamic Residential School Aligarh`,
+    title: `${SITE_NAME} | ${TAGLINE}`,
     description: DEFAULT_DESCRIPTION,
     keywords: KEYWORDS,
   },
@@ -67,25 +67,25 @@ export const PAGE_SEO = {
   },
   programs: {
     path: '/programs',
-    title: `Programs | ${SITE_NAME} — Hifz Plus Academic, STEM & Leadership`,
+    title: `Academic Leadership Program | ${SITE_NAME}`,
     description:
-      'Explore the Hifz plus academic program at NextGen Academy Aligarh: a Grade 5 through graduation curriculum with STEM, robotics, Islamic scholarship, and leadership for Hifz-completed students.',
+      'The NextGen Academic Leadership Program develops future Academic Leaders and Scholars of Islam — a transformative integrated pathway from middle school through postgraduate study.',
     keywords:
       'Hifz plus academic program, NextGen Academy Hifz program, STEM Islamic school, leadership academy for Huffaz, Islamic academic leadership program',
   },
   admissions: {
     path: '/admissions',
-    title: `Admissions | ${SITE_NAME} Aligarh — Enroll Grade 5 Through Graduation`,
+    title: `Admissions | ${SITE_NAME} — Grades 5–8, Ages 10–14`,
     description:
-      'Apply to NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh. Admissions for Hifz-completed and aspiring Huffaz in our residential Islamic leadership school. Call 7037511306 or 9955570749.',
+      'Apply to NextGen Academy for Grades 5th to 8th (ages 10–14). Includes Hifz Plus support for Hifz-completed students. Near Fort, Fort Enclave Colony, Aligarh. Call 7037511306 or 9955570749.',
     keywords:
       'NextGen Academy admissions, Islamic residential school admissions Aligarh, Hifz completed students school enrollment',
   },
   residential: {
     path: '/residential-program',
-    title: `Residential Program | ${SITE_NAME} — Islamic Boarding School Aligarh`,
+    title: `Residential Program | ${SITE_NAME} — Grades 6–8`,
     description:
-      'NextGen Academy residential program in Aligarh offers a safe, disciplined, faith-centered boarding environment where character, innovation, and the Hifz-to-leadership journey flourish.',
+      'A home away from home for Grades 6–8 — a nurturing 24/7 learning environment built on four pillars: Intellect, Spirit, Character, and Leadership.',
     keywords:
       'NextGen Academy residential school, Islamic residential school in Aligarh, residential school for Muslim students Aligarh',
   },
@@ -124,7 +124,7 @@ export const FAQ_ITEMS = [
   {
     question: 'What is NextGen Academy?',
     answer:
-      'NextGen Academy is a premium Islamic academic leadership and residential academy in Aligarh for students from Grade 5 through graduation, especially those who have completed Hifz, combining rigorous academics, Islamic values, STEM, robotics, and leadership development.',
+      'NextGen Academy is a sister organization of Islamic Mission School (IMS), empowering young learners to become compassionate academic leaders, ethical educators, and community scholars through integrated academic and Islamic education.',
   },
   {
     question: 'Where is NextGen Academy located?',
@@ -134,16 +134,21 @@ export const FAQ_ITEMS = [
   {
     question: 'Is NextGen Academy connected to Islamic Mission School (IMS)?',
     answer:
-      'Yes. NextGen Academy builds on the legacy of Islamic Mission School (IMS) as a sister evolution — honoring decades of faith-based education while preparing Huffaz for academic and leadership excellence.',
+      'Yes. NextGen Academy is a sister organization of Islamic Mission School (IMS), a value-based ICSE school founded in 2008, carrying forward its legacy of academic excellence and strong ethical character.',
   },
   {
     question: 'Who is the residential program for?',
     answer:
-      'Our residential program serves Muslim students seeking a disciplined, values-driven boarding environment in Aligarh, with structured study, character development, and support for the Hifz plus academic journey.',
+      'Our fully residential program serves students in Grades 6–8, providing a nurturing 24/7 learning environment built on four pillars: Intellect, Spirit, Character, and Leadership.',
+  },
+  {
+    question: 'What is the Hifz Plus program?',
+    answer:
+      'Hifz Plus supports Hifz-completed students aged 10–14 with academic age-grade alignment through screening, diagnostic evaluation, and a family interview — honoring their spiritual achievement while accelerating academic reintegration.',
   },
   {
     question: 'How do I apply for admissions?',
     answer:
-      'Contact our admissions team at 7037511306 or 9955570749 by phone or WhatsApp, or visit our Contact page to start your application and schedule a campus visit.',
+      'Admissions are open for Grades 5th to 8th (ages 10–14). Contact our admissions team at 7037511306 or 9955570749, or visit our Admissions page to begin your application.',
   },
 ]

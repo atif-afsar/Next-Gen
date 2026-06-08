@@ -1,23 +1,24 @@
+import { ABOUT } from '../../lib/siteContent.js'
 import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
-const pillars = [
+const highlights = [
   {
-    icon: 'auto_stories',
-    title: 'Traditional Hifz',
+    icon: 'science',
+    title: 'Modern Laboratories',
     description:
-      "A rigorous yet compassionate approach to Qur'anic memorization and understanding, integrated into the daily flow.",
+      'Physics, Chemistry, Biology, Computer Science, Robotics, and STEM facilities on campus.',
   },
   {
-    icon: 'terminal',
+    icon: 'school',
     title: 'ICSE Excellence',
     description:
-      'Top-tier Indian Certificate of Secondary Education curriculum with a focused emphasis on STEM and Critical Thinking.',
+      'Value-based ICSE curriculum with Integrated NEET/JEE Schooling Program for competitive pathways.',
   },
   {
     icon: 'groups',
-    title: 'Leadership Labs',
+    title: 'Enhancement Programs',
     description:
-      'Proprietary experiential workshops focused on emotional intelligence, negotiation, and ethical leadership.',
+      'English Communication, Arabic Communication, Financial Literacy, Life Skills, Robotics, and STEM.',
   },
 ]
 
@@ -26,14 +27,15 @@ export default function IntegrativeModel() {
     <section id="model" className="scroll-mt-20 bg-[#fbf9f8] py-16 sm:scroll-mt-24 sm:py-20 md:py-28">
       <div className="container-narrow text-center">
         <Reveal>
-          <p className="about-eyebrow text-xs sm:text-sm">The Pedagogy</p>
+          <p className="about-eyebrow text-xs sm:text-sm">Islamic Mission School</p>
           <h2 className="about-heading mt-3 text-2xl sm:mt-4 sm:text-3xl md:text-5xl">
-            The Integrative Model
+            A Legacy of Excellence
           </h2>
+          <p className="about-body mx-auto mt-4 max-w-2xl text-sm sm:text-base">{ABOUT.paragraphs[1]}</p>
         </Reveal>
 
         <RevealStagger className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
-          {pillars.map(({ icon, title, description }) => (
+          {highlights.map(({ icon, title, description }) => (
             <RevealItem
               key={title}
               as="article"

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { FOOTER_COLUMNS, FOOTER_MISSION, isLightPage } from '../../lib/navigation.js'
+import { FOOTER } from '../../lib/siteContent.js'
 import { PHONE_DISPLAY, TEL_URL, WHATSAPP_URL, ADDRESS_SHORT } from '../../lib/contact.js'
 import { PhoneIcon, WhatsAppIcon } from './ContactIcons.jsx'
 import logo from '../../assets/image.png'
@@ -167,7 +168,7 @@ export default function Footer() {
         <p
           className={`mt-8 text-center text-xs leading-relaxed sm:mt-10 sm:text-sm lg:text-left ${copyrightClass}`}
         >
-          © {new Date().getFullYear()} NextGen Academy, Aligarh. Building the Architects of Tomorrow.
+          © {new Date().getFullYear()} NextGen Academy. {FOOTER.tagline}
         </p>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import AdmissionsHero from './Hero.jsx'
 import WhoWeServe from './WhoWeServe.jsx'
 import Process from './Process.jsx'
+import HifzPlus from './HifzPlus.jsx'
 import ApplicationForm from './ApplicationForm.jsx'
 import QuickContact from './QuickContact.jsx'
 import FAQ from '../Contact/FAQ.jsx'
@@ -11,6 +12,7 @@ export default function AdmissionsPageContent() {
       <AdmissionsHero />
       <WhoWeServe />
       <Process />
+      <HifzPlus />
       <ApplicationForm />
       <QuickContact />
       <FAQ />

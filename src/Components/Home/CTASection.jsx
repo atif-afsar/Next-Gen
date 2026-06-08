@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useMotionViewport } from '../../hooks/useMotionViewport.js'
+import { ADMISSIONS } from '../../lib/siteContent.js'
 import { motion, scaleIn } from './motion.jsx'
 
 export default function CTASection() {
@@ -11,7 +12,7 @@ export default function CTASection() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={viewport}
+          viewport={motionViewport}
           variants={scaleIn}
           custom={0}
           className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7a5900] to-[#f4b400] px-6 py-12 text-center sm:px-10 sm:py-14 md:px-16 md:py-20"
@@ -30,11 +31,10 @@ export default function CTASection() {
             transition={{ delay: 0.15, duration: 0.55 }}
           >
             <h2 className="font-serif text-2xl leading-snug text-[#261900] sm:text-3xl md:text-4xl lg:text-5xl">
-              Prepare Your Child for Leadership in this Life and the Next
+              {ADMISSIONS.title}
             </h2>
             <p className="text-base text-[#261900]/85 sm:text-lg">
-              Give your child a residential path from Hifz to leadership at NextGen Academy,
-              Aligarh. Admissions are open from Grade 5 through graduation for Hifz-completed and aspiring Huffaz.
+              {ADMISSIONS.description} Open for {ADMISSIONS.grades} ({ADMISSIONS.ageGroup}).
             </p>
             <div className="flex flex-col items-stretch justify-center gap-3 pt-2 sm:flex-row sm:items-center sm:gap-4">
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
@@ -47,10 +47,10 @@ export default function CTASection() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Link
-                  to="/contact"
+                  to="/admissions#hifz-plus"
                   className="block w-full rounded-lg border border-[#261900]/30 bg-white/10 px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-widest text-[#261900] backdrop-blur-md transition hover:bg-white/20 sm:min-w-[200px] sm:px-10 sm:py-4"
                 >
-                  Visit Our Campus
+                  Hifz Plus Program
                 </Link>
               </motion.div>
             </div>

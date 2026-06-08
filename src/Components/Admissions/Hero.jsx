@@ -1,7 +1,7 @@
+import { ADMISSIONS } from '../../lib/siteContent.js'
 import { ABOUT_HERO_CAMPUS } from '../../lib/images.js'
-import { ADDRESS_SHORT } from '../../lib/contact.js'
 import OptimizedImage from '../Common/OptimizedImage.jsx'
-import { motion, EASE_OUT, staggerContainer, staggerItem } from '../Contact/motion.jsx'
+import { motion, staggerContainer, staggerItem } from '../Contact/motion.jsx'
 
 export default function AdmissionsHero() {
   return (
@@ -30,35 +30,34 @@ export default function AdmissionsHero() {
           variants={staggerItem}
           className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7a5900] sm:mb-4 sm:text-xs"
         >
-          Enroll at {ADDRESS_SHORT}
+          {ADMISSIONS.title}
         </motion.p>
         <motion.h1
           id="admissions-hero-heading"
           variants={staggerItem}
           className="font-serif text-3xl leading-tight text-[#1b1c1c] sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          Admissions —{' '}
-          <span className="italic text-[#7a5900]">Grade 5 Through Graduation</span>
+          {ADMISSIONS.grades}{' '}
+          <span className="italic text-[#7a5900]">· Ages {ADMISSIONS.ageGroup}</span>
         </motion.h1>
         <motion.p
           variants={staggerItem}
           className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#504533] sm:mt-8 sm:text-lg"
         >
-          Begin your child&apos;s Hifz-to-leadership journey at NextGen Academy Aligarh. We welcome
-          Hifz-completed students and families seeking our Hifz plus academic residential program.
+          {ADMISSIONS.description}
         </motion.p>
         <motion.div variants={staggerItem} className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
           <a
             href="#apply"
             className="admissions-btn-primary inline-block rounded-lg px-8 py-3.5 text-xs font-semibold uppercase tracking-wider shadow-lg sm:text-sm"
           >
-            Start Application
+            Apply for Admission
           </a>
           <a
-            href="/contact"
+            href="#hifz-plus"
             className="inline-block rounded-lg border border-[#827560] bg-white px-8 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#1b1c1c] transition hover:bg-[#f5f3f3] sm:text-sm"
           >
-            General Contact
+            Hifz Plus Program
           </a>
         </motion.div>
       </motion.div>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { WHY_ACADEMIC_LEADERSHIP } from '../../lib/siteContent.js'
-import { motion, staggerContainer, staggerItem } from './motion.jsx'
+import { ACADEMIC_LEADERSHIP_PROGRAM } from '../../lib/siteContent.js'
+import { motion, staggerContainer, staggerItem } from '../WhyNextGen/motion.jsx'
 
-export default function WhyNextGenHero() {
+export default function ProgramsHero() {
   return (
     <section className="relative flex min-h-[75dvh] items-center justify-center overflow-hidden py-16 sm:min-h-[80dvh] sm:py-20 md:py-24">
       <div className="absolute inset-0 z-0 opacity-10">
@@ -19,21 +19,21 @@ export default function WhyNextGenHero() {
           variants={staggerItem}
           className="mb-6 inline-block rounded-full border border-[#d4c4ac] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7a5900] sm:mb-8 sm:px-4 sm:py-1.5 sm:text-xs"
         >
-          Academic Leadership for New India
+          {ACADEMIC_LEADERSHIP_PROGRAM.eyebrow}
         </motion.span>
 
         <motion.h1
           variants={staggerItem}
           className="font-serif text-3xl leading-[1.15] text-[#1b1c1c] sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          {WHY_ACADEMIC_LEADERSHIP.title}
+          {ACADEMIC_LEADERSHIP_PROGRAM.title}
         </motion.h1>
 
         <motion.p
           variants={staggerItem}
           className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#504533] sm:mt-8 sm:text-lg"
         >
-          {WHY_ACADEMIC_LEADERSHIP.paragraphs[0]}
+          {ACADEMIC_LEADERSHIP_PROGRAM.description}
         </motion.p>
 
         <motion.div
@@ -41,19 +41,19 @@ export default function WhyNextGenHero() {
           className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4"
         >
           <motion.a
-            href="#muslim-leadership"
+            href="#program-phases"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="why-btn-primary w-full rounded-lg px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-wider shadow-lg shadow-[#7a5900]/20 sm:w-auto sm:px-10 sm:py-4 sm:text-sm"
           >
-            Learn More
+            View Program Phases
           </motion.a>
           <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
             <Link
-              to="/programs"
+              to="/admissions"
               className="why-btn-outline block w-full rounded-lg px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-wider sm:px-10 sm:py-4 sm:text-sm"
             >
-              Explore Program
+              Apply for Admission
             </Link>
           </motion.div>
         </motion.div>

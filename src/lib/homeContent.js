@@ -1,73 +1,48 @@
-/** Copy from Stitch — Home light screen fa8c439b898342b5a22671b6c35c0826 */
+/** Home page data — re-exported from siteContent for backward compatibility */
 
-export const LEGACY_STATS = [
-  { value: '98%', label: 'Academic Success' },
-  { value: '500+', label: 'Hafiz Graduates' },
-  { value: '12:1', label: 'Student Ratio' },
-  { value: '15+', label: 'Countries Represented' },
-]
+export {
+  LEGACY_STATS,
+  PROGRAM_PHASES as TIMELINE_STAGES,
+  DUAL_PATHWAYS,
+} from './siteContent.js'
 
 export const VISION_PILLARS = [
   {
-    icon: 'military_tech',
-    title: 'Leadership',
+    icon: 'visibility',
+    title: 'Vision',
     description:
-      'Cultivating the moral courage and strategic thinking required to navigate global challenges.',
+      'Empowering learners to become compassionate architects of a more just, sustainable, and beautiful world.',
   },
   {
-    icon: 'auto_awesome',
-    title: 'Iman',
+    icon: 'flag',
+    title: 'Mission',
     description:
-      'Deepening spiritual connection through sophisticated theological study and daily practice.',
+      'Nurturing young leaders who see themselves as trustees of the future — with kindness, honesty, respect, and responsibility.',
   },
   {
-    icon: 'lightbulb',
-    title: 'Innovation',
-    description: 'Integrating STEM and creative problem solving into the core of our educational DNA.',
+    icon: 'school',
+    title: 'Academic Leadership',
+    description:
+      'Preparing educators, researchers, and institutional visionaries who reimagine learning and foster innovation.',
   },
   {
     icon: 'menu_book',
-    title: 'Knowledge',
+    title: 'Islamic Scholarship',
     description:
-      'Pursuing intellectual excellence across both sacred and secular disciplines with equal rigor.',
+      'Deep engagement with Tafseer, Hadith, Seerah, Fiqh, and Arabic — guiding communities with wisdom and Iman.',
   },
 ]
 
 export const ACADEMIC_TRACK = [
-  'IB Diploma Program',
-  'Advanced STEM Research',
-  'Critical Thinking & Logic',
+  'Educator development pipeline',
+  'STEM, Robotics & research methodology',
+  'ICSE with NEET/JEE integration',
+  'Institutional leadership training',
 ]
 
 export const ISLAMIC_TRACK = [
-  'Mastery of Tajweed',
-  'Classical Arabic Literacy',
-  'Comparative Fiqh Studies',
-]
-
-export const TIMELINE_STAGES = [
-  {
-    step: '01',
-    grades: 'Grade 5–7',
-    phase: 'Foundation',
-    description: 'Focus on Hifz intensity and core cognitive skills.',
-  },
-  {
-    step: '02',
-    grades: 'Grade 8-10',
-    phase: 'Exploration',
-    description: 'Introduction of STEM electives and classical Arabic.',
-  },
-  {
-    step: '03',
-    grades: 'Grade 11-12',
-    phase: 'Specialization',
-    description: 'IB Diploma and Advanced Islamic Research Projects.',
-  },
-  {
-    step: '04',
-    grades: 'Post-Grad',
-    phase: 'Legacy',
-    description: 'Alumni network and global leadership placement.',
-  },
+  'Tafseer & Hadith studies',
+  'Islamic Studies & Seerah',
+  'Fiqh & Usul al-Fiqh',
+  'Arabic Language mastery',
 ]

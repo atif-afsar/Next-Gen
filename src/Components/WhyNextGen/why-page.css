@@ -1,5 +1,7 @@
-/* Stitch light theme — Why NextGen | NextGen Academy (Light) */
-.page-why {
+/* Stitch light theme — shared across program-style pages */
+.page-why,
+.page-programs,
+.page-residential {
   --why-bg: #fbf9f8;
   --why-surface: #ffffff;
   --why-card: #fdfbf7;
@@ -12,50 +14,74 @@
   color: var(--why-text);
 }
 
-.page-why .why-card {
+.page-why .why-card,
+.page-programs .why-card,
+.page-residential .why-card {
   background-color: var(--why-card);
   border: 1px solid var(--why-border);
 }
 
-.page-why .why-btn-primary {
+.page-why .why-btn-primary,
+.page-programs .why-btn-primary,
+.page-residential .why-btn-primary {
   background-color: var(--why-primary);
   color: #ffffff;
 }
 
-.page-why .why-btn-primary:hover {
+.page-why .why-btn-primary:hover,
+.page-programs .why-btn-primary:hover,
+.page-residential .why-btn-primary:hover {
   background-color: #5d4200;
 }
 
-.page-why .why-btn-outline {
+.page-why .why-btn-outline,
+.page-programs .why-btn-outline,
+.page-residential .why-btn-outline {
   border: 1px solid var(--why-border);
   color: var(--why-text);
 }
 
-.page-why .why-btn-outline:hover {
+.page-why .why-btn-outline:hover,
+.page-programs .why-btn-outline:hover,
+.page-residential .why-btn-outline:hover {
   background-color: #f5f3f3;
 }
 
-.page-why .why-text-primary {
+.page-why .why-text-primary,
+.page-programs .why-text-primary,
+.page-residential .why-text-primary {
   color: var(--why-primary);
 }
 
-.page-why .why-highlight-card {
+.page-why .why-highlight-card,
+.page-programs .why-highlight-card,
+.page-residential .why-highlight-card {
   background-color: var(--why-primary);
   color: #ffffff;
 }
 
-.page-why .why-table-highlight {
+.page-why .why-table-highlight,
+.page-programs .why-table-highlight,
+.page-residential .why-table-highlight {
   background-color: rgba(255, 222, 163, 0.2);
 }
 
-.page-why .why-table-col {
+.page-why .why-table-col,
+.page-programs .why-table-col,
+.page-residential .why-table-col {
   background-color: rgba(255, 222, 163, 0.12);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .page-why *,
   .page-why *::before,
-  .page-why *::after {
+  .page-why *::after,
+  .page-programs *,
+  .page-programs *::before,
+  .page-programs *::after,
+  .page-residential *,
+  .page-residential *::before,
+  .page-residential *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

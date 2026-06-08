@@ -1,8 +1,10 @@
-/* Hero — svh fallback for mobile browser chrome */
+/* Hero — content + feature cards layout */
 .home-hero-section {
-  min-height: 100vh;
-  min-height: 100dvh;
-  min-height: 100svh;
+  min-height: auto;
+}
+
+.hero-feature-card img {
+  will-change: transform;
 }
 
 .page-home-sections {

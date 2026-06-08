@@ -1,6 +1,7 @@
 import {
   SITE_URL,
   SITE_NAME,
+  TAGLINE,
   DEFAULT_DESCRIPTION,
   ADDRESS,
   GEO,
@@ -21,7 +22,7 @@ export function organizationSchema() {
     logo: LOGO_URL,
     image: OG_IMAGE,
     description: DEFAULT_DESCRIPTION,
-    slogan: 'Building the Architects of Tomorrow',
+    slogan: TAGLINE,
     telephone: PHONES.map((p) => `+91-${p.raw}`),
     address: {
       '@type': 'PostalAddress',
@@ -69,12 +70,13 @@ export function schoolSchema() {
       latitude: GEO.latitude,
       longitude: GEO.longitude,
     },
-    educationalLevel: 'Grade 5 through graduation',
+    educationalLevel: 'Grades 5–8 (ages 10–14)',
     knowsAbout: [
-      'Hifz plus academic program',
-      'Islamic residential education',
+      'Academic Leadership Program',
+      'Islamic Scholarship',
+      'Hifz Plus program',
       'STEM and robotics',
-      'Islamic leadership development',
+      'Residential education',
     ],
   }
 }

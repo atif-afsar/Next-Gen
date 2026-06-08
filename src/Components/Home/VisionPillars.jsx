@@ -7,7 +7,7 @@ export default function VisionPillars() {
       <div className="container-narrow">
         <Reveal className="text-center">
           <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-4xl">
-            The Pillars of our Vision
+            Vision &amp; Mission
           </h2>
         </Reveal>
 

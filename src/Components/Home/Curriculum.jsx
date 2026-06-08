@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { HOME_CURRICULUM_PHILOSOPHY, HOME_CURRICULUM_STEM } from '../../lib/images.js'
+import { CURRICULUM_HIGHLIGHTS } from '../../lib/siteContent.js'
 import OptimizedImage from '../Common/OptimizedImage.jsx'
 import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
@@ -32,14 +34,17 @@ function IconCard({ icon, title, description, bgClass }) {
         {icon}
       </span>
       <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:mt-3 sm:text-base">
-        {description}
-      </p>
+      <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:mt-3 sm:text-base">{description}</p>
     </article>
   )
 }
 
+const IMAGE_SRCS = [HOME_CURRICULUM_STEM, HOME_CURRICULUM_PHILOSOPHY]
+
 export default function Curriculum() {
+  const [stem, robotics, languages, neet] = CURRICULUM_HIGHLIGHTS
+  let imageIndex = 0
+
   return (
     <section id="curriculum" className="scroll-mt-20 bg-white py-16 sm:scroll-mt-24 sm:py-20 md:py-32">
       <div className="container-narrow">
@@ -52,37 +57,38 @@ export default function Curriculum() {
         <RevealStagger className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3 md:grid-rows-2 md:gap-6 lg:h-[600px]">
           <RevealItem className="md:col-span-2 md:row-span-1">
             <ImageCard
-              src={HOME_CURRICULUM_STEM}
-              title="STEM & Digital Innovation"
-              description="Mastering coding, bio-engineering, and the ethical use of technology."
+              src={IMAGE_SRCS[imageIndex++]}
+              alt="STEM and innovation labs at NextGen Academy"
+              title={stem.title}
+              description={stem.description}
               className="h-full min-h-[260px]"
             />
           </RevealItem>
 
           <RevealItem>
             <IconCard
-              icon="precision_manufacturing"
-              title="Robotics"
-              description="Design, build, and program the future. From Grade 5 through graduation."
-              bgClass="bg-[#ffdea3]/20"
+              icon={robotics.icon}
+              title={robotics.title}
+              description={robotics.description}
+              bgClass={robotics.bgClass}
             />
           </RevealItem>
 
           <RevealItem>
             <IconCard
-              icon="monetization_on"
-              title="Financial Literacy"
-              description="Understanding Islamic finance, investments, and global markets."
-              bgClass="bg-[#efeded]"
+              icon={languages.icon}
+              title={languages.title}
+              description={languages.description}
+              bgClass={languages.bgClass}
             />
           </RevealItem>
 
           <RevealItem className="md:col-span-2">
             <ImageCard
-              src={HOME_CURRICULUM_PHILOSOPHY}
-              alt="Students in philosophy and leadership discussion at NextGen Academy"
-              title="Philosophy & Rhetoric"
-              description="Developing the power of persuasion, critical analysis, and ethical reasoning."
+              src={IMAGE_SRCS[imageIndex++]}
+              alt="Integrated NEET and JEE preparation at NextGen Academy"
+              title={neet.title}
+              description={neet.description}
               className="h-full min-h-[260px]"
             />
           </RevealItem>

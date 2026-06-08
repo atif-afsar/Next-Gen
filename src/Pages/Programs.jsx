@@ -1,6 +1,6 @@
 import PageShell from '../Components/Common/PageShell.jsx'
 import '../Components/WhyNextGen/why-page.css'
-import WhyNextGenPageContent from '../Components/WhyNextGen/PageContent.jsx'
+import ProgramsPageContent from '../Components/Programs/PageContent.jsx'
 
 export default function Programs() {
   return (
@@ -8,10 +8,10 @@ export default function Programs() {
       page="programs"
       breadcrumbs={[
         { name: 'Home', path: '/' },
-        { name: 'Programs', path: '/programs' },
+        { name: 'Academic Leadership Program', path: '/programs' },
       ]}
     >
-      <WhyNextGenPageContent />
+      <ProgramsPageContent />
     </PageShell>
   )
 }

@@ -1,92 +1,100 @@
 import { Link } from 'react-router-dom'
-import { ACADEMIC_TRACK, ISLAMIC_TRACK } from '../../lib/homeContent.js'
-import { useMotionViewport } from '../../hooks/useMotionViewport.js'
-import { motion, Reveal, EASE_OUT } from './motion.jsx'
+import { DUAL_PATHWAYS } from '../../lib/siteContent.js'
+import { Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
-function TrackCard({ label, items, accentClass, iconColor, fromLeft, motionViewport }) {
+const PATH_STYLES = [
+  {
+    accent: 'border-t-[#7a5900]',
+    iconBg: 'bg-[#ffdea3]/50',
+    iconColor: 'text-[#7a5900]',
+    checkColor: 'text-[#7a5900]',
+  },
+  {
+    accent: 'border-t-[#914c00]',
+    iconBg: 'bg-[#ffdea3]/30',
+    iconColor: 'text-[#914c00]',
+    checkColor: 'text-[#914c00]',
+  },
+]
+
+function PathwayCard({ path, style }) {
   return (
-    <motion.div
-      initial={{ opacity: 1, x: fromLeft ? -24 : 24 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={motionViewport}
-      transition={{ duration: 0.65, ease: EASE_OUT }}
-      whileHover={{ y: -4, transition: { duration: 0.25 } }}
-      className={`rounded-xl border bg-white p-6 shadow-sm sm:p-8 ${accentClass}`}
-    >
-      <span
-        className={`mb-4 block text-xs font-semibold uppercase tracking-wider ${iconColor}`}
-      >
-        {label}
-      </span>
-      <ul className="space-y-2.5 text-sm text-[#504533] sm:space-y-3 sm:text-base">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2">
-            <span className={`material-symbols-outlined icon-outline shrink-0 text-lg ${iconColor}`}>
-              check_circle
-            </span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
+    <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#d4c4ac]/35 bg-white shadow-[0_4px_24px_rgba(26,26,26,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(122,89,0,0.08)]">
+      <div className={`border-t-4 ${style.accent} p-6 sm:p-8`}>
+        <div className="mb-5 flex items-start gap-4">
+          <span
+            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${style.iconBg} ${style.iconColor}`}
+          >
+            <span className="material-symbols-outlined text-2xl">{path.icon}</span>
+          </span>
+          <div className="min-w-0">
+            <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">{path.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:text-base">{path.summary}</p>
+          </div>
+        </div>
+
+        <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-3">
+          {path.items.map((item) => (
+            <li key={item} className="flex min-w-0 items-start gap-2 text-sm text-[#504533]">
+              <span className={`material-symbols-outlined icon-outline mt-0.5 shrink-0 text-base ${style.checkColor}`}>
+                check_circle
+              </span>
+              <span className="leading-snug">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
   )
 }
 
 export default function DualFocus() {
-  const motionViewport = useMotionViewport()
+  const [academicPath, islamicPath] = DUAL_PATHWAYS.paths
 
   return (
-    <section className="overflow-hidden bg-[#fbf9f8] py-16 sm:py-20 md:py-32">
+    <section
+      id="dual-pathway"
+      className="scroll-mt-20 bg-[#fbf9f8] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
+    >
       <div className="container-narrow">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-16">
-          <Reveal className="w-full text-center lg:max-w-md lg:text-left">
-            <h2 className="font-serif text-2xl leading-tight text-[#1b1c1c] sm:text-3xl md:text-5xl">
-              The Integration of Two Worlds
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-[#504533] sm:mt-6 sm:text-lg">
-              At our Islamic residential school in Aligarh, the Hifz plus academic program is one
-              unified journey — where Islamic scholarship strengthens STEM, robotics, and leadership
-              for Hifz-completed students.
-            </p>
-          </Reveal>
+        {/* Centered header — full width on desktop */}
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7a5900] sm:text-sm">
+            Two Journeys, One Vision
+          </p>
+          <h2 className="mt-3 font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-4xl lg:text-5xl">
+            {DUAL_PATHWAYS.title}
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-[#504533] sm:mt-5 sm:text-base md:text-lg">
+            {DUAL_PATHWAYS.subtitle}
+          </p>
+        </Reveal>
 
-          <div className="w-full flex-1">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
-              <TrackCard
-                label="Academic Track"
-                items={ACADEMIC_TRACK}
-                accentClass="border-[#7a5900]/20"
-                iconColor="text-[#7a5900]"
-                fromLeft
-                motionViewport={motionViewport}
-              />
-              <TrackCard
-                label="Islamic Scholarship"
-                items={ISLAMIC_TRACK}
-                accentClass="border-[#914c00]/20"
-                iconColor="text-[#914c00]"
-                motionViewport={motionViewport}
-              />
-            </div>
+        {/* Full-width card grid */}
+        <RevealStagger className="mt-10 grid min-w-0 grid-cols-1 gap-6 sm:mt-14 md:grid-cols-2 md:gap-8 lg:mt-16">
+          <RevealItem className="min-w-0">
+            <PathwayCard path={academicPath} style={PATH_STYLES[0]} />
+          </RevealItem>
+          <RevealItem className="min-w-0">
+            <PathwayCard path={islamicPath} style={PATH_STYLES[1]} />
+          </RevealItem>
+        </RevealStagger>
 
-            <Reveal delay={0.2} className="relative mt-8 sm:mt-10">
-              <div className="home-merging-path rounded-full shadow-[0_0_20px_rgba(244,180,0,0.3)]" />
-              <div className="absolute -top-3 left-1/2 max-w-[90vw] -translate-x-1/2 whitespace-nowrap rounded-full bg-[#7a5900] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:-top-4 sm:px-6 sm:py-2 sm:text-xs">
-                Unified Path
-              </div>
-            </Reveal>
+        {/* Unified path connector */}
+        <Reveal delay={0.1} className="relative mx-auto mt-10 max-w-xl sm:mt-12">
+          <div className="home-merging-path rounded-full" />
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#7a5900] px-5 py-2 text-[10px] font-semibold uppercase tracking-widest text-white shadow-md sm:text-xs">
+            Unified Path
           </div>
-        </div>
+        </Reveal>
 
-        <Reveal delay={0.15} className="mt-10 text-center sm:mt-14">
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              to="/about"
-              className="inline-block w-full max-w-xs rounded-lg bg-[#7a5900] px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#654800] sm:w-auto sm:px-10 sm:py-4"
-            >
-              Learn More
-            </Link>
-          </motion.div>
+        <Reveal delay={0.15} className="mt-10 text-center sm:mt-12">
+          <Link
+            to="/programs"
+            className="inline-flex items-center justify-center rounded-lg bg-[#7a5900] px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#654800] active:scale-[0.98] sm:px-10 sm:py-4"
+          >
+            Explore Program
+          </Link>
         </Reveal>
       </div>
     </section>

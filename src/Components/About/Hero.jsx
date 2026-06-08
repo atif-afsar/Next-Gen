@@ -1,5 +1,5 @@
-import { ABOUT_HERO_CAMPUS } from '../../lib/images.js'
-import { ADDRESS_SHORT } from '../../lib/contact.js'
+import { ABOUT_PAGE_HERO } from '../../lib/images.js'
+import { ABOUT } from '../../lib/siteContent.js'
 import OptimizedImage from '../Common/OptimizedImage.jsx'
 import {
   motion,
@@ -29,23 +29,21 @@ export default function AboutHero() {
               variants={staggerItem}
               className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#7a5900] sm:mb-4 sm:text-sm"
             >
-              Our Mission
+              {ABOUT.eyebrow}
             </motion.p>
 
             <motion.h1
               variants={staggerItem}
               className="font-serif text-3xl leading-[1.12] text-balance sm:text-4xl md:text-5xl lg:text-[3.75rem] lg:leading-[1.1]"
             >
-              Architecting the Future of Faith &amp; Intellect
+              {ABOUT.title}
             </motion.h1>
 
             <motion.p
               variants={staggerItem}
               className="mt-4 max-w-xl text-base leading-relaxed text-[#504533] sm:mt-6 sm:text-lg"
             >
-              NextGen Academy Aligarh — at {ADDRESS_SHORT} — transforms Huffaz into academic leaders
-              through faith with future education, residential character building, and Islamic values
-              with modern STEM education.
+              {ABOUT.paragraphs[0]}
             </motion.p>
 
             <motion.div
@@ -53,20 +51,20 @@ export default function AboutHero() {
               className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
             >
               <motion.a
-                href="#philosophy"
+                href="#vision-mission"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full rounded bg-[#7a5900] px-6 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#654800] sm:w-auto sm:px-8 sm:py-4"
               >
-                Explore the Vision
+                Vision &amp; Mission
               </motion.a>
               <motion.a
-                href="#mission"
+                href="#why-leadership"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full rounded border border-[#827560] bg-white px-6 py-3.5 text-center text-sm font-semibold text-[#1b1c1c] transition hover:bg-[#f5f3f3] sm:w-auto sm:px-8 sm:py-4"
               >
-                View History
+                Why Academic Leadership
               </motion.a>
             </motion.div>
           </motion.div>
@@ -79,8 +77,8 @@ export default function AboutHero() {
           >
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl shadow-2xl sm:max-w-none">
               <OptimizedImage
-                src={ABOUT_HERO_CAMPUS}
-                  alt="NextGen Academy campus at Near Fort, Fort Enclave Colony, Aligarh"
+                src={ABOUT_PAGE_HERO}
+                alt="Balancing academic excellence and Iman — the heart of NextGen Academy"
                 className="h-full w-full object-cover object-center"
                 priority
                 width={800}
@@ -95,9 +93,9 @@ export default function AboutHero() {
               transition={{ duration: 0.6, delay: 0.55, ease: EASE_OUT }}
             >
               <p className="font-serif text-lg italic leading-snug text-[#7a5900] sm:text-xl">
-                &ldquo;Engineering Future Heritage&rdquo;
+                &ldquo;Building Academic Leadership for New India&rdquo;
               </p>
-              <p className="mt-2 text-sm text-[#504533]">The NextGen Manifesto</p>
+              <p className="mt-2 text-sm text-[#504533]">NextGen Academy</p>
             </motion.div>
           </motion.div>
         </div>

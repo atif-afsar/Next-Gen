@@ -26,3 +26,5 @@ export const CONTACT_CAMPUS = '/images/contact-campus.jpg'
 /** Home page — light curriculum bento (Stitch fa8c439b) */
 export const HOME_CURRICULUM_STEM = '/images/home-curriculum-stem.jpg'
 export const HOME_CURRICULUM_PHILOSOPHY = '/images/home-curriculum-philosophy.jpg'
+export const HOME_ABOUT_HERITAGE = '/images/hero/image6.png'
+export const ABOUT_PAGE_HERO = '/images/hero/image4.png'
