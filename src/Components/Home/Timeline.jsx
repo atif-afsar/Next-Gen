@@ -52,6 +52,7 @@ export default function Timeline() {
         <div className="relative mt-10 hidden md:block 2xl:hidden md:mt-14">
           <div
             className="flex gap-4 overflow-x-auto pb-2 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-5 [&::-webkit-scrollbar]:hidden"
+            data-lenis-prevent
             role="list"
             aria-label="Program phases"
           >
