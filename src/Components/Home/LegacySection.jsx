@@ -9,7 +9,7 @@ export default function LegacySection() {
   return (
     <section
       id="about"
-      className="scroll-mt-20 bg-[#f5f3f3] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
+      className="scroll-mt-20 bg-[#f3ecd9] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
       aria-labelledby="legacy-heading"
     >
       <div className="container-narrow">

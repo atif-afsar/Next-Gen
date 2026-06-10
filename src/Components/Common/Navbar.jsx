@@ -16,6 +16,14 @@ import logo from '../../assets/image.png'
 
 const EASE_OUT = [0.16, 1, 0.3, 1]
 
+/* Hash-aware active match — only the exact link (path + hash) highlights */
+function isExactPathActive(path, pathname, hash) {
+  const [base, linkHash = ''] = path.split('#')
+  if (pathname !== base) return false
+  const currentHash = hash.replace('#', '')
+  return linkHash === currentHash
+}
+
 function NavItem({ to, end, children, light, className = '' }) {
   return (
     <NavLink
@@ -44,7 +52,7 @@ function NavItem({ to, end, children, light, className = '' }) {
   )
 }
 
-function ProgramsDropdown({ light, pathname, onNavigate }) {
+function ProgramsDropdown({ light, pathname, hash, onNavigate }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
   const active = isProgramsNavActive(pathname)
@@ -82,7 +90,7 @@ function ProgramsDropdown({ light, pathname, onNavigate }) {
     : 'absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 rounded-xl border border-white/10 bg-[#141414] py-2 shadow-[0_12px_40px_rgba(0,0,0,0.45)]'
 
   const itemClass = light
-    ? 'block px-4 py-2.5 text-sm text-[#504533] transition hover:bg-[#f5f3f3] hover:text-[#7a5900]'
+    ? 'block px-4 py-2.5 text-sm text-[#504533] transition hover:bg-[#f3ecd9] hover:text-[#7a5900]'
     : 'block px-4 py-2.5 text-sm text-white/80 transition hover:bg-white/5 hover:text-gold'
 
   const activeItemClass = light ? 'bg-[#ffdea3]/25 font-medium text-[#7a5900]' : 'bg-gold/10 font-medium text-gold'
@@ -122,8 +130,7 @@ function ProgramsDropdown({ light, pathname, onNavigate }) {
             role="menu"
           >
             {NAV_PROGRAMS.map(({ label, path }) => {
-              const base = path.split('#')[0]
-              const isActive = pathname === base
+              const isActive = isExactPathActive(path, pathname, hash)
               return (
                 <Link
                   key={path}
@@ -147,14 +154,14 @@ function ProgramsDropdown({ light, pathname, onNavigate }) {
 }
 
 export default function Navbar() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   const light = isLightPage(pathname)
   const reduced = usePrefersReducedMotion()
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     setIsOpen(false)
-  }, [pathname])
+  }, [pathname, hash])
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
@@ -168,17 +175,17 @@ export default function Navbar() {
   function mobileLinkClass(isActive) {
     if (light) {
       return isActive
-        ? 'border-[#7a5900] bg-[#ffdea3]/20 text-[#7a5900]'
-        : 'border-transparent text-[#1b1c1c]/80 hover:border-[#d4c4ac] hover:bg-white/60 hover:text-[#7a5900]'
+        ? 'border-[#7a5900] bg-[#ffdea3]/25 font-semibold text-[#7a5900]'
+        : 'border-transparent text-[#1b1c1c]/80 hover:border-[#d4c4ac] hover:bg-white/60 hover:text-[#7a5900] active:bg-[#ffdea3]/20 active:text-[#7a5900]'
     }
     return isActive
-      ? 'border-gold bg-gold/10 text-gold'
-      : 'border-transparent text-white/85 hover:border-white/15 hover:bg-white/5 hover:text-gold'
+      ? 'border-gold bg-gold/10 font-semibold text-gold'
+      : 'border-transparent text-white/85 hover:border-white/15 hover:bg-white/5 hover:text-gold active:bg-gold/10 active:text-gold'
   }
 
   const headerClass = isOpen
     ? light
-      ? 'max-lg:border-[#d4c4ac]/30 max-lg:bg-[#fcfaf7] max-lg:shadow-none max-lg:backdrop-blur-none lg:border-b lg:border-[#d4c4ac]/30 lg:bg-white/70 lg:shadow-[0_10px_30px_rgba(26,26,26,0.04)] lg:backdrop-blur-xl'
+      ? 'max-lg:border-[#d4c4ac]/30 max-lg:bg-[#faf3e3] max-lg:shadow-none max-lg:backdrop-blur-none lg:border-b lg:border-[#d4c4ac]/30 lg:bg-white/70 lg:shadow-[0_10px_30px_rgba(26,26,26,0.04)] lg:backdrop-blur-xl'
       : 'max-lg:border-white/10 max-lg:bg-[#0f0f0f] max-lg:shadow-none max-lg:backdrop-blur-none lg:border-b lg:border-white/5 lg:bg-[#0a0a0a]/80 lg:backdrop-blur-md'
     : light
       ? 'border-b border-[#d4c4ac]/30 bg-white/70 shadow-[0_10px_30px_rgba(26,26,26,0.04)] backdrop-blur-xl'
@@ -250,7 +257,7 @@ export default function Navbar() {
                 </NavItem>
               </li>
             ))}
-            <ProgramsDropdown light={light} pathname={pathname} />
+            <ProgramsDropdown light={light} pathname={pathname} hash={hash} />
             {NAV_SECONDARY.map(({ label, path }) => (
               <li key={path}>
                 <NavItem to={path} light={light}>
@@ -328,7 +335,7 @@ export default function Navbar() {
         aria-hidden={!isOpen}
         inert={!isOpen ? true : undefined}
         className={`fixed inset-y-0 right-0 z-[45] flex w-full max-w-sm flex-col shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden ${
-          light ? 'bg-[#fcfaf7]' : 'bg-[#0f0f0f]'
+          light ? 'bg-[#faf3e3]' : 'bg-[#0f0f0f]'
         } ${isOpen ? 'translate-x-0' : 'pointer-events-none translate-x-full'}`}
       >
         {/* Drawer header */}
@@ -344,7 +351,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setIsOpen(false)}
             className={`flex h-9 w-9 items-center justify-center rounded-lg ${
-              light ? 'text-[#504533] hover:bg-[#efeded]' : 'text-white/70 hover:bg-white/10'
+              light ? 'text-[#504533] hover:bg-[#efe7d2]' : 'text-white/70 hover:bg-white/10'
             }`}
             aria-label="Close menu"
           >
@@ -366,17 +373,16 @@ export default function Navbar() {
               <ul className="space-y-1">
                 {links.map(({ label, path }) => (
                   <li key={path}>
-                    <NavLink
+                    <Link
                       to={path}
-                      end={path === '/'}
                       tabIndex={isOpen ? 0 : -1}
                       onClick={() => setIsOpen(false)}
-                      className={({ isActive }) =>
-                        `block rounded-lg border-l-2 px-3 py-2.5 text-[0.95rem] font-medium leading-snug transition-colors duration-150 ${mobileLinkClass(isActive)}`
-                      }
+                      className={`block rounded-lg border-l-2 px-3 py-3 text-[0.95rem] font-medium leading-snug transition-colors duration-150 ${mobileLinkClass(
+                        isExactPathActive(path, pathname, hash)
+                      )}`}
                     >
                       {label}
-                    </NavLink>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -387,7 +393,7 @@ export default function Navbar() {
         {/* Sticky CTA */}
         <div
           className={`shrink-0 border-t p-4 pb-[max(1rem,env(safe-area-inset-bottom))] ${
-            light ? 'border-[#d4c4ac]/30 bg-[#fcfaf7]' : 'border-white/10 bg-[#0f0f0f]'
+            light ? 'border-[#d4c4ac]/30 bg-[#faf3e3]' : 'border-white/10 bg-[#0f0f0f]'
           }`}
         >
           <NavLink

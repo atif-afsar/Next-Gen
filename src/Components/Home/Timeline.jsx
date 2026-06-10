@@ -29,7 +29,7 @@ export default function Timeline() {
   return (
     <section
       id="leadership"
-      className="scroll-mt-20 bg-[#f5f3f3] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
+      className="scroll-mt-20 bg-[#f3ecd9] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
       aria-labelledby="leadership-heading"
     >
       <div className="container-narrow">

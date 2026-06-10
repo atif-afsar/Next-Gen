@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { CONTACT_HERO } from '../../lib/images.js'
 import { ADDRESS_SHORT } from '../../lib/contact.js'
 import OptimizedImage from '../Common/OptimizedImage.jsx'
@@ -6,7 +7,7 @@ import { motion, EASE_OUT, staggerContainer, staggerItem } from './motion.jsx'
 export default function ContactHero() {
   return (
     <section
-      className="relative flex min-h-[min(560px,75dvh)] items-center justify-center overflow-hidden px-4 py-14 sm:min-h-[min(640px,80dvh)] sm:py-16 md:min-h-[min(716px,85vh)]"
+      className="relative flex min-h-[min(440px,55dvh)] items-center justify-center overflow-hidden px-4 py-12 sm:min-h-[min(640px,80dvh)] sm:py-16 md:min-h-[min(716px,85vh)]"
       aria-labelledby="contact-hero-heading"
     >
       <OptimizedImage
@@ -18,7 +19,7 @@ export default function ContactHero() {
         height={1080}
         aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fbf9f8] via-transparent to-[#fbf9f8]" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#faf3e3] via-transparent to-[#faf3e3]" aria-hidden />
 
       <motion.div
         className="container-narrow relative z-10 max-w-4xl text-center"
@@ -47,9 +48,9 @@ export default function ContactHero() {
         >
           Reach us for campus visits, directions, partnerships, and general enquiries. For enrollment
           and applications, visit our{' '}
-          <a href="/admissions" className="font-semibold text-[#7a5900] underline-offset-2 hover:underline">
+          <Link to="/admissions" className="font-semibold text-[#7a5900] underline-offset-2 hover:underline">
             Admissions page
-          </a>
+          </Link>
           .
         </motion.p>
       </motion.div>

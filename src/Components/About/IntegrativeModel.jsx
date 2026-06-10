@@ -24,7 +24,7 @@ const highlights = [
 
 export default function IntegrativeModel() {
   return (
-    <section id="model" className="scroll-mt-20 bg-[#fbf9f8] py-16 sm:scroll-mt-24 sm:py-20 md:py-28">
+    <section id="model" className="scroll-mt-20 bg-[#faf3e3] py-16 sm:scroll-mt-24 sm:py-20 md:py-28">
       <div className="container-narrow text-center">
         <Reveal>
           <p className="about-eyebrow text-xs sm:text-sm">Islamic Mission School</p>
@@ -39,7 +39,7 @@ export default function IntegrativeModel() {
             <RevealItem
               key={title}
               as="article"
-              className="group flex h-full flex-col items-center rounded-xl bg-[#f5f3f3] p-8 text-center transition-colors duration-500 hover:bg-[#7a5900] sm:p-10"
+              className="group flex h-full flex-col items-center rounded-xl bg-[#f3ecd9] p-8 text-center transition-colors duration-500 hover:bg-[#7a5900] sm:p-10"
             >
               <motion.div whileHover={{ y: -6 }} className="flex h-full flex-col items-center">
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:scale-110 sm:mb-6 sm:h-16 sm:w-16">

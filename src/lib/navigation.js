@@ -112,8 +112,6 @@ export const FOOTER_COLUMNS = [
       { label: 'Call Us', path: TEL_URL, external: true },
       { label: 'WhatsApp', path: WHATSAPP_URL, external: true },
       { label: ADDRESS_SHORT, path: '/contact#location' },
-      { label: 'Privacy Policy', path: '#' },
-      { label: 'Terms of Service', path: '#' },
     ],
   },
 ]

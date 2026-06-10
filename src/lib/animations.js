@@ -5,11 +5,11 @@ export const EASE_OUT = [0.16, 1, 0.3, 1]
 export const EASE_SPRING = { type: 'spring', stiffness: 120, damping: 22 }
 
 export const SECTION_REVEAL = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 24 },
   visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay, ease: EASE_OUT },
+    transition: { duration: 0.45, delay, ease: EASE_OUT },
   }),
 }
 
@@ -51,16 +51,16 @@ export const SLIDE_FROM_RIGHT = {
 export const STAGGER_CONTAINER = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.07, delayChildren: 0 },
   },
 }
 
 export const STAGGER_ITEM = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: EASE_OUT },
+    transition: { duration: 0.45, ease: EASE_OUT },
   },
 }
 
@@ -68,16 +68,16 @@ export const STAGGER_ITEM = {
 export const HERO_LOAD_CONTAINER = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.09, delayChildren: 0.05 },
   },
 }
 
 export const HERO_LOAD_ITEM = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 22 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: EASE_OUT },
+    transition: { duration: 0.5, ease: EASE_OUT },
   },
 }
 

@@ -42,7 +42,7 @@ export {
 } from '../Common/animations.jsx'
 
 /** @deprecated use useMotionViewport() */
-export const viewport = { once: true, amount: 0.15, margin: '0px 0px -24px 0px' }
+export const viewport = { once: true, amount: 0.05, margin: '0px 0px 20% 0px' }
 
 /** Scroll-triggered section wrapper */
 export function Reveal({

@@ -13,10 +13,12 @@ export default function Pillars() {
 
         <RevealStagger className="mt-10 sm:mt-14">
           <RevealItem as="article" className="why-card mx-auto max-w-3xl rounded-sm p-6 sm:p-10">
-            <motion.div whileHover={{ y: -4 }}>
-              <p className="text-sm leading-relaxed text-[#504533] sm:text-base md:text-lg">
-                {MUSLIM_ACADEMIC_LEADERSHIP.text}
-              </p>
+            <motion.div whileHover={{ y: -4 }} className="space-y-5">
+              {MUSLIM_ACADEMIC_LEADERSHIP.paragraphs.map((text) => (
+                <p key={text.slice(0, 32)} className="text-sm leading-relaxed text-[#504533] sm:text-base md:text-lg">
+                  {text}
+                </p>
+              ))}
             </motion.div>
           </RevealItem>
         </RevealStagger>

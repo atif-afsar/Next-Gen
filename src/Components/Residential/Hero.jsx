@@ -4,7 +4,7 @@ import { motion, staggerContainer, staggerItem } from '../WhyNextGen/motion.jsx'
 
 export default function ResidentialHero() {
   return (
-    <section className="relative flex min-h-[70dvh] items-center justify-center overflow-hidden py-16 sm:py-20 md:py-24">
+    <section className="relative flex min-h-[55dvh] items-center justify-center overflow-hidden py-14 sm:min-h-[70dvh] sm:py-20 md:py-24">
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffdea3_0%,transparent_70%)]" />
       </div>
@@ -19,7 +19,7 @@ export default function ResidentialHero() {
           variants={staggerItem}
           className="mb-6 inline-block rounded-full border border-[#d4c4ac] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7a5900] sm:mb-8 sm:px-4 sm:py-1.5 sm:text-xs"
         >
-          Grades 6–8 · Fully Residential
+          Grades 5–8 · Fully Residential
         </motion.span>
 
         <motion.h1

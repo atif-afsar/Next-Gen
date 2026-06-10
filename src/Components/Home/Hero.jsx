@@ -25,18 +25,19 @@ function ArrowIcon({ className = '' }) {
 
 function HeroFeatureCard({ title, imageUrl, href, className = '' }) {
   return (
-    <motion.div variants={heroLoadItem} className={`premium-card-hover ${className}`}>
+    <motion.div variants={heroLoadItem} className={`premium-card-hover w-full ${className}`}>
       <AnimatedButton
         to={href}
         wrapperClassName="h-full w-full"
-        className="hero-feature-card group h-full overflow-hidden rounded-2xl border border-[#d4c4ac]/40 bg-white shadow-[0_4px_24px_rgba(26,26,26,0.06)] transition-shadow duration-300 hover:border-[#7a5900]/30 hover:shadow-[0_12px_40px_rgba(122,89,0,0.1)]"
+        layoutClass="flex h-full w-full flex-col"
+        className="hero-feature-card group overflow-hidden rounded-2xl border border-[#d4c4ac]/40 bg-white shadow-[0_4px_24px_rgba(26,26,26,0.06)] transition-shadow duration-300 hover:border-[#7a5900]/30 hover:shadow-[0_12px_40px_rgba(122,89,0,0.1)]"
         aria-label={title}
       >
-        <div className="premium-image overflow-hidden bg-[#f5f3f3]">
+        <div className="premium-image overflow-hidden bg-[#f3ecd9]">
           <OptimizedImage
             src={imageUrl}
             alt=""
-            className="aspect-[4/3] w-full object-cover sm:aspect-square"
+            className="aspect-[4/3] w-full object-cover sm:aspect-square lg:aspect-auto lg:h-72 xl:h-80"
             width={800}
             height={800}
           />
@@ -125,7 +126,7 @@ export default function Hero() {
             </AnimatedButton>
             <AnimatedButton
               to={HERO.ctaSecondary.path}
-              className="inline-flex items-center justify-center rounded-lg border border-[#d4c4ac] bg-white px-7 py-3.5 text-sm font-semibold text-[#1b1c1c] transition hover:border-[#7a5900]/40 hover:bg-[#fbf9f8] sm:min-w-[200px]"
+              className="inline-flex items-center justify-center rounded-lg border border-[#d4c4ac] bg-white px-7 py-3.5 text-sm font-semibold text-[#1b1c1c] transition hover:border-[#7a5900]/40 hover:bg-[#faf3e3] sm:min-w-[200px]"
             >
               {HERO.ctaSecondary.label}
             </AnimatedButton>
@@ -137,7 +138,7 @@ export default function Hero() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-5 md:mt-20 lg:grid-cols-3 lg:gap-6"
+          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-5 md:mt-20 lg:grid-cols-3 lg:gap-8"
         >
           {HERO_FEATURES.map((feature, index) => (
             <HeroFeatureCard

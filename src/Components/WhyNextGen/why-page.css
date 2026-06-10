@@ -2,9 +2,9 @@
 .page-why,
 .page-programs,
 .page-residential {
-  --why-bg: #fbf9f8;
+  --why-bg: #faf3e3;
   --why-surface: #ffffff;
-  --why-card: #fdfbf7;
+  --why-card: #fffdf6;
   --why-primary: #7a5900;
   --why-primary-light: #ffdea3;
   --why-text: #1b1c1c;
@@ -44,7 +44,7 @@
 .page-why .why-btn-outline:hover,
 .page-programs .why-btn-outline:hover,
 .page-residential .why-btn-outline:hover {
-  background-color: #f5f3f3;
+  background-color: #f3ecd9;
 }
 
 .page-why .why-text-primary,

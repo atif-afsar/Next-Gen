@@ -7,7 +7,7 @@ export default function ProgramPhases() {
   const stageCount = PROGRAM_PHASES.length
 
   return (
-    <section id="program-phases" className="scroll-mt-20 bg-[#fbf9f8] py-16 sm:scroll-mt-24 sm:py-20 md:py-24">
+    <section id="program-phases" className="scroll-mt-20 bg-[#faf3e3] py-16 sm:scroll-mt-24 sm:py-20 md:py-24">
       <div className="container-narrow px-4">
         <Reveal className="text-center">
           <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-5xl">Program Phases</h2>
@@ -30,7 +30,7 @@ export default function ProgramPhases() {
           >
             {PROGRAM_PHASES.map(({ step, grades, phase, role, description }) => (
               <motion.div key={step} variants={staggerItem} className="relative z-10 space-y-2 text-center">
-                <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#7a5900] text-xs font-bold text-white shadow-lg ring-8 ring-[#fbf9f8] lg:mb-6 lg:h-11 lg:w-11">
+                <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#7a5900] text-xs font-bold text-white shadow-lg ring-8 ring-[#faf3e3] lg:mb-6 lg:h-11 lg:w-11">
                   {step}
                 </div>
                 <h3 className="font-serif text-sm text-[#1b1c1c] lg:text-base">{grades}</h3>
@@ -48,7 +48,7 @@ export default function ProgramPhases() {
           <div className="absolute bottom-4 left-6 top-4 w-px bg-[#d4c4ac]/50" aria-hidden />
           {PROGRAM_PHASES.map(({ step, grades, phase, role, description }) => (
             <RevealItem key={step} className="relative flex gap-5 pb-10 last:pb-0">
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#7a5900] text-sm font-bold text-white shadow-md ring-4 ring-[#fbf9f8]">
+              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#7a5900] text-sm font-bold text-white shadow-md ring-4 ring-[#faf3e3]">
                 {step}
               </div>
               <div className="min-w-0 flex-1 pt-1">

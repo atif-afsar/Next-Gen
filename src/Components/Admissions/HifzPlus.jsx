@@ -3,11 +3,22 @@ import { Reveal, RevealStagger, RevealItem } from '../Contact/motion.jsx'
 
 export default function HifzPlus() {
   return (
-    <section id="hifz-plus" className="scroll-mt-20 border-t border-[#d4c4ac]/25 bg-[#fbf9f8] py-14 sm:scroll-mt-24 sm:py-16 md:py-20">
+    <section id="hifz-plus" className="scroll-mt-20 border-t border-[#d4c4ac]/25 bg-[#faf3e3] py-14 sm:scroll-mt-24 sm:py-16 md:py-20">
       <div className="container-narrow px-4 sm:px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-4xl">{HIFZ_PLUS.title}</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#504533] sm:text-base">{HIFZ_PLUS.description}</p>
+        </Reveal>
+
+        <Reveal className="mx-auto mt-7 max-w-2xl sm:mt-8">
+          <div className="flex items-start gap-4 rounded-2xl border border-[#f5a623]/40 bg-white p-5 text-left shadow-sm sm:p-6">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ffdea3]/50 text-[#7a5900]">
+              <span className="material-symbols-outlined icon-outline text-xl" aria-hidden>
+                workspace_premium
+              </span>
+            </span>
+            <p className="text-sm leading-relaxed text-[#504533] sm:text-base">{HIFZ_PLUS.note}</p>
+          </div>
         </Reveal>
 
         <Reveal className="mt-10 text-center sm:mt-12">

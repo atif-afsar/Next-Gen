@@ -10,7 +10,7 @@ import CTASection from '../Components/Home/CTASection.jsx'
 
 export default function Home() {
   return (
-    <PageShell page="home" preload="/images/hero/image1.png" includeFaq>
+    <PageShell page="home" preload="/images/brochure/dual-pathway.jpg" includeFaq>
       <main>
         <Hero />
         <div className="page-home-sections" aria-label="Academy overview">

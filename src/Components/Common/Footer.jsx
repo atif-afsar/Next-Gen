@@ -11,13 +11,6 @@ function FooterLink({ path, label, variant, external }) {
       ? 'text-sm text-[#5f5e5e] transition-colors hover:text-[#7a5900]'
       : 'text-sm text-white/55 transition-colors hover:text-gold'
 
-  if (path === '#') {
-    return (
-      <a href="#" className={linkClass}>
-        {label}
-      </a>
-    )
-  }
   if (external || path.startsWith('tel:') || path.startsWith('http')) {
     return (
       <a
@@ -67,7 +60,7 @@ export default function Footer() {
   const copyrightClass = light ? 'text-[#5f5e5e]/60' : 'text-white/40'
 
   const callChipClass = light
-    ? 'border-[#d4c4ac]/40 bg-[#fcfaf7] text-[#1b1c1c] hover:border-[#7a5900]/50 hover:bg-[#ffdea3]/30'
+    ? 'border-[#d4c4ac]/40 bg-[#faf3e3] text-[#1b1c1c] hover:border-[#7a5900]/50 hover:bg-[#ffdea3]/30'
     : 'border-white/10 bg-white/5 text-white/90 hover:border-gold/40 hover:bg-gold/10'
 
   const waChipClass = light

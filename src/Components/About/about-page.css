@@ -4,8 +4,8 @@
   --about-muted: #504533;
   --about-primary: #7a5900;
   --about-border: #d4c4ac;
-  --about-surface: #f5f3f3;
-  --about-bg: #fbf9f8;
+  --about-surface: #f3ecd9;
+  --about-bg: #faf3e3;
   color: var(--about-text);
 }
 

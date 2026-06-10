@@ -6,7 +6,7 @@ import { motion, staggerContainer, staggerItem } from '../Contact/motion.jsx'
 export default function AdmissionsHero() {
   return (
     <section
-      className="relative flex min-h-[min(520px,72dvh)] items-center justify-center overflow-hidden px-4 py-14 sm:min-h-[min(600px,78dvh)] sm:py-16 md:min-h-[min(680px,82vh)]"
+      className="relative flex min-h-[min(440px,55dvh)] items-center justify-center overflow-hidden px-4 py-12 sm:min-h-[min(600px,78dvh)] sm:py-16 md:min-h-[min(680px,82vh)]"
       aria-labelledby="admissions-hero-heading"
     >
       <OptimizedImage
@@ -18,7 +18,7 @@ export default function AdmissionsHero() {
         height={1080}
         aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fbf9f8] via-[#fbf9f8]/80 to-[#fbf9f8]" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#faf3e3] via-[#faf3e3]/80 to-[#faf3e3]" aria-hidden />
 
       <motion.div
         className="container-narrow relative z-10 max-w-4xl text-center"
@@ -38,7 +38,7 @@ export default function AdmissionsHero() {
           className="font-serif text-3xl leading-tight text-[#1b1c1c] sm:text-4xl md:text-5xl lg:text-6xl"
         >
           {ADMISSIONS.grades}{' '}
-          <span className="italic text-[#7a5900]">· Ages {ADMISSIONS.ageGroup}</span>
+          <span className="italic text-[#7a5900]">· {ADMISSIONS.ageGroup}</span>
         </motion.h1>
         <motion.p
           variants={staggerItem}
@@ -55,7 +55,7 @@ export default function AdmissionsHero() {
           </a>
           <a
             href="#hifz-plus"
-            className="inline-block rounded-lg border border-[#827560] bg-white px-8 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#1b1c1c] transition hover:bg-[#f5f3f3] sm:text-sm"
+            className="inline-block rounded-lg border border-[#827560] bg-white px-8 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#1b1c1c] transition hover:bg-[#f3ecd9] sm:text-sm"
           >
             Hifz Plus Program
           </a>

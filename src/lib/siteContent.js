@@ -1,11 +1,11 @@
 /** NextGen Academy — centralized website copy */
 
 export const HERO = {
-  eyebrow: 'Where minds graduate with honors, and hearts graduate with Iman.',
-  title: 'Building Academic Leadership for New India',
-  titleAccent: 'New India',
+  eyebrow: 'Where Minds Graduate with Honors, and Hearts Graduate with IMAN.',
+  title: 'Nurturing Academic Leaders Who Will Lead Classrooms and Congregations',
+  titleAccent: 'Classrooms and Congregations',
   description:
-    'NextGen Academy empowers young learners to become compassionate academic leaders, ethical educators, community scholars, and architects of a more just, sustainable, and beautiful world.',
+    "We are embarking on a transformative journey, selecting students at the pivotal Middle School age to embark on a unique, integrated educational path. This isn't just schooling; it's the forging of future Academic Leaders and Scholars of Islam — in one person.",
   ctaPrimary: { label: 'Explore Program', path: '/programs' },
   ctaSecondary: { label: 'Apply for Admission', path: '/admissions' },
 }
@@ -14,44 +14,46 @@ export const HERO_FEATURES = [
   {
     id: 'leadership',
     title: 'Academic Leadership Program',
-    imageUrl: '/images/hero/image1.png',
+    imageUrl: '/images/brochure/dual-pathway.jpg',
     href: '/programs',
   },
   {
     id: 'scholarship',
     title: 'Islamic Scholarship',
-    imageUrl: '/images/hero/image2.png',
+    imageUrl: '/images/brochure/islamic-scholarship.jpg',
     href: '/programs#islamic-scholarship',
   },
   {
     id: 'residential',
     title: 'Residential Program',
-    imageUrl: '/images/hero/image3.png',
+    imageUrl: '/images/brochure/residential-child.jpg',
     href: '/residential-program',
   },
 ]
 
 export const ABOUT = {
   eyebrow: 'Islamic Mission School Heritage',
-  title: 'Rooted in Values, Committed to Excellence',
-  lead: 'NextGen Academy is a sister organization of Islamic Mission School (IMS), a value-based ICSE school founded in 2008. IMS was established by educators and parents who believed that education must balance academic excellence with strong ethical character.',
+  title: 'The Next Chapter in the Legacy of Excellence of IMS',
+  lead: 'NextGen Academy is a sister organization of Islamic Mission School (IMS), a value-based ICSE School. IMS was founded in 2008 by a small group of educators and parents who believed that modern education was becoming overly focused on rote learning and examination results. The vision was to create a learning environment where academic excellence and strong ethical character were given equal importance.',
   highlights: [
     {
       icon: 'domain',
-      title: 'A Respected Institution',
-      text: 'Modern laboratories for Physics, Chemistry, Biology, Computer Science, Robotics, and STEM — rooted in values, innovation, and global citizenship.',
+      title: 'A Mighty, Fruit-Bearing Tree',
+      text: 'IMS has blossomed from a sapling of an idea — deeply rooted in its values and branching out towards academic excellence and global citizenship, with modern labs for Physics, Chemistry, Biology, Computer Science, Robotics & STEM.',
     },
     {
       icon: 'auto_stories',
-      title: 'Holistic Enhancement',
-      text: 'English & Arabic Communication, Financial Literacy, Life Skills, Robotics, and an Integrated NEET/JEE Schooling Program with ICSE curriculum.',
+      title: 'Beyond the Standard Curriculum',
+      text: "Enhancement classes in English Communication, Arabic Communication, Financial Literacy, Life Skills, Robotics & STEM — plus IMS' Integrated NEET/JEE Schooling Program blending ICSE rigor with competitive exam preparation.",
     },
   ],
   paragraphs: [
-    'NextGen Academy is a sister organization of Islamic Mission School (IMS), a value-based ICSE school founded in 2008. IMS was established by educators and parents who believed that education must balance academic excellence with strong ethical character.',
-    'IMS has grown into a respected institution rooted in values and committed to academic excellence, innovation, and global citizenship. The campus includes modern laboratories for Physics, Chemistry, Biology, Computer Science, Robotics, and STEM.',
-    'IMS also offers enhancement programs in English Communication, Arabic Communication, Financial Literacy, Life Skills, Robotics, and STEM. Its Integrated NEET/JEE Schooling Program blends ICSE curriculum with competitive exam preparation.',
+    'NextGen Academy is a sister organization of Islamic Mission School (IMS), a value-based ICSE School. IMS was founded in 2008 by a small group of educators and parents who believed that modern education was becoming overly focused on rote learning and examination results. The vision was to create a learning environment where academic excellence and strong ethical character were given equal importance.',
+    'IMS has blossomed from a sapling of an idea into a mighty, fruit-bearing tree, deeply rooted in its values and branching out towards academic excellence and global citizenship. Our campus houses well-equipped, modern laboratories for Physics, Chemistry, Biology, Computer Science, Robotics & STEM, fostering a spirit of inquiry and innovation.',
+    "Beyond the standard curriculum, we offer enhancement classes in English Communication, Arabic Communication, Financial Literacy, Life Skills, Robotics & STEM. IMS' Integrated NEET/JEE Schooling Program is a unique educational model that seamlessly blends the rigor of the ICSE curriculum with the intensive preparation required for competitive exams.",
   ],
+  legacy:
+    'Where IMS established the gold standard for integrated education — meriting world-class academics with timeless moral values — NextGen Academy is the natural evolution.',
 }
 
 export const LEGACY_STATS = [
@@ -62,33 +64,39 @@ export const LEGACY_STATS = [
 ]
 
 export const VISION = {
-  title: 'Our Vision',
-  text: 'To empower learners to become compassionate architects of a more just, sustainable, and beautiful world by transforming them into Academic Leaders.',
+  title: 'Vision Statement',
+  text: 'To empower learners to become compassionate architects of a more just, sustainable and beautiful world by transforming them into Academic Leaders.',
 }
 
 export const MISSION = {
-  title: 'Our Mission',
-  text: 'Our mission is to nurture a generation of young leaders who see themselves as trustees of the future by becoming great academic leaders. We aim to instill core human values such as kindness, honesty, respect, and responsibility.',
+  title: 'Mission Statement',
+  text: 'Our mission is to nurture a generation of young leaders who see themselves as trustees of the future by becoming great academic leaders, instilling in them the core human values — such as kindness, honesty, respect, and responsibility — so they can become architects of a more beautiful world.',
 }
 
 export const WHY_ACADEMIC_LEADERSHIP = {
   title: 'Why Academic Leadership',
+  quote:
+    "A nation's greatness is not measured by its resources or military might alone, but by the depth of its knowledge, the strength of its values, and the vision of its future. At the heart of this intellectual and moral architecture stand its academic leaders — the educators, researchers, and institutional visionaries.",
   paragraphs: [
-    'India stands at a decisive moment in its history. Its future depends not only on resources or power, but on knowledge, values, and visionary academic leadership.',
-    'India needs educators, researchers, and institutional visionaries who can reimagine learning, foster innovation, and build an equitable and enlightened society.',
+    'India stands at a decisive moment in its history — poised for economic ascent, demographic advantage, and global influence. Yet, this potential can only be unlocked through the transformative power of education and knowledge. At this critical juncture, India does not merely need managers of educational institutions; it requires visionary academic leaders who can reimagine learning, foster groundbreaking innovation, and build an equitable, enlightened society.',
+    'A nation that intentionally cultivates ethical, visionary, and effective academic leaders is investing in the very engine of its own progress. It is building the foundation upon which its economic prosperity, cultural vitality, and global relevance will stand for generations to come.',
   ],
 }
 
 export const MUSLIM_ACADEMIC_LEADERSHIP = {
-  title: 'Muslim Academic Leadership',
-  text: 'As India aspires to become a Vishwa Guru, it must harness the full potential of all communities. Indian Muslim academic leaders can play a pivotal role by bridging tradition with modernity, addressing community challenges, and contributing to national development.',
+  title: 'Towards a Vishwa Guru: The Pivotal Role of Muslim Academic Leadership',
+  paragraphs: [
+    "Indian Muslims, as an integral part of India's social fabric and the world's second-largest Muslim population, stand at a critical juncture. The cultivation of great academic leaders from within the community is not merely beneficial but essential — for the community's progress, for India's democratic strength, and for the nation's collective advancement.",
+    'The need for great Muslim academic leaders is not a "Muslim issue" but an Indian imperative. A large demographic cannot be left behind without serious consequences for national cohesion and development. As India aspires to be a Vishwa Guru (world teacher), it needs to harness the full potential of all its communities. Indian Muslim academic leaders can be pivotal in this journey — interpreting tradition for modernity, addressing particular challenges with universal solutions, and embodying the composite Indian identity that is both rooted and global.',
+  ],
+  text: 'As India aspires to be a Vishwa Guru (world teacher), it needs to harness the full potential of all its communities. Indian Muslim academic leaders can be pivotal in this journey — interpreting tradition for modernity, addressing particular challenges with universal solutions, and embodying the composite Indian identity that is both rooted and global.',
 }
 
 export const ACADEMIC_LEADERSHIP_PROGRAM = {
   eyebrow: 'The NextGen Academic Leadership Program',
-  title: 'Where Minds Graduate with Honors, and Hearts Graduate with Iman.',
+  title: 'The Dual Pathway: Excellence in Academia, Mastery in Faith',
   description:
-    'A transformative integrated program for students from Middle School onwards, designed to develop future Academic Leaders and Scholars of Islam in one person.',
+    'Our revolutionary model synchronizes two prestigious tracks into one seamless journey — spanning from Middle School to Post-Graduation — forging future Academic Leaders and Scholars of Islam in one person.',
 }
 
 export const PROGRAM_PHASES = [
@@ -130,82 +138,90 @@ export const PROGRAM_PHASES = [
 ]
 
 export const DUAL_PATHWAYS = {
-  title: 'Dual Pathway Program',
+  title: 'The Dual Pathway',
   subtitle:
-    'Two integrated journeys — Academic Leadership and Islamic Scholarship — united in one transformative experience.',
+    'Excellence in Academia, Mastery in Faith — our revolutionary model synchronizes two prestigious tracks into one seamless journey.',
   paths: [
     {
       label: 'Path 1: Academic Leadership',
-      title: 'Academic Leadership',
+      title: 'The Path of Academic Leadership',
       icon: 'school',
       summary:
-        'A leadership pipeline that prepares exceptional educators and institutional leaders from a young age.',
+        'Great schools are built by great educators. Leadership is not a position one attains, but a craft one cultivates over a lifetime.',
       description:
-        'Great schools are built by great educators. Leadership is not only a position, but a craft cultivated over a lifetime. NextGen Academy builds a leadership pipeline to prepare exceptional educators and academic leaders from a young age.',
+        'Great schools are built by great educators. Leadership is not a position one attains, but a craft one cultivates over a lifetime. NextGen Academy has an ambitious and visionary concept — a longitudinal leadership pipeline designed to cultivate exceptional educators and academic leaders from a young age.',
       items: [
-        'Educator development from middle school',
-        'Institutional leadership training',
-        'Research and academic excellence',
-        'Classroom and community impact',
+        'Longitudinal leadership pipeline',
+        'Middle School to Post-Graduation',
+        'Cultivating exceptional educators',
+        'Classroom and institutional impact',
       ],
     },
     {
       label: 'Path 2: Islamic Scholarship',
-      title: 'Islamic Scholarship',
+      title: 'The Path of Islamic Scholarship',
       icon: 'menu_book',
       summary:
-        'Comprehensive Islamic studies that develop scholars ready to guide communities with wisdom and Iman.',
+        'Parallel to their academic studies, students immerse themselves in a comprehensive Islamic curriculum.',
       description:
-        'Alongside academic studies, students engage with a comprehensive Islamic curriculum including Tafseer, Hadith, Islamic Studies, Seerah, Fiqh, and Arabic Language. They develop the knowledge and maturity to guide communities, deliver Khutbahs, and teach Islamic sciences.',
-      items: ['Tafseer & Hadith', 'Islamic Studies & Seerah', 'Fiqh & Usul', 'Arabic Language'],
+        "Parallel to their academic studies, students will immerse themselves in a comprehensive Islamic curriculum like Tafseer, Hadith & Islamic Studies, Seerah, Fiqh, Arabic Language etc. They will gain the profound knowledge and spiritual maturity to deliver the Khutbah at Jumu'ah Prayers, provide religious guidance, and teach Islamic sciences.",
+      items: [
+        'Tafseer, Hadith & Islamic Studies',
+        'Seerah & Fiqh',
+        'Arabic Language',
+        "Khutbah at Jumu'ah Prayers",
+      ],
     },
   ],
 }
 
 export const GRADUATE_PROFILE = {
-  title: 'A NextGen Graduate Is',
+  title: 'The NextGen Graduate: A Uniquely Empowered Academic Leader',
+  intro:
+    'Imagine a future where your local school principal is also a respected community scholar. Where a college educator can eloquently bridge modern science and timeless Islamic wisdom. Where the person leading the Friday sermon also understands contemporary educational psychology and leadership.',
   traits: [
-    'An Educational Visionary with certified academic credentials.',
-    'A Community Scholar with deep spiritual and ethical knowledge.',
-    'A leader capable of guiding classrooms, institutions, and communities.',
-    'A bridge between modern education and timeless Islamic wisdom.',
+    'An Educational Visionary with certified credentials to shape institutions.',
+    'A Community Scholar with the depth of knowledge to guide spiritual and ethical development.',
   ],
-  outcomesTitle: 'Graduate Outcomes',
+  outcomesTitle: 'We are nurturing well-rounded individuals who will',
   outcomes: [
     'Lead classrooms and congregations.',
     'Author academic papers and deliver impactful sermons.',
-    'Manage educational institutions.',
-    'Nurture the moral and intellectual fabric of society.',
+    'Manage educational institutions while nurturing the moral fabric of their communities.',
   ],
+  closing:
+    "This program is more than an academy; it's an investment in a future where leadership is defined by both intellectual prowess and unwavering faith.",
 }
 
 export const RESIDENTIAL_PROGRAM = {
   title: 'A Home Away from Home, A Foundation for Life',
   description:
-    'The fully residential program for Grades 6–8 creates a nurturing, structured, and vibrant 24/7 learning environment. Students grow academically, socially, spiritually, and emotionally in a safe and holistic ecosystem.',
+    'At NextGen Academy, we believe that education extends far beyond the classroom. Our fully residential program for students is thoughtfully designed to create a nurturing, structured, and vibrant 24/7 learning environment. We provide a safe, holistic ecosystem where young minds grow academically, socially, spiritually, and emotionally, preparing them not just for the next grade, but for life.',
+  closing:
+    'This is the investment that yields a return beyond university placements and worldly success. It yields a leader who carries the Light into the darkest corners of ignorance, and the sword of intellect against the tide of mediocrity.',
   pillars: [
     {
       icon: 'psychology',
-      title: 'Pillar of Intellect — Aql',
+      title: 'Pillar of Intellect (Aql)',
       description:
-        'Curriculum surpassing international standards with project-based learning and research methodology.',
+        'Curriculum: surpassing international standards, with project-based learning and research methodology.',
     },
     {
       icon: 'auto_stories',
-      title: 'Pillar of Spirit — Ruh',
+      title: 'Pillar of Spirit (Ruh)',
       description:
-        'Structured progression from Hifz to Hifz with Tajweed and Tafsir, leading into foundational Usul al-Fiqh.',
+        'Pathway: structured progression from Hifz to Hifz with Tajweed & Tafsir, into foundational Usul al-Fiqh (Principles of Jurisprudence).',
     },
     {
       icon: 'volunteer_activism',
-      title: 'Pillar of Character — Khuluq',
-      description: 'The Seerah of the Prophet ﷺ as the ultimate leadership manual.',
+      title: 'Pillar of Character (Khuluq)',
+      description: 'Model: the Seerah of the Prophet (PBUH) as the ultimate leadership manual.',
     },
     {
       icon: 'leaderboard',
-      title: 'Pillar of Leadership — Qiyadah',
+      title: 'Pillar of Leadership (Qiyadah)',
       description:
-        'Students experience leadership through roles such as Academic Prefect, Prayer Imam, Hospitality Coordinator, and Sustainability Lead.',
+        'Laboratory: the residential community itself serves as their living laboratory of leadership. Students rotate through roles — Academic Prefect, Prayer Imam, Hospitality Coordinator, Sustainability Lead.',
     },
   ],
 }
@@ -213,15 +229,16 @@ export const RESIDENTIAL_PROGRAM = {
 export const ADMISSIONS = {
   title: 'Admission Criteria',
   grades: 'Grades 5th to 8th',
-  ageGroup: '10–14 years',
+  ageGroup: 'Age 10–14 years',
   description:
-    'NextGen Academy provides a transformative educational experience for students aged 10–14 years. The program combines rigorous academics with holistic development to prepare students for future success.',
+    'NextGen Academy provides a transformative educational experience for students aged 10–14 years (Grades 5–8). We combine rigorous academics with holistic development, preparing students for future success.',
 }
 
 export const HIFZ_PLUS = {
   title: 'Hifz Plus Students',
   description:
-    'NextGen Academy offers a specialized program for Hifz-completed students aged 10–14 who need support with academic age-grade alignment. The program provides a structured, compassionate, and accelerated pathway to reintegrate students into age-appropriate academic levels while honoring their spiritual achievement.',
+    'NextGen Academy has a specialized educational program designed to support Hifz-completed students aged 10–14 who are experiencing academic age-grade misalignment. Our mission is to provide a structured, compassionate, and accelerated learning pathway that reintegrates students into age-appropriate academic levels while honoring and leveraging their spiritual accomplishment.',
+  note: 'NextGen Academy recognizes the extraordinary dedication and discipline of children who have completed Hifz. To support their successful transition into formal academic schooling, we offer a tailored admission and integration process.',
   steps: [
     {
       step: 'Step 1',
@@ -259,6 +276,15 @@ export const FOOTER = {
   copyright: 'Building Academic Leadership for New India.',
 }
 
+export const PARENT_ORG = {
+  eyebrow: 'Islamic Mission School, the Parent Organization',
+  title: 'The Next Chapter in the Legacy of Excellence of IMS',
+  paragraphs: [
+    'NextGen Academy is proud to be the pioneering sister institution of the renowned Islamic Mission School (IMS) — a celebrated ICSE K-12 school with a decades-long legacy of nurturing minds and strengthening character.',
+    'Where IMS established the gold standard for integrated education — meriting world-class academics with timeless moral values — NextGen Academy is the natural evolution.',
+  ],
+}
+
 export const CURRICULUM_HIGHLIGHTS = [
   {
     type: 'image',
@@ -277,7 +303,7 @@ export const CURRICULUM_HIGHLIGHTS = [
     icon: 'translate',
     title: 'Language & Life Skills',
     description: 'English Communication, Arabic Communication, Financial Literacy, and Life Skills.',
-    bgClass: 'bg-[#efeded]',
+    bgClass: 'bg-[#efe7d2]',
   },
   {
     type: 'image',

@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react'
 
 const MOBILE_QUERY = '(max-width: 767px)'
 
-/** Looser intersection on small screens so whileInView reliably fires */
+/* Positive bottom margin pre-triggers reveals before elements enter the
+   viewport, so content is already visible when the user scrolls to it */
 export function getMotionViewport(isMobile) {
   if (isMobile) {
-    return { once: true, amount: 0.08, margin: '0px 0px 0px 0px' }
+    return { once: true, amount: 0, margin: '0px 0px 25% 0px' }
   }
-  return { once: true, amount: 0.15, margin: '0px 0px -24px 0px' }
+  return { once: true, amount: 0.05, margin: '0px 0px 15% 0px' }
 }
 
 export function useMotionViewport() {

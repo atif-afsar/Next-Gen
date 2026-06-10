@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {
   PHONE_DISPLAY,
   PHONE_SECONDARY_DISPLAY,
@@ -23,9 +24,9 @@ export default function ContactDirect() {
           <p className="mt-3 text-sm leading-relaxed text-[#504533] sm:mt-4 sm:text-base">
             General enquiries, directions, and campus visits — we are at {ADDRESS_SHORT}. For
             applications, see{' '}
-            <a href="/admissions" className="font-semibold text-[#7a5900] underline-offset-2 hover:underline">
+            <Link to="/admissions" className="font-semibold text-[#7a5900] underline-offset-2 hover:underline">
               Admissions
-            </a>
+            </Link>
             .
           </p>
         </Reveal>

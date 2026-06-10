@@ -11,6 +11,12 @@ export default function GraduateOutcomes() {
               <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl md:text-4xl">
                 {GRADUATE_PROFILE.title}
               </h2>
+              <p className="mt-4 text-sm leading-relaxed text-[#504533] sm:text-base">
+                {GRADUATE_PROFILE.intro}
+              </p>
+              <p className="mt-3 text-sm font-medium leading-relaxed text-[#1b1c1c] sm:text-base">
+                A NextGen graduate embodies this powerful synthesis:
+              </p>
             </Reveal>
             <RevealStagger className="mt-6 space-y-3">
               {GRADUATE_PROFILE.traits.map((trait) => (
@@ -34,6 +40,11 @@ export default function GraduateOutcomes() {
                 </RevealItem>
               ))}
             </RevealStagger>
+            <Reveal>
+              <p className="mt-8 border-l-2 border-[#f5a623] pl-4 text-sm italic leading-relaxed text-[#504533] sm:text-base">
+                {GRADUATE_PROFILE.closing}
+              </p>
+            </Reveal>
           </div>
         </div>
       </div>

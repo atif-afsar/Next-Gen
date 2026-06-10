@@ -9,7 +9,7 @@ import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
 const pillarImages = [ABOUT_PILLAR_INTELLECTUAL, ABOUT_PILLAR_SPIRITUAL, ABOUT_PILLAR_LEADERSHIP]
 
 export default function Pillars() {
-  const traits = GRADUATE_PROFILE.traits.slice(0, 3)
+  const traits = [...GRADUATE_PROFILE.traits, GRADUATE_PROFILE.outcomes[2]].slice(0, 3)
 
   return (
     <section className="bg-white py-16 sm:py-20 md:py-28">

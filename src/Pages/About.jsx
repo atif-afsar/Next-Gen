@@ -17,7 +17,7 @@ export default function About() {
         { name: 'About', path: '/about' },
       ]}
     >
-      <main className="page-about bg-[#fbf9f8]">
+      <main className="page-about bg-[#faf3e3]">
         <AboutHero />
         <Mission />
         <IntegrativeModel />

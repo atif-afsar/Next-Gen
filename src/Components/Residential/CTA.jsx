@@ -3,7 +3,7 @@ import { motion, viewport, staggerContainer, staggerItem } from '../WhyNextGen/m
 
 export default function ResidentialCTA() {
   return (
-    <section className="border-t border-[#d4c4ac]/30 bg-[#fbf9f8] px-4 py-16 sm:py-20 md:py-24">
+    <section className="border-t border-[#d4c4ac]/30 bg-[#faf3e3] px-4 py-16 sm:py-20 md:py-24">
       <div className="container-narrow">
         <motion.div
           className="why-highlight-card overflow-hidden rounded-2xl px-6 py-12 text-center shadow-[0_16px_48px_rgba(122,89,0,0.18)] sm:px-10 sm:py-14 md:px-14 md:py-16"
@@ -22,7 +22,7 @@ export default function ResidentialCTA() {
             variants={staggerItem}
             className="mx-auto mt-4 max-w-xl text-sm text-white/90 sm:mt-5 sm:text-base md:text-lg"
           >
-            Explore admissions for our fully residential program for Grades 6–8.
+            Explore admissions for our fully residential program for Grades 5–8.
           </motion.p>
           <motion.div
             variants={staggerItem}

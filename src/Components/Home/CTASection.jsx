@@ -15,7 +15,7 @@ export default function CTASection() {
           viewport={motionViewport}
           variants={scaleIn}
           custom={0}
-          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7a5900] to-[#f4b400] px-6 py-12 text-center sm:px-10 sm:py-14 md:px-16 md:py-20"
+          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7a5900] to-[#f5a623] px-6 py-12 text-center sm:px-10 sm:py-14 md:px-16 md:py-20"
         >
           <div className="pointer-events-none absolute inset-0 opacity-10" aria-hidden>
             <svg className="h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 100">

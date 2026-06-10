@@ -4,7 +4,7 @@ import { motion, heroLoadContainer, heroLoadItem } from '../WhyNextGen/motion.js
 
 export default function ProgramsHero() {
   return (
-    <section className="relative flex min-h-[75dvh] items-center justify-center overflow-hidden py-16 sm:min-h-[80dvh] sm:py-20 md:py-24">
+    <section className="relative flex min-h-[55dvh] items-center justify-center overflow-hidden py-14 sm:min-h-[80dvh] sm:py-20 md:py-24">
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ffdea3_0%,transparent_70%)]" />
       </div>

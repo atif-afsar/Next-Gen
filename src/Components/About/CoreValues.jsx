@@ -9,6 +9,9 @@ export default function CoreValues() {
           <h2 className="about-heading mb-6 text-2xl sm:mb-8 sm:text-3xl md:text-5xl">
             {WHY_ACADEMIC_LEADERSHIP.title}
           </h2>
+          <p className="mx-auto mb-2 max-w-3xl text-left text-sm italic leading-relaxed text-[#504533] sm:text-base">
+            &ldquo;{WHY_ACADEMIC_LEADERSHIP.quote}&rdquo;
+          </p>
         </Reveal>
 
         <RevealStagger className="mx-auto grid max-w-3xl grid-cols-1 gap-6">

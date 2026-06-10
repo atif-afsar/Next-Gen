@@ -4,7 +4,7 @@ import { Reveal } from './motion.jsx'
 export default function FAQ() {
   return (
     <section
-      className="border-t border-[#d4c4ac]/25 bg-[#fbf9f8] py-14 sm:py-20"
+      className="border-t border-[#d4c4ac]/25 bg-[#faf3e3] py-14 sm:py-20"
       aria-labelledby="faq-heading"
     >
       <div className="container-narrow px-4 sm:px-6">

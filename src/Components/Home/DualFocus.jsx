@@ -56,7 +56,7 @@ export default function DualFocus() {
   return (
     <section
       id="dual-pathway"
-      className="scroll-mt-20 bg-[#fbf9f8] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
+      className="scroll-mt-20 bg-[#faf3e3] py-16 sm:scroll-mt-24 sm:py-20 md:py-28"
     >
       <div className="container-narrow">
         {/* Centered header — full width on desktop */}

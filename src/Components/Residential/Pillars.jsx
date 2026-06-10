@@ -29,6 +29,12 @@ export default function ResidentialPillars() {
             </RevealItem>
           ))}
         </RevealStagger>
+
+        <Reveal className="mx-auto mt-10 max-w-3xl text-center sm:mt-14">
+          <p className="border-l-2 border-[#f5a623] pl-4 text-left text-sm italic leading-relaxed text-[#504533] sm:text-base">
+            {RESIDENTIAL_PROGRAM.closing}
+          </p>
+        </Reveal>
       </div>
     </section>
   )

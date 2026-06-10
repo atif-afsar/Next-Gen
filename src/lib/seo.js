@@ -26,12 +26,12 @@ export const KEYWORDS = [
 ].join(', ')
 
 export const ADDRESS = {
-  street: 'Near Fort, Fort Enclave Colony',
+  street: 'Near AMU Fort, Fort Enclave Colony',
   locality: 'Aligarh',
   region: 'UP',
   postalCode: '202002',
   country: 'India',
-  formatted: 'Near Fort, Fort Enclave Colony, Aligarh, UP, India',
+  formatted: 'Near AMU Fort, Fort Enclave Colony, Aligarh, UP, India',
 }
 
 export const GEO = {
@@ -41,10 +41,10 @@ export const GEO = {
 
 export const PHONES = [
   { raw: '7037511306', display: '+91 70375 11306' },
-  { raw: '9955570749', display: '+91 99555 70749' },
+  { raw: '6398874753', display: '+91 63988 74753' },
 ]
 
-export const OG_IMAGE = `${SITE_URL}/images/hero-bg.png`
+export const OG_IMAGE = `${SITE_URL}/images/brochure/dual-pathway.jpg`
 export const LOGO_URL = `${SITE_URL}/favicon.png`
 
 /** @typedef {'home'|'about'|'programs'|'admissions'|'residential'|'gallery'|'contact'|'whyNextGen'} PageKey */
@@ -61,7 +61,7 @@ export const PAGE_SEO = {
     path: '/about',
     title: `About ${SITE_NAME} Aligarh | Islamic Mission School Heritage`,
     description:
-      'Discover NextGen Academy in Aligarh — the evolution of Islamic Mission School (IMS), uniting Iman with academic excellence for Huffaz and young leaders at Near Fort, Fort Enclave Colony.',
+      'Discover NextGen Academy in Aligarh — the evolution of Islamic Mission School (IMS), uniting Iman with academic excellence for Huffaz and young leaders at Near AMU Fort, Fort Enclave Colony.',
     keywords:
       'NextGen Academy Aligarh, Islamic Mission School NextGen Academy, about NextGen Academy, IMS sister organization, Islamic academic leadership Aligarh',
   },
@@ -77,15 +77,15 @@ export const PAGE_SEO = {
     path: '/admissions',
     title: `Admissions | ${SITE_NAME} — Grades 5–8, Ages 10–14`,
     description:
-      'Apply to NextGen Academy for Grades 5th to 8th (ages 10–14). Includes Hifz Plus support for Hifz-completed students. Near Fort, Fort Enclave Colony, Aligarh. Call 7037511306 or 9955570749.',
+      'Apply to NextGen Academy for Grades 5th to 8th (ages 10–14). Includes Hifz Plus support for Hifz-completed students. Near AMU Fort, Fort Enclave Colony, Aligarh. Call 7037511306 or 6398874753.',
     keywords:
       'NextGen Academy admissions, Islamic residential school admissions Aligarh, Hifz completed students school enrollment',
   },
   residential: {
     path: '/residential-program',
-    title: `Residential Program | ${SITE_NAME} — Grades 6–8`,
+    title: `Residential Program | ${SITE_NAME} — Grades 5–8`,
     description:
-      'A home away from home for Grades 6–8 — a nurturing 24/7 learning environment built on four pillars: Intellect, Spirit, Character, and Leadership.',
+      'A home away from home for Grades 5–8 — a nurturing 24/7 learning environment built on four pillars: Intellect, Spirit, Character, and Leadership.',
     keywords:
       'NextGen Academy residential school, Islamic residential school in Aligarh, residential school for Muslim students Aligarh',
   },
@@ -93,14 +93,14 @@ export const PAGE_SEO = {
     path: '/gallery',
     title: `Gallery | ${SITE_NAME} Campus — Aligarh`,
     description:
-      'View life at NextGen Academy, Near Fort, Fort Enclave Colony, Aligarh — campus, classrooms, residential facilities, and student life at our Islamic leadership academy.',
+      'View life at NextGen Academy, Near AMU Fort, Fort Enclave Colony, Aligarh — campus, classrooms, residential facilities, and student life at our Islamic leadership academy.',
     keywords: 'NextGen Academy campus, Islamic school Aligarh photos, NextGen Academy gallery',
   },
   contact: {
     path: '/contact',
     title: `Contact ${SITE_NAME} Aligarh | Admissions & Campus Visit`,
     description:
-      'Contact NextGen Academy at Near Fort, Fort Enclave Colony, Aligarh. Call 7037511306 or 9955570749 for admissions, campus tours, and Hifz plus academic program enquiries.',
+      'Contact NextGen Academy at Near AMU Fort, Fort Enclave Colony, Aligarh. Call 7037511306 or 6398874753 for admissions, campus tours, and Hifz plus academic program enquiries.',
     keywords:
       'NextGen Academy contact, NextGen Academy Aligarh phone, Islamic residential school Aligarh contact',
   },
@@ -129,7 +129,7 @@ export const FAQ_ITEMS = [
   {
     question: 'Where is NextGen Academy located?',
     answer:
-      'NextGen Academy is at Near Fort, Fort Enclave Colony, Aligarh, UP, India — easily accessible for families across Aligarh and the region.',
+      'NextGen Academy is at Near AMU Fort, Fort Enclave Colony, Aligarh, UP, India — easily accessible for families across Aligarh and the region.',
   },
   {
     question: 'Is NextGen Academy connected to Islamic Mission School (IMS)?',
@@ -139,7 +139,7 @@ export const FAQ_ITEMS = [
   {
     question: 'Who is the residential program for?',
     answer:
-      'Our fully residential program serves students in Grades 6–8, providing a nurturing 24/7 learning environment built on four pillars: Intellect, Spirit, Character, and Leadership.',
+      'Our fully residential program serves students in Grades 5–8, providing a nurturing 24/7 learning environment built on four pillars: Intellect, Spirit, Character, and Leadership.',
   },
   {
     question: 'What is the Hifz Plus program?',
@@ -149,6 +149,6 @@ export const FAQ_ITEMS = [
   {
     question: 'How do I apply for admissions?',
     answer:
-      'Admissions are open for Grades 5th to 8th (ages 10–14). Contact our admissions team at 7037511306 or 9955570749, or visit our Admissions page to begin your application.',
+      'Admissions are open for Grades 5th to 8th (ages 10–14). Contact our admissions team at 7037511306 or 6398874753, or visit our Admissions page to begin your application.',
   },
 ]

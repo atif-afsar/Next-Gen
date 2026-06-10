@@ -21,7 +21,7 @@ export default function WhyNextGenCTA() {
           variants={staggerItem}
           className="mx-auto mt-4 max-w-xl text-base text-white/90 sm:mt-6 sm:text-lg"
         >
-          Admissions for the 2025 Academic Year are now open. We invite visionaries to apply.
+          Admissions are now open for Grades 5–8. We invite visionaries to apply.
         </motion.p>
         <motion.div
           variants={staggerItem}
@@ -29,7 +29,7 @@ export default function WhyNextGenCTA() {
         >
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
             <Link
-              to="/contact"
+              to="/admissions#apply"
               className="block w-full rounded-lg bg-white px-8 py-3.5 text-center text-xs font-semibold uppercase tracking-wider text-[#7a5900] transition hover:bg-white/95 sm:px-12 sm:py-5 sm:text-sm"
             >
               Begin Application

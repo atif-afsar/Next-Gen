@@ -10,7 +10,7 @@ import { Reveal } from '../Contact/motion.jsx'
 
 export default function AdmissionsQuickContact() {
   return (
-    <section className="border-t border-[#d4c4ac]/25 bg-[#fbf9f8] py-12 sm:py-14">
+    <section className="border-t border-[#d4c4ac]/25 bg-[#faf3e3] py-12 sm:py-14">
       <div className="container-narrow px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-serif text-2xl text-[#1b1c1c] sm:text-3xl">Speak with admissions today</h2>

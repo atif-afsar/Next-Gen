@@ -13,7 +13,7 @@ export default function Consultation() {
   return (
     <section
       id="apply"
-      className="relative scroll-mt-20 overflow-hidden bg-[#efeded] py-14 sm:scroll-mt-24 sm:py-16 md:py-24"
+      className="relative scroll-mt-20 overflow-hidden bg-[#efe7d2] py-14 sm:scroll-mt-24 sm:py-16 md:py-24"
     >
       <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-1/3 -translate-y-1/2 rounded-full bg-[#7a5900]/5 blur-[120px] sm:block" />
 

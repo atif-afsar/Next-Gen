@@ -58,7 +58,7 @@ export default function VirtualVisit() {
                   type="button"
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
-                  className="rounded-full p-2 hover:bg-[#f5f3f3]"
+                  className="rounded-full p-2 hover:bg-[#f3ecd9]"
                   aria-label="Previous month"
                 >
                   <span className="material-symbols-outlined text-xl">chevron_left</span>
@@ -67,7 +67,7 @@ export default function VirtualVisit() {
                   type="button"
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
-                  className="rounded-full p-2 hover:bg-[#f5f3f3]"
+                  className="rounded-full p-2 hover:bg-[#f3ecd9]"
                   aria-label="Next month"
                 >
                   <span className="material-symbols-outlined text-xl">chevron_right</span>
@@ -98,7 +98,7 @@ export default function VirtualVisit() {
                           ? 'bg-[#7a5900] font-bold text-white shadow-md'
                           : highlight === 'peach'
                             ? 'bg-[#ffdea3]/40 font-bold text-[#7a5900]'
-                            : 'text-[#1b1c1c] hover:bg-[#f5f3f3]'
+                            : 'text-[#1b1c1c] hover:bg-[#f3ecd9]'
                     }`}
                   >
                     {day}
@@ -108,7 +108,7 @@ export default function VirtualVisit() {
             </div>
           </div>
 
-          <div className="w-full bg-[#fbf9f8] p-5 sm:p-6 md:w-80 md:shrink-0 md:p-8">
+          <div className="w-full bg-[#faf3e3] p-5 sm:p-6 md:w-80 md:shrink-0 md:p-8">
             <h4 className="text-[10px] font-semibold uppercase tracking-widest text-[#504533] sm:text-xs">
               Available Slots
             </h4>

@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { isLightPage } from '../../lib/navigation.js'
 import { EASE_OUT } from '../../lib/animations.js'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion.js'
@@ -13,27 +13,27 @@ export default function Layout() {
   const light = isLightPage(pathname)
   const reduced = usePrefersReducedMotion()
 
+  /* No exit animation / mode="wait" — pages must render instantly on navigation */
   const pageContent = reduced ? (
-    <Outlet />
+    <main>
+      <Outlet />
+    </main>
   ) : (
-    <AnimatePresence mode="wait">
-      <motion.main
-        key={pathname}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.35, ease: EASE_OUT }}
-      >
-        <Outlet />
-      </motion.main>
-    </AnimatePresence>
+    <motion.main
+      key={pathname}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2, ease: EASE_OUT }}
+    >
+      <Outlet />
+    </motion.main>
   )
 
   return (
     <div
       className={
         light
-          ? 'min-h-screen bg-[#fbf9f8] text-[#1b1c1c]'
+          ? 'min-h-screen bg-[#faf3e3] text-[#1b1c1c]'
           : 'min-h-screen bg-[#0a0a0a] text-white'
       }
     >

@@ -7,7 +7,7 @@ import './about-hero.css'
 
 export default function AboutHero() {
   return (
-    <header className="about-hero-split relative overflow-hidden bg-[#fbf9f8] pt-24 pb-16 text-[#1b1c1c] sm:pt-28 sm:pb-20 md:pt-36 md:pb-28">
+    <header className="about-hero-split relative overflow-hidden bg-[#faf3e3] pt-24 pb-16 text-[#1b1c1c] sm:pt-28 sm:pb-20 md:pt-36 md:pb-28">
       <div
         className="about-hero-accent pointer-events-none absolute top-0 right-0 -z-10 hidden h-full w-2/5 max-w-xl sm:block"
         aria-hidden
@@ -54,7 +54,7 @@ export default function AboutHero() {
               </AnimatedButton>
               <AnimatedButton
                 href="#why-leadership"
-                className="w-full rounded border border-[#827560] bg-white px-6 py-3.5 text-center text-sm font-semibold text-[#1b1c1c] transition hover:bg-[#f5f3f3] sm:w-auto sm:px-8 sm:py-4"
+                className="w-full rounded border border-[#827560] bg-white px-6 py-3.5 text-center text-sm font-semibold text-[#1b1c1c] transition hover:bg-[#f3ecd9] sm:w-auto sm:px-8 sm:py-4"
               >
                 Why Academic Leadership
               </AnimatedButton>

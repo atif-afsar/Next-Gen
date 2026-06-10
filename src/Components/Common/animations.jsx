@@ -113,9 +113,10 @@ export function AnimatedButton({
   to,
   href,
   wrapperClassName = 'w-full sm:w-auto',
+  layoutClass = BUTTON_LAYOUT,
   ...props
 }) {
-  const buttonClass = `${BUTTON_LAYOUT} ${className}`.trim()
+  const buttonClass = `${layoutClass} ${className}`.trim()
   const reduced = usePrefersReducedMotion()
 
   if (to) {

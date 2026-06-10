@@ -25,7 +25,7 @@ const variants = {
   },
   compact: {
     wrap: 'gap-2',
-    btn: 'border-[#d4c4ac]/30 bg-[#fcfaf7] px-3 py-2 text-sm hover:border-[#7a5900]/50',
+    btn: 'border-[#d4c4ac]/30 bg-[#faf3e3] px-3 py-2 text-sm hover:border-[#7a5900]/50',
     iconCall: 'bg-[#ffdea3] text-[#7a5900] h-8 w-8',
     iconWa: 'bg-[#dcf8e8] text-[#128C7E] h-8 w-8',
     label: 'text-[#504533]/60 text-[10px]',
