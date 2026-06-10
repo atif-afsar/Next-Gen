@@ -8,6 +8,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|images/|favicon\\.png|robots\\.txt|sitemap\\.xml|site\\.webmanifest|icons\\.svg).*)",
+      "destination": "/index.html"
+    }
   ]
 }

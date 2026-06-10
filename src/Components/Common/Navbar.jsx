@@ -360,7 +360,7 @@ export default function Navbar() {
         </div>
 
         {/* Scrollable links */}
-        <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-5" data-lenis-prevent>
+        <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-5">
           {NAV_MOBILE_GROUPS.map(({ title, links }) => (
             <div key={title} className="mb-6 last:mb-2">
               <p
