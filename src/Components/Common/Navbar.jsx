@@ -16,7 +16,6 @@ import logo from '../../assets/image.png'
 
 const EASE_OUT = [0.16, 1, 0.3, 1]
 
-/* Hash-aware active match — only the exact link (path + hash) highlights */
 function isExactPathActive(path, pathname, hash) {
   const [base, linkHash = ''] = path.split('#')
   if (pathname !== base) return false
@@ -30,19 +29,19 @@ function NavItem({ to, end, children, light, className = '' }) {
       to={to}
       end={end}
       className={({ isActive }) => {
-        const base = `group relative block whitespace-nowrap px-2 py-2 text-sm font-medium transition-colors duration-200 ${className}`
+        const base = `group relative block whitespace-nowrap px-3 py-2 text-sm font-medium transition-colors duration-200 ${className}`
         if (light) {
-          return `${base} ${isActive ? 'text-[#7a5900]' : 'text-[#504533] hover:text-[#7a5900]'}`
+          return `${base} ${isActive ? 'text-white' : 'text-white/80 hover:text-white'}`
         }
-        return `${base} ${isActive ? 'text-gold' : 'text-white/85 hover:text-gold'}`
+        return `${base} ${isActive ? 'text-gold' : 'text-white/80 hover:text-gold'}`
       }}
     >
       {({ isActive }) => (
         <>
           {children}
           <span
-            className={`absolute inset-x-2 bottom-0 h-0.5 origin-center rounded-full transition-transform duration-300 ease-out ${
-              light ? 'bg-[#7a5900]' : 'bg-gold'
+            className={`absolute inset-x-3 bottom-0 h-0.5 origin-center rounded-full transition-transform duration-300 ease-out will-change-transform ${
+              light ? 'bg-white' : 'bg-gold'
             } ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
             aria-hidden
           />
@@ -78,22 +77,12 @@ function ProgramsDropdown({ light, pathname, hash, onNavigate }) {
   }, [open])
 
   const triggerClass = light
-    ? `flex items-center gap-1 px-2 py-2 text-sm font-medium transition-colors ${
-        active || open ? 'text-[#7a5900]' : 'text-[#504533] hover:text-[#7a5900]'
+    ? `flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
+        active || open ? 'text-white' : 'text-white/80 hover:text-white'
       }`
-    : `flex items-center gap-1 px-2 py-2 text-sm font-medium transition-colors ${
-        active || open ? 'text-gold' : 'text-white/85 hover:text-gold'
+    : `flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
+        active || open ? 'text-gold' : 'text-white/80 hover:text-gold'
       }`
-
-  const panelClass = light
-    ? 'absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 rounded-xl border border-[#d4c4ac]/40 bg-white py-2 shadow-[0_12px_40px_rgba(26,26,26,0.12)]'
-    : 'absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 rounded-xl border border-white/10 bg-[#141414] py-2 shadow-[0_12px_40px_rgba(0,0,0,0.45)]'
-
-  const itemClass = light
-    ? 'block px-4 py-2.5 text-sm text-[#504533] transition hover:bg-[#f3ecd9] hover:text-[#7a5900]'
-    : 'block px-4 py-2.5 text-sm text-white/80 transition hover:bg-white/5 hover:text-gold'
-
-  const activeItemClass = light ? 'bg-[#ffdea3]/25 font-medium text-[#7a5900]' : 'bg-gold/10 font-medium text-gold'
 
   return (
     <li ref={ref} className="relative">
@@ -114,7 +103,7 @@ function ProgramsDropdown({ light, pathname, hash, onNavigate }) {
       </button>
       {(active || open) && (
         <span
-          className={`absolute inset-x-2 bottom-0 h-0.5 rounded-full ${light ? 'bg-[#7a5900]' : 'bg-gold'}`}
+          className={`absolute inset-x-3 bottom-0 h-0.5 rounded-full ${light ? 'bg-white' : 'bg-gold'}`}
           aria-hidden
         />
       )}
@@ -122,11 +111,15 @@ function ProgramsDropdown({ light, pathname, hash, onNavigate }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.18, ease: EASE_OUT }}
-            className={panelClass}
+            initial={{ opacity: 0, y: -4, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.98 }}
+            transition={{ duration: 0.15, ease: EASE_OUT }}
+            className={`absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 rounded-xl border py-2 shadow-xl will-change-transform ${
+              light 
+                ? 'border-[#d4c4ac]/40 bg-white shadow-[0_12px_40px_rgba(26,26,26,0.12)]' 
+                : 'border-white/10 bg-[#141414] shadow-[0_12px_40px_rgba(0,0,0,0.45)]'
+            }`}
             role="menu"
           >
             {NAV_PROGRAMS.map(({ label, path }) => {
@@ -136,7 +129,11 @@ function ProgramsDropdown({ light, pathname, hash, onNavigate }) {
                   key={path}
                   to={path}
                   role="menuitem"
-                  className={`${itemClass} ${isActive ? activeItemClass : ''}`}
+                  className={`block px-4 py-2.5 text-sm transition-colors duration-150 ${
+                    light
+                      ? `${isActive ? 'bg-[#ffdea3]/25 font-medium text-[#7a5900]' : 'text-[#504533] hover:bg-[#f3ecd9] hover:text-[#7a5900]'}`
+                      : `${isActive ? 'bg-gold/10 font-medium text-gold' : 'text-white/80 hover:bg-white/5 hover:text-gold'}`
+                  }`}
                   onClick={() => {
                     setOpen(false)
                     onNavigate?.()
@@ -165,117 +162,79 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
+    return () => { document.body.style.overflow = '' }
   }, [isOpen])
-
-  const barClass = light ? 'bg-[#1b1c1c]' : 'bg-white'
 
   function mobileLinkClass(isActive) {
     if (light) {
       return isActive
         ? 'border-[#7a5900] bg-[#ffdea3]/25 font-semibold text-[#7a5900]'
-        : 'border-transparent text-[#1b1c1c]/80 hover:border-[#d4c4ac] hover:bg-white/60 hover:text-[#7a5900] active:bg-[#ffdea3]/20 active:text-[#7a5900]'
+        : 'border-transparent text-[#1b1c1c]/80 active:bg-[#ffdea3]/20'
     }
     return isActive
       ? 'border-gold bg-gold/10 font-semibold text-gold'
-      : 'border-transparent text-white/85 hover:border-white/15 hover:bg-white/5 hover:text-gold active:bg-gold/10 active:text-gold'
+      : 'border-transparent text-white/85 active:bg-gold/10'
   }
 
-  const headerClass = isOpen
-    ? light
-      ? 'max-lg:border-[#d4c4ac]/30 max-lg:bg-[#faf3e3] max-lg:shadow-none max-lg:backdrop-blur-none lg:border-b lg:border-[#d4c4ac]/30 lg:bg-white/70 lg:shadow-[0_10px_30px_rgba(26,26,26,0.04)] lg:backdrop-blur-xl'
-      : 'max-lg:border-white/10 max-lg:bg-[#0f0f0f] max-lg:shadow-none max-lg:backdrop-blur-none lg:border-b lg:border-white/5 lg:bg-[#0a0a0a]/80 lg:backdrop-blur-md'
-    : light
-      ? 'border-b border-[#d4c4ac]/30 bg-white/70 shadow-[0_10px_30px_rgba(26,26,26,0.04)] backdrop-blur-xl'
-      : 'border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md'
+  const headerClass = light
+    ? 'border-b border-white/15 bg-primary shadow-[0_10px_30px_rgba(122,89,0,0.15)]'
+    : 'border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md'
 
   return (
     <>
       <motion.header
-        initial={reduced ? false : { y: -24, opacity: 0 }}
+        initial={reduced ? false : { y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.55, ease: EASE_OUT }}
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${headerClass}`}
+        transition={{ duration: 0.4, ease: EASE_OUT }}
+        className={`fixed inset-x-0 top-0 z-50 h-16 transition-colors duration-200 md:h-20 ${headerClass}`}
       >
-        <nav
-          className="container-narrow grid h-16 grid-cols-[auto_1fr_auto] items-center gap-3 md:h-[4.5rem] md:gap-4"
-          aria-label="Main navigation"
-        >
-          {/* Logo */}
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+          
+          {/* Brand/Logo Area */}
           <Link
             to="/"
             aria-label="NextGen Academy — Home"
-            className={`group flex shrink-0 items-center gap-2 rounded-lg transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:gap-2.5 ${
-              light ? 'focus-visible:outline-[#7a5900]' : 'focus-visible:outline-gold'
-            }`}
+            className="flex items-center gap-2.5 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
-            <span
-              className={
-                light
-                  ? 'flex shrink-0 items-center'
-                  : 'flex shrink-0 items-center rounded-lg bg-white px-1.5 py-1 shadow-[0_2px_14px_rgba(0,0,0,0.35)]'
-              }
-            >
-              <img
-                src={logo}
-                alt=""
-                aria-hidden
-                className="h-9 w-9 object-contain sm:h-10 sm:w-10"
-                width={40}
-                height={40}
-                decoding="async"
-              />
-            </span>
-            <span className="hidden min-w-0 flex-col justify-center gap-0.5 sm:flex sm:gap-1">
-              <span
-                className={`whitespace-nowrap font-serif text-[0.95rem] leading-none sm:text-base md:text-lg ${
-                  light ? 'text-[#1b1c1c]' : 'text-white'
-                }`}
-              >
-                <span className="font-semibold">NextGen</span>
-                <span className={light ? 'text-[#7a5900]' : 'text-gold'}> Academy</span>
+            <div className={`flex shrink-0 items-center rounded-lg bg-white p-1.5 ${light ? 'shadow-md' : 'shadow-lg'}`}>
+              <img src={logo} alt="" className="h-8 w-8 object-contain sm:h-9 sm:w-9" width={36} height={36} />
+            </div>
+            <div className="flex min-w-0 flex-col">
+              <span className="truncate font-serif text-sm font-semibold tracking-tight text-white sm:text-base md:text-lg">
+                NextGen<span className={light ? 'text-white/90' : 'text-gold'}> Academy</span>
               </span>
-              <span
-                aria-hidden
-                className={`h-px w-10 rounded-full sm:w-12 ${
-                  light
-                    ? 'bg-gradient-to-r from-[#7a5900]/55 to-transparent'
-                    : 'bg-gradient-to-r from-gold/80 to-transparent'
-                }`}
-              />
-            </span>
+              <span className={`h-0.5 w-6 rounded-full sm:w-8 ${light ? 'bg-white/50' : 'bg-gold/60'}`} />
+            </div>
           </Link>
 
-          {/* Desktop nav — lg+ */}
-          <ul className="hidden items-center justify-center gap-0.5 lg:flex lg:gap-1">
-            {NAV_PRIMARY.map(({ label, path }) => (
-              <li key={path}>
-                <NavItem to={path} end={path === '/'} light={light}>
-                  {label}
-                </NavItem>
-              </li>
-            ))}
-            <ProgramsDropdown light={light} pathname={pathname} hash={hash} />
-            {NAV_SECONDARY.map(({ label, path }) => (
-              <li key={path}>
-                <NavItem to={path} light={light}>
-                  {label}
-                </NavItem>
-              </li>
-            ))}
-          </ul>
+          {/* Desktop Navigation Links */}
+          <nav className="hidden items-center gap-1 lg:flex">
+            <ul className="flex items-center gap-1">
+              {NAV_PRIMARY.map(({ label, path }) => (
+                <li key={path}>
+                  <NavItem to={path} end={path === '/'} light={light}>
+                    {label}
+                  </NavItem>
+                </li>
+              ))}
+              <ProgramsDropdown light={light} pathname={pathname} hash={hash} />
+              {NAV_SECONDARY.map(({ label, path }) => (
+                <li key={path}>
+                  <NavItem to={path} light={light}>
+                    {label}
+                  </NavItem>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          {/* Right: CTA + hamburger */}
-          <div className="flex items-center justify-end gap-2 sm:gap-3">
+          {/* Action Call / Menu Buttons */}
+          <div className="flex items-center gap-4">
             <AnimatedButton
               to={APPLY_PATH}
               wrapperClassName="hidden lg:inline-flex"
-              className={`whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold transition sm:px-5 sm:py-2.5 sm:text-sm ${
-                light
-                  ? 'bg-[#ffdea3] text-[#1b1c1c] shadow-sm hover:bg-[#ffd088]'
-                  : 'bg-gold text-black hover:bg-[#e8c96a]'
+              className={`rounded-full px-5 py-2 text-sm font-semibold tracking-wide shadow-sm transition-transform active:scale-[0.98] ${
+                light ? 'bg-white text-[#1b1c1c] hover:bg-white/90' : 'bg-gold text-black hover:bg-[#e8c96a]'
               }`}
             >
               Apply Now
@@ -284,130 +243,107 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen((v) => !v)}
-              className={`flex h-10 w-10 items-center justify-center rounded-lg border transition active:scale-95 lg:hidden ${
-                light
-                  ? 'border-[#d4c4ac]/50 bg-white/80 text-[#1b1c1c]'
-                  : 'border-white/15 bg-white/5 text-white'
+              className={`flex h-10 w-10 items-center justify-center rounded-xl border transition-colors will-change-transform active:scale-95 lg:hidden ${
+                light ? 'border-white/20 bg-white/10 text-white' : 'border-white/15 bg-white/5 text-white'
               }`}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
             >
-              <div className="flex w-5 flex-col justify-center gap-1.5">
-                <span
-                  className={`block h-0.5 w-5 origin-center transition-transform duration-200 ${barClass} ${
-                    isOpen ? 'translate-y-[7px] rotate-45' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 w-5 transition-all duration-150 ${barClass} ${
-                    isOpen ? 'scale-x-0 opacity-0' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 w-5 origin-center transition-transform duration-200 ${barClass} ${
-                    isOpen ? '-translate-y-[7px] -rotate-45' : ''
-                  }`}
-                />
+              <div className="relative flex h-5 w-5 flex-col justify-center gap-1.5">
+                <span className={`block h-0.5 w-5 bg-white transition-transform duration-200 ${isOpen ? 'absolute translate-y-0 rotate-45' : ''}`} />
+                <span className={`block h-0.5 w-5 bg-white transition-opacity duration-150 ${isOpen ? 'opacity-0' : ''}`} />
+                <span className={`block h-0.5 w-5 bg-white transition-transform duration-200 ${isOpen ? 'absolute translate-y-0 -rotate-45' : ''}`} />
               </div>
             </button>
           </div>
-        </nav>
+        </div>
       </motion.header>
 
-      {/* Mobile overlay */}
-      <div
-        className={`fixed inset-0 z-40 lg:hidden ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
-        aria-hidden={!isOpen}
-      >
-        <button
-          type="button"
-          aria-label="Close menu"
-          tabIndex={isOpen ? 0 : -1}
-          className={`absolute inset-0 bg-black/55 backdrop-blur-[2px] transition-opacity duration-200 ${
-            isOpen ? 'opacity-100' : 'opacity-0'
-          }`}
-          onClick={() => setIsOpen(false)}
-        />
-      </div>
+      {/* Optimized Native Mobile Menu Stack */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop Layer */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-[4px] lg:hidden"
+              onClick={() => setIsOpen(false)}
+            />
 
-      {/* Mobile drawer */}
-      <div
-        aria-hidden={!isOpen}
-        inert={!isOpen ? true : undefined}
-        className={`fixed inset-y-0 right-0 z-[45] flex w-full max-w-sm flex-col shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden ${
-          light ? 'bg-[#faf3e3]' : 'bg-[#0f0f0f]'
-        } ${isOpen ? 'translate-x-0' : 'pointer-events-none translate-x-full'}`}
-      >
-        {/* Drawer header */}
-        <div
-          className={`flex shrink-0 items-center justify-between border-b px-5 py-4 pt-[max(1rem,env(safe-area-inset-top))] ${
-            light ? 'border-[#d4c4ac]/30' : 'border-white/10'
-          }`}
-        >
-          <span className={`font-serif text-lg ${light ? 'text-[#1b1c1c]' : 'text-white'}`}>
-            Menu
-          </span>
-          <button
-            type="button"
-            onClick={() => setIsOpen(false)}
-            className={`flex h-9 w-9 items-center justify-center rounded-lg ${
-              light ? 'text-[#504533] hover:bg-[#efe7d2]' : 'text-white/70 hover:bg-white/10'
-            }`}
-            aria-label="Close menu"
-          >
-            <span className="material-symbols-outlined text-xl">close</span>
-          </button>
-        </div>
+            {/* Side Sheet Panel Container */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+              className={`fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col shadow-2xl will-change-transform lg:hidden ${
+                light ? 'bg-[#faf3e3]' : 'bg-[#0f0f0f]'
+              }`}
+            >
+              {/* Menu Sheet Top Header Container */}
+              <div className={`flex shrink-0 items-center justify-between border-b px-5 py-4 pt-[max(1rem,env(safe-area-inset-top))] ${
+                light ? 'border-[#d4c4ac]/30' : 'border-white/10'
+              }`}>
+                <span className={`font-serif text-lg font-medium ${light ? 'text-[#1b1c1c]' : 'text-white'}`}>Menu</span>
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className={`flex h-9 w-9 items-center justify-center rounded-xl ${
+                    light ? 'text-[#504533] hover:bg-[#efe7d2]' : 'text-white/70 hover:bg-white/10'
+                  }`}
+                  aria-label="Close menu"
+                >
+                  <span className="material-symbols-outlined text-xl">close</span>
+                </button>
+              </div>
 
-        {/* Scrollable links */}
-        <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-5">
-          {NAV_MOBILE_GROUPS.map(({ title, links }) => (
-            <div key={title} className="mb-6 last:mb-2">
-              <p
-                className={`mb-2 px-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${
-                  light ? 'text-[#7a5900]' : 'text-gold'
-                }`}
-              >
-                {title}
-              </p>
-              <ul className="space-y-1">
-                {links.map(({ label, path }) => (
-                  <li key={path}>
-                    <Link
-                      to={path}
-                      tabIndex={isOpen ? 0 : -1}
-                      onClick={() => setIsOpen(false)}
-                      className={`block rounded-lg border-l-2 px-3 py-3 text-[0.95rem] font-medium leading-snug transition-colors duration-150 ${mobileLinkClass(
-                        isExactPathActive(path, pathname, hash)
-                      )}`}
-                    >
-                      {label}
-                    </Link>
-                  </li>
+              {/* Scrollable Nav Link Listing Context */}
+              <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-6">
+                {NAV_MOBILE_GROUPS.map(({ title, links }) => (
+                  <div key={title} className="mb-6 last:mb-2">
+                    <p className={`mb-2 px-2 text-[10px] font-bold uppercase tracking-[0.2em] ${light ? 'text-[#7a5900]' : 'text-gold'}`}>
+                      {title}
+                    </p>
+                    <ul className="space-y-1">
+                      {links.map(({ label, path }) => (
+                        <li key={path}>
+                          <Link
+                            to={path}
+                            onClick={() => setIsOpen(false)}
+                            className={`block rounded-xl border-l-4 px-4 py-3 text-base font-medium transition-colors duration-150 ${mobileLinkClass(
+                              isExactPathActive(path, pathname, hash)
+                            )}`}
+                          >
+                            {label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
-            </div>
-          ))}
-        </nav>
+              </nav>
 
-        {/* Sticky CTA */}
-        <div
-          className={`shrink-0 border-t p-4 pb-[max(1rem,env(safe-area-inset-bottom))] ${
-            light ? 'border-[#d4c4ac]/30 bg-[#faf3e3]' : 'border-white/10 bg-[#0f0f0f]'
-          }`}
-        >
-          <NavLink
-            to={APPLY_PATH}
-            tabIndex={isOpen ? 0 : -1}
-            onClick={() => setIsOpen(false)}
-            className={`block w-full rounded-xl py-3.5 text-center text-sm font-semibold tracking-wide active:scale-[0.98] ${
-              light ? 'bg-[#ffdea3] text-[#1b1c1c]' : 'bg-gold text-black'
-            }`}
-          >
-            Apply Now
-          </NavLink>
-        </div>
-      </div>
+              {/* Fixed Base Control Element Anchor */}
+              <div className={`shrink-0 border-t p-4 pb-[max(1rem,env(safe-area-inset-bottom))] ${
+                light ? 'border-[#d4c4ac]/30 bg-[#faf3e3]' : 'border-white/10 bg-[#0f0f0f]'
+              }`}>
+                <NavLink
+                  to={APPLY_PATH}
+                  onClick={() => setIsOpen(false)}
+                  className={`block w-full rounded-xl py-3.5 text-center text-sm font-semibold tracking-wide transition-transform active:scale-[0.98] ${
+                    light ? 'bg-[#ffdea3] text-[#1b1c1c]' : 'bg-gold text-black'
+                  }`}
+                >
+                  Apply Now
+                </NavLink>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   )
 }
