@@ -4,12 +4,13 @@
   --color-gold: #ffb800;
   --color-gold-light: #ffc933;
   --color-gold-dim: #c99400;
+  --color-amber-deep: #e8941a;
   --color-surface: #0a0a0a;
   --color-surface-elevated: #141414;
   --color-surface-card: #1a1a1a;
   --color-muted: #a3a3a3;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 }
 
 html {
@@ -79,6 +80,23 @@ body {
 
 .font-serif {
   font-family: var(--font-serif);
+}
+
+/* Site-wide heading underline — brochure amber-deep accent */
+main h1,
+main h2,
+main h3,
+.about-heading {
+  text-decoration: underline;
+  text-decoration-color: var(--color-amber-deep);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 0.1em;
+  text-decoration-skip-ink: auto;
+}
+
+main h1 {
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.2em;
 }
 
 .text-gold {
@@ -235,5 +253,50 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .premium-image:hover img {
     transform: none;
+  }
+}
+
+/* Spline scene loader */
+.spline-loader {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid rgba(122, 89, 0, 0.2);
+  border-top-color: #7a5900;
+  border-radius: 50%;
+  animation: spline-spin 0.8s linear infinite;
+}
+
+@keyframes spline-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Aceternity spotlight entrance */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease 0.75s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spline-loader {
+    animation: none;
+  }
+
+  .animate-spotlight {
+    animation: none;
+    opacity: 0.4;
+    transform: translate(-50%, -40%) scale(1);
   }
 }

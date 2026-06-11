@@ -1,5 +1,5 @@
 import { ACADEMIC_LEADERSHIP_PROGRAM } from '../../lib/siteContent.js'
-import { AnimatedButton, HighlightText } from '../Common/animations.jsx'
+import { AnimatedButton } from '../Common/animations.jsx'
 import { motion, heroLoadContainer, heroLoadItem } from '../WhyNextGen/motion.jsx'
 
 export default function ProgramsHero() {
@@ -26,7 +26,7 @@ export default function ProgramsHero() {
           variants={heroLoadItem}
           className="font-serif text-3xl leading-[1.15] text-[#1b1c1c] sm:text-4xl md:text-5xl lg:text-6xl"
         >
-          <HighlightText>{ACADEMIC_LEADERSHIP_PROGRAM.title}</HighlightText>
+          {ACADEMIC_LEADERSHIP_PROGRAM.title}
         </motion.h1>
 
         <motion.p

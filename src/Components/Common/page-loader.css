@@ -20,7 +20,7 @@
 
 .page-loader__text {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;

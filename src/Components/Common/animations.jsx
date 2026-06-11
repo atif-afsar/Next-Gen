@@ -191,7 +191,11 @@ export function HighlightText({ children, className = '' }) {
   const motionViewport = useMotionViewport()
 
   if (reduced) {
-    return <span className={className}>{children}</span>
+    return (
+      <span className={`underline decoration-amber-deep decoration-2 underline-offset-2 ${className}`}>
+        {children}
+      </span>
+    )
   }
 
   return (
@@ -207,7 +211,7 @@ export function HighlightText({ children, className = '' }) {
     >
       {children}
       <motion.span
-        className="absolute -bottom-0.5 left-0 h-px rounded-full bg-current opacity-40"
+        className="absolute -bottom-0.5 left-0 h-0.5 w-full rounded-full bg-amber-deep"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={motionViewport}

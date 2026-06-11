@@ -1,10 +1,342 @@
-/* Hero — content + feature cards layout */
+/* Hero — centered copy + spline stage with floating cards */
 .home-hero-section {
   min-height: auto;
+  overflow-x: clip;
 }
 
-.hero-feature-card img {
-  will-change: transform;
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hero-copy,
+.hero-media,
+.hero-copy-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-eyebrow {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #504533;
+  text-wrap: balance;
+}
+
+@media (min-width: 640px) {
+  .hero-eyebrow {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+.hero-cta-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .hero-cta-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 28rem;
+    gap: 1rem;
+  }
+}
+
+.hero-spline-stage {
+  isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Consistent spline height — avoids jumping between breakpoints */
+.hero-spline-placeholder {
+  width: 100%;
+  height: clamp(15rem, 62vw, 20rem);
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 18rem;
+}
+
+@media (min-width: 640px) {
+  .hero-spline-placeholder {
+    height: clamp(17rem, 42vw, 24rem);
+    contain-intrinsic-size: auto 22rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-spline-placeholder {
+    height: clamp(20rem, 36vw, 28rem);
+    contain-intrinsic-size: auto 26rem;
+  }
+}
+
+.hero-spline-canvas {
+  z-index: 2;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  touch-action: pan-y;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-spline-canvas--interactive {
+    pointer-events: auto;
+    touch-action: none;
+    cursor: default;
+  }
+
+  .hero-spline-canvas--interactive .hero-spline-canvas-inner,
+  .hero-spline-canvas--interactive .hero-spline-scene,
+  .hero-spline-canvas--interactive canvas {
+    pointer-events: auto !important;
+  }
+}
+
+.hero-spline-canvas-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Touch / mobile: gentle ambient drift on the scene container */
+.hero-spline-canvas-inner--ambient {
+  animation: hero-spline-ambient-drift 7s ease-in-out infinite;
+}
+
+@keyframes hero-spline-ambient-drift {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+.hero-spline-scene,
+.hero-spline-canvas > div,
+.hero-spline-canvas-inner > div {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin-inline: auto;
+}
+
+.hero-spline-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain;
+}
+
+.hero-spline-spotlight {
+  top: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120% !important;
+  height: 140% !important;
+}
+
+@media (min-width: 768px) {
+  .hero-spline-spotlight {
+    top: -5rem;
+    width: 138% !important;
+    height: 169% !important;
+  }
+}
+
+/* Lightweight static fallback — mobile & reduced motion */
+.hero-spline-fallback {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, rgba(255, 222, 163, 0.55), transparent 62%),
+    radial-gradient(circle at 50% 68%, rgba(122, 89, 0, 0.08), transparent 55%);
+}
+
+.hero-spline-fallback--loading {
+  background: transparent;
+}
+
+.hero-spline-fallback-ring {
+  position: absolute;
+  width: min(58%, 12rem);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  border: 2px dashed rgba(212, 196, 172, 0.65);
+  animation: hero-fallback-pulse 4s ease-in-out infinite;
+}
+
+.hero-spline-fallback-core {
+  width: min(34%, 6.5rem);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, #ffdea3, #7a5900 72%);
+  box-shadow: 0 12px 36px rgba(122, 89, 0, 0.22);
+}
+
+@keyframes hero-fallback-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+.hero-mobile-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.hero-mobile-feature-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-mobile-feature-card {
+  width: 100%;
+  min-height: 3.25rem;
+}
+
+@media (min-width: 640px) {
+  .hero-mobile-features {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .hero-mobile-features::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-mobile-feature-wrap {
+    width: auto;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .hero-mobile-feature-card {
+    width: 14rem;
+    min-width: 14rem;
+    max-width: 14rem;
+  }
+}
+
+.hero-corner-wave {
+  opacity: 1;
+}
+
+.hero-corner-wave--tl {
+  animation: hero-wave-drift 18s ease-in-out infinite;
+}
+
+.hero-corner-wave--br {
+  animation: hero-wave-drift 22s ease-in-out infinite reverse;
+}
+
+@keyframes hero-wave-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(6px, -4px);
+  }
+}
+
+/* Floating cards — desktop only */
+.hero-float-card {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-spline-stage {
+    padding-inline: 0.5rem;
+  }
+
+  .hero-float-card {
+    display: block;
+    max-width: min(11rem, 22vw);
+  }
+
+  .hero-float-card--left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hero-float-card--right {
+    right: 0;
+    top: 26%;
+  }
+
+  .hero-float-card--bottom {
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-spline-stage {
+    padding-inline: 0;
+  }
+
+  .hero-float-card {
+    max-width: 13rem;
+  }
+
+  .hero-float-card--left {
+    left: -1.5rem;
+  }
+
+  .hero-float-card--right {
+    right: -1.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-float-card {
+    max-width: 15rem;
+  }
+
+  .hero-float-card--left {
+    left: -2.5rem;
+  }
+
+  .hero-float-card--right {
+    right: -2.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .home-hero-section .hero-ambient-float {
+    animation: none;
+  }
 }
 
 .page-home-sections {
@@ -46,7 +378,10 @@
 @media (prefers-reduced-motion: reduce) {
   .page-home-sections *,
   .page-home-sections *::before,
-  .page-home-sections *::after {
+  .page-home-sections *::after,
+  .home-hero-section .hero-corner-wave,
+  .hero-spline-fallback-ring,
+  .hero-spline-canvas-inner--ambient {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -1,5 +1,5 @@
 import { ABOUT } from '../../lib/siteContent.js'
-import { motion, Reveal, RevealStagger, RevealItem } from './motion.jsx'
+import { Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
 const highlights = [
   {
@@ -34,24 +34,27 @@ export default function IntegrativeModel() {
           <p className="about-body mx-auto mt-4 max-w-2xl text-sm sm:text-base">{ABOUT.paragraphs[1]}</p>
         </Reveal>
 
-        <RevealStagger className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
+        <RevealStagger className="about-model-grid mt-10 grid grid-cols-1 gap-5 sm:mt-14 sm:gap-6 md:grid-cols-3">
           {highlights.map(({ icon, title, description }) => (
             <RevealItem
               key={title}
               as="article"
-              className="group flex h-full flex-col items-center rounded-xl bg-[#f3ecd9] p-8 text-center transition-colors duration-500 hover:bg-[#7a5900] sm:p-10"
+              hoverLift={false}
+              className="about-model-card group relative flex h-full min-w-0 flex-col items-center overflow-hidden rounded-xl border border-[#d4c4ac]/30 bg-[#f3ecd9] p-8 text-center shadow-[0_4px_20px_rgba(26,26,26,0.05)] transition-[background-color,box-shadow,border-color,transform] duration-300 hover:-translate-y-1 hover:border-[#7a5900]/25 hover:bg-[#7a5900] hover:shadow-[0_14px_36px_rgba(122,89,0,0.22)] sm:p-10"
             >
-              <motion.div whileHover={{ y: -6 }} className="flex h-full flex-col items-center">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:scale-110 sm:mb-6 sm:h-16 sm:w-16">
+              <div className="flex h-full w-full min-w-0 flex-col items-center">
+                <div className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white shadow-sm transition-transform duration-300 group-hover:scale-105 sm:mb-6 sm:h-16 sm:w-16">
                   <span className="material-symbols-outlined text-2xl text-[#7a5900] sm:text-3xl">
                     {icon}
                   </span>
                 </div>
-                <h3 className="about-heading text-lg group-hover:text-white sm:text-xl">{title}</h3>
-                <p className="about-body mt-3 text-sm leading-relaxed group-hover:text-white/85 sm:mt-4 md:text-base">
+                <h3 className="about-heading about-model-card-title w-full shrink-0 text-lg sm:text-xl">
+                  {title}
+                </h3>
+                <p className="about-body about-model-card-body mt-3 w-full shrink-0 text-sm leading-relaxed sm:mt-4 md:text-base">
                   {description}
                 </p>
-              </motion.div>
+              </div>
             </RevealItem>
           ))}
         </RevealStagger>

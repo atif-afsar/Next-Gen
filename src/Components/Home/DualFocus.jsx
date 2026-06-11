@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { DUAL_PATHWAYS } from '../../lib/siteContent.js'
-import { HighlightText, Reveal, RevealStagger, RevealItem } from './motion.jsx'
+import { Reveal, RevealStagger, RevealItem } from './motion.jsx'
 
 const PATH_STYLES = [
   {
@@ -28,9 +28,7 @@ function PathwayCard({ path, style }) {
             <span className="material-symbols-outlined text-2xl">{path.icon}</span>
           </span>
           <div className="min-w-0">
-            <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">
-              <HighlightText>{path.title}</HighlightText>
-            </h3>
+            <h3 className="font-serif text-xl text-[#1b1c1c] sm:text-2xl">{path.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-[#504533] sm:text-base">{path.summary}</p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   optimizeDeps: {
-    include: ['motion/react', 'react-helmet-async'],
+    include: ['motion/react', 'react-helmet-async', '@splinetool/react-spline', '@splinetool/runtime'],
   },
   build: {
     target: 'es2020',
@@ -16,6 +16,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            if (id.includes('@splinetool')) return 'spline'
             if (id.includes('motion')) return 'motion'
             if (id.includes('react-router')) return 'router'
             if (id.includes('react-dom') || id.includes('react/')) return 'react-vendor'

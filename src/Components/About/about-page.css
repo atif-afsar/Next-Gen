@@ -42,6 +42,33 @@
   border-left: 4px solid var(--about-primary);
 }
 
+/* Integrative model cards — stable hover without text overlap */
+.page-about .about-model-grid {
+  isolation: isolate;
+}
+
+.page-about .about-model-card {
+  z-index: 0;
+}
+
+.page-about .about-model-card:hover {
+  z-index: 2;
+}
+
+.page-about .about-model-card-title,
+.page-about .about-model-card-body {
+  transition: color 0.3s ease;
+}
+
+.page-about .about-model-card:hover .about-model-card-title {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.65);
+}
+
+.page-about .about-model-card:hover .about-model-card-body {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-about *,
   .page-about *::before,
