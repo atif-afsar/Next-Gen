@@ -13,8 +13,9 @@ export const CONTACT_CAMPUS = '/images/contact-campus.jpg'
 
 /** Home page — light curriculum bento (Stitch fa8c439b) */
 export const HOME_CURRICULUM_STEM = '/images/brochure/faith-skills.jpg'
-export const HOME_CURRICULUM_PHILOSOPHY = '/images/brochure/vision.jpg'
+export const HOME_CURRICULUM_PHILOSOPHY = '/images/brochure/image.png'
 export const HOME_ABOUT_HERITAGE = '/images/brochure/mission.jpg'
+export const HOME_ABOUT_VISION = '/images/brochure/vision.jpg'
 export const ABOUT_PAGE_HERO = '/images/brochure/minds-hearts.jpg'
 
 /** Glimpses of IMS — real campus photos from the prospectus */
